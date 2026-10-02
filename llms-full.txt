@@ -1,0 +1,68 @@
+# LIFAN Power Ecuador — Especificaciones Técnicas Completas (llms-full.txt)
+
+## 1. LIFAN 3800i Inverter Dual Fuel
+- SKU: LF-3800i
+- Potencia Nominal (Rated Power): 3.0 kW
+- Potencia Máxima (Max Power): 3.5 kW
+- Tipo de Motor: 165F, 4 tiempos, monocilíndrico, enfriado por aire
+- Cilindrada: 149 cc
+- Tipo de Arranque: Manual retráctil
+- Voltajes de Salida: 110V / 120V / 220V / 240V AC; 12V / 8.3A DC
+- Consumo de Combustible: ≤ 450 g/kW.h
+- Autonomía al 100% de carga continua: 3.5 horas con gasolina
+- Capacidad del tanque de gasolina: 6 Litros
+- Operación Dual Fuel: Admite conexión a cilindro de Gas Licuado de Petróleo (GLP) de uso doméstico de 15 kg mediante manguera y regulador de baja presión incluido.
+- Peso Neto: 21 kg
+- Nivel de Ruido: ≤ 68 dB a 7 metros
+- Dimensiones del cartón: 550 x 360 x 550 mm
+- Precio Oficial: $690 inc. IVA
+
+## 2. LIFAN 4800iE Inverter Dual Fuel Silencioso (Recomendado)
+- SKU: LF-4800iE
+- Potencia Nominal (Rated Power): 3.8 kW
+- Potencia Máxima (Max Power): 4.2 kW
+- Tipo de Motor: 170F-3, 4 tiempos, monocilíndrico, enfriado por aire
+- Cilindrada: 192 cc
+- Tipo de Arranque: Eléctrico con llave / Manual retráctil
+- Voltajes de Salida: 110V / 120V / 220V / 240V AC; 12V / 8.3A DC
+- Consumo de Combustible: ≤ 450 g/kW.h
+- Autonomía al 100% de carga continua: 4.0 horas con gasolina
+- Capacidad del tanque de gasolina: 10 Litros
+- Operación Dual Fuel: Compatible con cilindro doméstico de Gas GLP 15kg.
+- Peso Neto: 30 kg
+- Nivel de Ruido: ≤ 62 dB a 7 metros (Cabina insonorizada ultra silenciosa)
+- Dimensiones del cartón: 600 x 400 x 605 mm
+- Precio Oficial: $920 inc. IVA
+
+## 3. LIFAN 6500iOE Open Inverter
+- SKU: LF-6500iOE
+- Potencia Nominal (Rated Power): 5.0 kW
+- Potencia Máxima (Max Power): 5.5 kW
+- Tipo de Motor: 170F-2D, 4 tiempos, monocilíndrico, enfriado por aire
+- Cilindrada: 223 cc
+- Tipo de Arranque: Eléctrico / Manual
+- Voltajes de Salida: 110V / 120V / 220V / 240V AC; 12V / 8.3A DC
+- Consumo de Combustible: ≤ 450 g/kW.h
+- Autonomía al 100% de carga continua: 10.0 horas continuas
+- Capacidad del tanque de gasolina: 15 Litros
+- Peso Neto: 38 kg
+- Nivel de Ruido: ≤ 74 dB a 7 metros
+- Chasis: Tubular abierto de alta resistencia con amortiguadores antivibración
+- Dimensiones del cartón: 485 x 515 x 530 mm
+- Precio Oficial: $860 inc. IVA
+
+## 4. LIFAN 12000E Industrial Pesado
+- SKU: LF-12000E
+- Potencia Nominal (Rated Power): 10.0 / 11.0 kW
+- Potencia Máxima (Max Power): 11.0 / 12.0 kW
+- Tipo de Motor: 2V78F-2, 4 tiempos, bicilíndrico en V (V-Twin), refrigeración por aire forzado
+- Cilindrada: 688 cc
+- Tipo de Arranque: Eléctrico con batería incluida
+- Voltajes de Salida: 120V / 220V / 240V AC monofásico / bifásico; 12V / 8.3A DC
+- Consumo de Combustible: ≤ 460 g/kW.h
+- Autonomía al 100% de carga: 3.5 horas continuas
+- Capacidad del tanque: 23 Litros
+- Peso Neto: 152 kg (equipado con ruedas y manillares abatibles de transporte)
+- Nivel de Ruido: ≤ 97 dB a 7 metros
+- Dimensiones del cartón: 900 x 750 x 805 mm
+- Precio Oficial: $1,955 inc. IVA

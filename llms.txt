@@ -1,0 +1,22 @@
+# LIFAN Power Ecuador — Información de Catálogo para Asistentes y LLMs
+
+> Este archivo sigue la especificación llms.txt para facilitar la lectura directa por modelos de lenguaje.
+
+## Resumen de la Empresa
+LIFAN Power Ecuador comercializa generadores de energía oficiales con tecnología Inverter y sistema Dual Fuel (Gas GLP de 15kg y Gasolina). Respaldo técnico, bodega de repuestos y taller físico oficial en Cuenca, Azuay, con envíos a las 24 provincias de Ecuador ante los cortes de energía eléctrica.
+
+## Catálogo de Equipos y Precios (USD, IVA incluido)
+- LIFAN 3800i Inverter Dual Fuel: 3.5 kW Máx | Gas GLP y Gasolina | 21 kg ultraligero | Manual | $690
+- LIFAN 4800iE Inverter Dual Fuel: 4.2 kW Máx | Gas GLP y Gasolina | Silencioso 62 dB | Encendido de Llave | $920 (Más Vendido)
+- LIFAN 6500iOE Open Inverter: 5.5 kW Máx | Gasolina (Tanque 15L) | Autonomía 10 Horas | Eléctrico y Manual | $860
+- LIFAN 12000E Industrial: 12.0 kW Máx | Motor 688cc V-Twin | Voltaje 120/220/240V | Tanque 23L | $1,955
+
+## Ventajas Tecnológicas Principales
+- Onda Senoidal Pura con THD < 3%: Totalmente seguro para computadoras, pantallas OLED, servidores y refrigeradores inverter sensibles.
+- Ahorro de combustible del 40% al 45% utilizando el cilindro doméstico de gas GLP de 15kg ecuatoriano.
+- Factura legal autorizada por el SRI y 1 año (12 meses) de garantía formal por escrito.
+
+## Canales Oficiales de Contacto
+- WhatsApp Ventas & Asesoría: https://wa.me/593998765432
+- Teléfono directo: +593 99 876 5432
+- Sitio Web: https://lifanpower.ec
