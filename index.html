@@ -28,10 +28,12 @@
   <meta name="twitter:description" content="Generadores Inverter y Dual Fuel con despacho inmediato a todo Ecuador. Garantía y repuestos directos." />
   <meta name="twitter:image" content="screen_screenshot.png" />
 
-  <!-- Preconnect & Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,300..900;1,300..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet" />
+  <!-- Fuentes Locales Oficiales: Khand (Títulos) & Switzer (Cuerpo y UI) -->
+  <link rel="preload" href="assets/tipografias/Khand_Complete/Fonts/WEB/fonts/Khand-Bold.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/tipografias/Khand_Complete/Fonts/WEB/fonts/Khand-SemiBold.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/tipografias/Switzer_Complete/Fonts/WEB/fonts/Switzer-Regular.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/tipografias/Switzer_Complete/Fonts/WEB/fonts/Switzer-Medium.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/tipografias/Switzer_Complete/Fonts/WEB/fonts/Switzer-Semibold.woff2" as="font" type="font/woff2" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
 
   <!-- Tailwind CSS -->
@@ -42,22 +44,24 @@
       theme: {
         extend: {
           colors: {
-            "surface": "#ffffff",
-            "surface-container-low": "#f8fafc",
-            "surface-container": "#f1f5f9",
-            "surface-container-high": "#e2e8f0",
-            "primary": "#0B192C",
-            "secondary": "#FF6500",
-            "secondary-dark": "#e05800",
+            "surface": "#FFFFFF",
+            "surface-container-low": "#F4F4F6",
+            "surface-container": "#D7D7DB",
+            "surface-container-high": "#C5C5CA",
+            "primary": "#0B1B48",
+            "secondary": "#1A3CFF",
+            "secondary-dark": "#0027E6",
+            "carbon": "#1B1B1F",
+            "silver": "#D7D7DB",
             "on-primary": "#ffffff",
             "on-secondary": "#ffffff",
-            "on-surface": "#0f172a",
+            "on-surface": "#1B1B1F",
             "on-surface-variant": "#475569",
             "whatsapp": "#25D366"
           },
           fontFamily: {
-            "headline": ["Chivo", "system-ui", "sans-serif"],
-            "body": ["Space Grotesk", "system-ui", "sans-serif"]
+            "headline": ["Khand", "system-ui", "sans-serif"],
+            "body": ["Switzer", "system-ui", "sans-serif"]
           }
         }
       }
@@ -66,10 +70,114 @@
 
   <!-- Modern Web CSS Fallbacks, Contrast & Accessibility Layer -->
   <style>
+    /* ============================================================
+       Tipografías Locales Oficiales: Khand (Títulos) & Switzer (Todo lo demás)
+       ============================================================ */
+    @font-face {
+      font-family: 'Khand';
+      src: url('assets/tipografias/Khand_Complete/Fonts/WEB/fonts/Khand-Variable.woff2') format('woff2-variations'),
+           url('assets/tipografias/Khand_Complete/Fonts/WEB/fonts/Khand-Regular.woff2') format('woff2');
+      font-weight: 300 700;
+      font-display: swap;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Khand';
+      src: url('assets/tipografias/Khand_Complete/Fonts/WEB/fonts/Khand-Light.woff2') format('woff2');
+      font-weight: 300;
+      font-display: swap;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Khand';
+      src: url('assets/tipografias/Khand_Complete/Fonts/WEB/fonts/Khand-Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-display: swap;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Khand';
+      src: url('assets/tipografias/Khand_Complete/Fonts/WEB/fonts/Khand-Medium.woff2') format('woff2');
+      font-weight: 500;
+      font-display: swap;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Khand';
+      src: url('assets/tipografias/Khand_Complete/Fonts/WEB/fonts/Khand-SemiBold.woff2') format('woff2');
+      font-weight: 600;
+      font-display: swap;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Khand';
+      src: url('assets/tipografias/Khand_Complete/Fonts/WEB/fonts/Khand-Bold.woff2') format('woff2');
+      font-weight: 700;
+      font-display: swap;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Switzer';
+      src: url('assets/tipografias/Switzer_Complete/Fonts/WEB/fonts/Switzer-Variable.woff2') format('woff2-variations'),
+           url('assets/tipografias/Switzer_Complete/Fonts/WEB/fonts/Switzer-Regular.woff2') format('woff2');
+      font-weight: 100 900;
+      font-display: swap;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Switzer';
+      src: url('assets/tipografias/Switzer_Complete/Fonts/WEB/fonts/Switzer-Light.woff2') format('woff2');
+      font-weight: 300;
+      font-display: swap;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Switzer';
+      src: url('assets/tipografias/Switzer_Complete/Fonts/WEB/fonts/Switzer-Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-display: swap;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Switzer';
+      src: url('assets/tipografias/Switzer_Complete/Fonts/WEB/fonts/Switzer-Medium.woff2') format('woff2');
+      font-weight: 500;
+      font-display: swap;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Switzer';
+      src: url('assets/tipografias/Switzer_Complete/Fonts/WEB/fonts/Switzer-Semibold.woff2') format('woff2');
+      font-weight: 600;
+      font-display: swap;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Switzer';
+      src: url('assets/tipografias/Switzer_Complete/Fonts/WEB/fonts/Switzer-Bold.woff2') format('woff2');
+      font-weight: 700;
+      font-display: swap;
+      font-style: normal;
+    }
+
+    /* Regla global: Khand para todos los títulos */
+    h1, h2, h3, h4, h5, h6, .font-headline {
+      font-family: 'Khand', system-ui, -apple-system, sans-serif !important;
+      letter-spacing: 0.015em;
+    }
+
+    /* Regla global: Switzer para todo lo demás */
+    body, p, span, a, button, input, select, textarea, label, dl, dt, dd, output, .font-body {
+      font-family: 'Switzer', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
     :root {
       color-scheme: light dark;
-      --brand-primary: #0B192C;
-      --brand-secondary: #FF6500;
+      --brand-primary: #0B1B48;
+      --brand-secondary: #1A3CFF;
+      --brand-carbon: #1B1B1F;
+      --brand-silver: #D7D7DB;
     }
     
     /* Skip Link for Accessibility */
@@ -130,8 +238,159 @@
 
     /* Product card badge glow */
     .badge-pop {
-      box-shadow: 0 2px 8px rgba(255, 101, 0, 0.25);
+      box-shadow: 0 2px 8px rgba(26, 60, 255, 0.25);
     }
+
+    /* Liquid Glass Minimalist Header System */
+    .liquid-glass-header {
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      box-shadow: 
+        0 10px 30px -5px rgba(11, 27, 72, 0.07),
+        0 4px 12px -2px rgba(11, 27, 72, 0.03),
+        inset 0 1px 2px 0 rgba(255, 255, 255, 0.95),
+        inset 0 -1px 1px 0 rgba(0, 0, 0, 0.02);
+    }
+    .liquid-nav-item {
+      position: relative;
+      padding: 0.45rem 0.9rem;
+      border-radius: 9999px;
+      color: #1B1B1F;
+      font-weight: 500;
+      font-size: 0.875rem;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .liquid-nav-item:hover {
+      background: rgba(11, 27, 72, 0.05);
+      color: var(--brand-primary);
+      backdrop-filter: blur(8px);
+    }
+    .liquid-badge-glow {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      box-shadow: inset 0 1px 1px rgba(255,255,255,0.95), 0 4px 12px rgba(11, 27, 72, 0.05);
+    }
+
+    /* Liquid Glass Animated Menu System */
+    #mobile-menu {
+      display: grid;
+      grid-template-rows: 0fr;
+      opacity: 0;
+      visibility: hidden;
+      border-top-color: transparent;
+      transition: grid-template-rows 0.38s cubic-bezier(0.16, 1, 0.3, 1), 
+                  opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                  visibility 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                  border-color 0.3s ease;
+      overflow: hidden;
+    }
+    #mobile-menu > div {
+      min-height: 0;
+      transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+      transform: translateY(-8px) scale(0.98);
+      opacity: 0;
+    }
+    #mobile-menu.open {
+      grid-template-rows: 1fr;
+      opacity: 1;
+      visibility: visible;
+      border-top-color: rgba(215, 215, 219, 0.6);
+    }
+    #mobile-menu.open > div {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+
+    /* Hero Heading Sweep (Barrido de luz continuo) Animation */
+    .heading-sweep {
+      background: linear-gradient(
+        110deg,
+        #0B1B48 0%,
+        #0B1B48 38%,
+        #1A3CFF 48%,
+        #60A5FA 54%,
+        #0B1B48 64%,
+        #0B1B48 100%
+      );
+      background-size: 230% 100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: textSweep 4.5s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+    }
+
+    .heading-sweep-dark {
+      background: linear-gradient(
+        110deg,
+        #FFFFFF 0%,
+        #FFFFFF 38%,
+        #60A5FA 48%,
+        #93C5FD 54%,
+        #FFFFFF 64%,
+        #FFFFFF 100%
+      );
+      background-size: 230% 100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: textSweep 4.5s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+    }
+
+    /* Hero Background Slider Styles */
+    .hero-slide {
+      opacity: 0;
+      transform: scale(1.04);
+      transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .hero-slide.active {
+      opacity: 1;
+      transform: scale(1);
+    }
+    .hero-dot.active {
+      width: 2rem !important;
+      background-color: #FFFFFF !important;
+    }
+
+    @keyframes textSweep {
+      0% {
+        background-position: 200% 0;
+      }
+      50%, 100% {
+        background-position: -100% 0;
+      }
+    }
+
+    /* Universal Sweep Reveal Scroll Animations */
+    .sweep-reveal {
+      opacity: 0;
+      clip-path: inset(0 100% 0 0);
+      transform: translateX(-15px);
+      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), 
+                  clip-path 0.95s cubic-bezier(0.16, 1, 0.3, 1), 
+                  transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, clip-path, transform;
+    }
+    .sweep-up {
+      opacity: 0;
+      clip-path: inset(100% 0 0 0);
+      transform: translateY(20px);
+      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), 
+                  clip-path 0.95s cubic-bezier(0.16, 1, 0.3, 1), 
+                  transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, clip-path, transform;
+    }
+    .sweep-reveal.is-visible,
+    .sweep-up.is-visible {
+      opacity: 1;
+      clip-path: inset(0 0 0 0);
+      transform: translate(0, 0);
+    }
+    .sweep-delay-1 { transition-delay: 0.1s; }
+    .sweep-delay-2 { transition-delay: 0.2s; }
+    .sweep-delay-3 { transition-delay: 0.3s; }
+    .sweep-delay-4 { transition-delay: 0.4s; }
+    .sweep-delay-5 { transition-delay: 0.5s; }
   </style>
 
   <!-- Machine-Readable Structured Data (Schema.org) for AI & Search Crawlers -->
@@ -285,53 +544,96 @@
   <a href="#contenido-principal" class="skip-link">Saltar al contenido principal</a>
 
   <!-- ==========================================
-       1. HEADER & NAVBAR ACCESIBLE Y MODERNO
+       1. HEADER & NAVBAR LIQUID GLASS MINIMALISTA (MENÚ HAMBURGUESA INTEGRADO)
        ========================================== -->
-  <header class="fixed top-0 left-0 w-full z-40 bg-white/95 backdrop-blur-md border-b border-slate-100 transition-all shadow-xs" role="banner">
-    <div class="max-w-7xl mx-auto h-20 px-6 sm:px-8 flex items-center justify-between">
-      <!-- Brand Logo con alta fidelidad y dimensiones explícitas -->
-      <a class="flex items-center gap-2.5 focus-visible:ring-2 focus-visible:ring-secondary rounded-lg p-1 group" href="#" aria-label="LIFAN Power Ecuador - Ir al inicio">
-        <span class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center text-secondary font-black text-xl shadow-xs group-hover:scale-105 transition-transform">
-          <span class="material-symbols-outlined text-[24px]">bolt</span>
-        </span>
-        <div class="flex flex-col leading-none">
-          <span class="font-headline font-black text-xl tracking-tight text-primary">LIFAN <span class="text-secondary">POWER</span></span>
-          <span class="text-[10px] uppercase font-bold tracking-widest text-slate-500">Ecuador Oficial</span>
+  <header class="fixed top-3 left-1/2 -translate-x-1/2 w-[calc(100%-1.5rem)] max-w-7xl z-50 rounded-2xl liquid-glass-header transition-all duration-300" role="banner">
+    <div class="h-16 px-4 sm:px-6 flex items-center justify-between">
+      <!-- Brand Logo Minimalista Oficial -->
+      <a class="flex items-center gap-2.5 group focus-visible:ring-2 focus-visible:ring-secondary rounded-xl p-1 transition-all" href="#" aria-label="LIFAN Power Ecuador - Ir al inicio">
+        <img src="assets/lifan negro.svg" alt="LIFAN Power Ecuador" class="h-6 sm:h-7 w-auto object-contain group-hover:scale-[1.03] transition-transform" width="170" height="22" />
+        <div class="flex items-center gap-1 border-l border-slate-300/80 pl-2.5 leading-none">
+          <span class="font-headline font-black text-[11px] sm:text-xs tracking-wider text-secondary uppercase">POWER</span>
+          <span class="text-[9px] uppercase font-bold tracking-widest text-slate-400">EC</span>
         </div>
       </a>
 
-      <!-- Navegación Primaria Accesible -->
-      <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium text-slate-700" aria-label="Navegación principal">
-        <a class="hover:text-secondary transition-colors" href="#modelos">Modelos</a>
-        <a class="hover:text-secondary transition-colors" href="#dimensionador">Calculadora</a>
-        <a class="hover:text-secondary transition-colors" href="#ventajas">Tecnología</a>
-        <a class="hover:text-secondary transition-colors" href="#garantia">Garantía & Servicio</a>
-        <a class="hover:text-secondary transition-colors" href="#preguntas-frecuentes">Preguntas</a>
-      </nav>
-
-      <!-- Botón de Acción Directo -->
-      <div class="flex items-center gap-3">
+      <!-- Botones de Acción Directos + Menú Hamburguesa Universal -->
+      <div class="flex items-center gap-2 sm:gap-2.5">
         <button 
           type="button" 
           onclick="openAdvisorModal()"
-          class="hidden sm:inline-flex items-center gap-2 px-4 py-2 border border-slate-300 hover:border-slate-400 text-slate-800 text-sm font-semibold rounded-lg transition-colors cursor-pointer"
+          class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 liquid-badge-glow hover:bg-white text-slate-800 text-xs font-semibold rounded-full transition-all cursor-pointer"
           aria-haspopup="dialog"
         >
-          <span class="material-symbols-outlined text-[18px] text-secondary" aria-hidden="true">calculate</span>
+          <span class="material-symbols-outlined text-[16px] text-secondary" aria-hidden="true">calculate</span>
           <span>Asesor Inteligente</span>
         </button>
         <a 
-          class="inline-flex items-center gap-2 px-5 py-2.5 bg-secondary hover:bg-secondary-dark text-white font-medium text-sm rounded-lg shadow-sm hover:shadow transition-all" 
+          class="inline-flex items-center gap-1.5 px-4 py-2 bg-secondary hover:bg-secondary-dark text-white font-medium text-xs rounded-full shadow-sm hover:shadow-md transition-all duration-200" 
           href="https://wa.me/19782035623?text=Hola%2C%20deseo%20cotizar%20un%20generador%20LIFAN%20en%20Ecuador" 
           rel="noopener noreferrer" 
           target="_blank"
           aria-label="Contactar por WhatsApp para cotización inmediata"
         >
-          <span class="material-symbols-outlined text-[19px]" aria-hidden="true">chat</span>
+          <span class="material-symbols-outlined text-[17px]" aria-hidden="true">chat</span>
           <span>Cotizar WhatsApp</span>
         </a>
+
+        <!-- Botón Menú Hamburguesa Universal -->
+        <button 
+          id="mobile-menu-btn"
+          type="button" 
+          onclick="toggleMobileMenu()"
+          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full liquid-badge-glow text-slate-800 hover:text-secondary focus:outline-none transition-all cursor-pointer font-semibold text-xs"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Abrir menú de navegación"
+        >
+          <span id="hamburger-icon" class="material-symbols-outlined text-[20px]">menu</span>
+          <span class="hidden md:inline text-xs font-bold tracking-wide">Menú</span>
+        </button>
       </div>
     </div>
+
+    <!-- Menú Desplegable Liquid Glass Animado (Secciones del Sitio) -->
+    <nav id="mobile-menu" class="px-4 border-t border-slate-200/60 text-slate-700 font-medium text-sm" aria-label="Navegación principal">
+      <div class="space-y-1">
+        <div class="grid grid-cols-1 md:grid-cols-6 gap-1 pt-2 pb-3">
+          <a class="flex items-center gap-2 px-4 py-2.5 rounded-xl hover:bg-slate-900/5 hover:text-secondary transition-all duration-200" href="#modelos" onclick="toggleMobileMenu()">
+            <span class="material-symbols-outlined text-[18px] text-slate-400">electric_bolt</span>
+            <span>Modelos y Precios</span>
+          </a>
+          <a class="flex items-center gap-2 px-4 py-2.5 rounded-xl hover:bg-slate-900/5 hover:text-secondary transition-all duration-200" href="#dimensionador" onclick="toggleMobileMenu()">
+            <span class="material-symbols-outlined text-[18px] text-slate-400">calculate</span>
+            <span>Calculadora de Watts</span>
+          </a>
+          <a class="flex items-center gap-2 px-4 py-2.5 rounded-xl hover:bg-slate-900/5 hover:text-secondary transition-all duration-200" href="#ventajas" onclick="toggleMobileMenu()">
+            <span class="material-symbols-outlined text-[18px] text-slate-400">verified</span>
+            <span>Tecnología Dual Fuel</span>
+          </a>
+          <a class="flex items-center gap-2 px-4 py-2.5 rounded-xl hover:bg-slate-900/5 hover:text-secondary transition-all duration-200" href="#garantia" onclick="toggleMobileMenu()">
+            <span class="material-symbols-outlined text-[18px] text-slate-400">build</span>
+            <span>Garantía & Servicio</span>
+          </a>
+          <a class="flex items-center gap-2 px-4 py-2.5 rounded-xl hover:bg-slate-900/5 hover:text-secondary transition-all duration-200" href="#preguntas-frecuentes" onclick="toggleMobileMenu()">
+            <span class="material-symbols-outlined text-[18px] text-slate-400">help_outline</span>
+            <span>Preguntas Frecuentes</span>
+          </a>
+          <a class="flex items-center gap-2 px-4 py-2.5 rounded-xl hover:bg-slate-900/5 hover:text-secondary transition-all duration-200" href="politicas.html" target="_blank" rel="noopener noreferrer" onclick="toggleMobileMenu()">
+            <span class="material-symbols-outlined text-[18px] text-slate-400">policy</span>
+            <span>Políticas & Legal</span>
+          </a>
+        </div>
+        <button 
+          type="button" 
+          onclick="toggleMobileMenu(); openAdvisorModal();"
+          class="w-full text-left sm:hidden flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-100 text-slate-800 font-semibold transition-all mb-3 cursor-pointer"
+        >
+          <span class="material-symbols-outlined text-[18px] text-secondary">calculate</span>
+          <span>Asesor Inteligente</span>
+        </button>
+      </div>
+    </nav>
   </header>
 
   <!-- ==========================================
@@ -343,207 +645,179 @@
     <div id="status-announcer" class="sr-only" role="status" aria-live="polite"></div>
 
     <!-- ==========================================
-         2. HERO SECTION OPTIMIZADA CON LCP PRIORITARIO
+         2. HERO SECTION CON SLIDER DE FONDO Y CRISTAL DE ALTO CONTRASTE
          ========================================== -->
-    <section class="relative pt-14 pb-20 lg:pt-20 lg:pb-28 overflow-hidden bg-gradient-to-b from-slate-50 via-white to-white" aria-labelledby="hero-heading">
-      <div class="max-w-7xl mx-auto px-6 sm:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+    <section class="relative min-h-[88vh] lg:min-h-[92vh] flex items-center justify-start overflow-hidden bg-[#0B1B48]" aria-labelledby="hero-heading">
+      
+      <!-- Slide Images Stack -->
+      <div id="hero-slider" class="absolute inset-0 w-full h-full pointer-events-none">
+        <!-- Slide 1 -->
+        <div class="hero-slide active absolute inset-0 bg-cover bg-center transition-all duration-1000 transform scale-100" style="background-image: url('assets/hero-slide-1.png');"></div>
+        <!-- Slide 2 -->
+        <div class="hero-slide absolute inset-0 bg-cover bg-center transition-all duration-1000 opacity-0 transform scale-105" style="background-image: url('assets/hero-slide-2.png');"></div>
+        <!-- Slide 3 -->
+        <div class="hero-slide absolute inset-0 bg-cover bg-center transition-all duration-1000 opacity-0 transform scale-105" style="background-image: url('assets/hero-slide-3.png');"></div>
+      </div>
+
+      <!-- Lighter, Airy Gradient Overlay for Natural Photo Radiance & Perfect Readability -->
+      <div class="absolute inset-0 bg-gradient-to-r from-black/65 via-black/35 to-black/10"></div>
+
+      <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+        <div class="max-w-2xl text-left space-y-6">
           
-          <!-- Columna Izquierda: Información de alto impacto -->
-          <div class="lg:col-span-7 flex flex-col text-center lg:text-left">
-            <div class="inline-flex items-center gap-2 self-center lg:self-start px-3.5 py-1.5 rounded-full bg-slate-100 text-slate-800 text-xs font-semibold tracking-wide mb-6 border border-slate-200/80">
-              <span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse" aria-hidden="true"></span>
-              <span>Distribución Oficial en Cuenca · Despacho a todo el Ecuador</span>
-            </div>
-
-            <h1 id="hero-heading" class="font-headline text-4xl sm:text-5xl lg:text-[54px] font-extrabold text-primary tracking-tight leading-[1.14] mb-6">
-              Energía continua y segura ante los racionamientos eléctricos.
-            </h1>
-
-            <p class="text-slate-600 text-lg lg:text-xl font-normal leading-relaxed max-w-xl mx-auto lg:mx-0 mb-8">
-              Generadores e inversores <strong class="font-semibold text-primary">LIFAN Power</strong> con tecnología Inverter pura y sistema <strong class="font-semibold text-secondary">Dual Fuel</strong> (Gas GLP y Gasolina). Cero fluctuaciones dañinas para tus computadoras, negocios y refrigeración.
-            </p>
-
-            <!-- Acciones Primarias -->
-            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-10">
-              <a 
-                class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-secondary hover:bg-secondary-dark text-white font-semibold text-base rounded-lg shadow-md hover:shadow-lg transition-all" 
-                href="#modelos"
-              >
-                <span class="material-symbols-outlined text-[20px]" aria-hidden="true">electric_bolt</span>
-                <span>Ver Catálogo con Precios</span>
-              </a>
-              <a 
-                class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 border-2 border-slate-300 hover:border-slate-400 bg-white text-slate-800 font-semibold text-base rounded-lg transition-colors shadow-xs" 
-                href="https://wa.me/19782035623?text=Hola%2C%20necesito%20asesor%C3%ADa%20inmediata%20sobre%20generadores%20LIFAN" 
-                rel="noopener noreferrer" 
-                target="_blank"
-              >
-                <span class="material-symbols-outlined text-[20px] text-emerald-600" aria-hidden="true">support_agent</span>
-                <span>Asesoría Técnica Inmediata</span>
-              </a>
-            </div>
-
-            <!-- 3 Badges de Garantía con Contraste Conforme -->
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-6 border-t border-slate-200 text-sm text-slate-700">
-              <div class="inline-flex items-center gap-2.5">
-                <span class="material-symbols-outlined text-secondary text-[22px]" aria-hidden="true">verified</span>
-                <span class="font-medium">1 Año de Garantía Oficial</span>
-              </div>
-              <div class="inline-flex items-center gap-2.5">
-                <span class="material-symbols-outlined text-secondary text-[22px]" aria-hidden="true">local_shipping</span>
-                <span class="font-medium">Envíos 24-48h Nacional</span>
-              </div>
-              <div class="inline-flex items-center gap-2.5">
-                <span class="material-symbols-outlined text-secondary text-[22px]" aria-hidden="true">savings</span>
-                <span class="font-medium">Hasta 45% Ahorro con Gas</span>
-              </div>
-            </div>
+          <!-- Minimalist Status Pill -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white/90 text-xs font-medium tracking-wide">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" aria-hidden="true"></span>
+            <span>Stock Inmediato · Despacho a todo el Ecuador</span>
           </div>
 
-          <!-- Columna Derecha: Tarjeta Destacada con optimización LCP (fetchpriority high) -->
-          <div class="lg:col-span-5 flex justify-center">
-            <article class="w-full max-w-md bg-white border border-slate-200/90 rounded-2xl shadow-xl shadow-slate-200/60 p-6 relative">
-              <div class="flex items-center justify-between mb-4">
-                <span class="bg-primary text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-                  Más Vendido
-                </span>
-                <span class="text-xs font-bold text-secondary uppercase tracking-wide">
-                  Dual Fuel Gas & Gasolina
-                </span>
-              </div>
+          <!-- Título Moderno y Minimalista -->
+          <h1 id="hero-heading" class="font-headline text-3xl sm:text-5xl lg:text-[48px] font-bold text-white tracking-tight leading-[1.16] drop-shadow-md">
+            Energía continua y segura <span class="font-light text-slate-200 block sm:inline">ante racionamientos.</span>
+          </h1>
 
-              <!-- LCP Image: fetchpriority high + width/height para evitar CLS -->
-              <div class="h-64 w-full bg-[#152438] rounded-xl flex items-center justify-center p-3 overflow-hidden mb-5 border border-slate-700/50">
-                <img 
-                  alt="Generador Inverter LIFAN 4800iE silenciado color azul" 
-                  class="max-h-full max-w-full object-contain transition-transform duration-300 hover:scale-105" 
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtx1w10udwKV1siA4CxUxa1wXTPHa1VRiDD_eYT4vCUqeM-HhbroeA-brJN0NxYVI4232fx-ayBBlTosys8xm6aSxPMtcw6gK6ptVs7JFzzaBkx30CI9T0RXnPqXhp0qY6Rp-9IhzHfGaPNQx_swZtopL7FfT7OL7P5f_Z6CIOpYRwTEbjx0R9LK7iZ3HMMwzNKdfIW6DzjHL6-vwQRPFyywXjOP1HqCi8rPyGucAXIDnl6fHIbFMnmHZsEiqrtw_4CA"
-                  width="420"
-                  height="260"
-                  fetchpriority="high"
-                  loading="eager"
-                />
-              </div>
+          <!-- Subtítulo Ligero y Conciso -->
+          <p class="text-slate-200/90 text-sm sm:text-base lg:text-lg font-normal leading-relaxed max-w-lg drop-shadow-sm">
+            Generadores Inverter silenciosos con tecnología <strong class="font-semibold text-white">Dual Fuel</strong> (Gas GLP y Gasolina). Respaldo estable y seguro para hogares y comercios.
+          </p>
 
-              <div class="mb-4">
-                <h2 class="font-headline text-2xl font-bold text-primary">LIFAN 4800iE Inverter</h2>
-                <p class="text-slate-600 text-sm">Respaldo premium para hogares, clínicas y negocios comerciales.</p>
-              </div>
+          <!-- Dos CTAs Minimalistas y Elegantes -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-start gap-3 pt-1">
+            <!-- CTA 1 -->
+            <a 
+              class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#1A3CFF] hover:bg-[#0027E6] text-white font-semibold text-xs sm:text-sm rounded-full shadow-lg shadow-blue-600/30 hover:shadow-blue-600/50 hover:scale-[1.02] transition-all cursor-pointer text-center" 
+              href="#modelos"
+            >
+              <span class="material-symbols-outlined text-[18px]" aria-hidden="true">electric_bolt</span>
+              <span>Ver Modelos y Precios</span>
+            </a>
+            <!-- CTA 2 -->
+            <a 
+              class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold text-xs sm:text-sm rounded-full border border-white/25 backdrop-blur-md hover:scale-[1.02] transition-all shadow-md cursor-pointer text-center" 
+              href="https://wa.me/19782035623?text=Hola%2C%20necesito%20asesor%C3%ADa%20inmediata%20sobre%20generadores%20LIFAN" 
+              rel="noopener noreferrer" 
+              target="_blank"
+            >
+              <span class="material-symbols-outlined text-[18px] text-emerald-400" aria-hidden="true">chat</span>
+              <span>Asesoría por WhatsApp</span>
+            </a>
+          </div>
 
-              <dl class="grid grid-cols-3 gap-2 bg-slate-50 border border-slate-100 rounded-lg p-3 text-center mb-5 text-xs text-slate-700">
-                <div>
-                  <dt class="text-slate-500 mb-0.5 font-medium">Potencia</dt>
-                  <dd class="text-primary text-sm font-bold">4.2 kW</dd>
-                </div>
-                <div class="border-x border-slate-200">
-                  <dt class="text-slate-500 mb-0.5 font-medium">Nivel Ruido</dt>
-                  <dd class="text-emerald-700 text-sm font-bold">≤62 dB</dd>
-                </div>
-                <div>
-                  <dt class="text-slate-500 mb-0.5 font-medium">Encendido</dt>
-                  <dd class="text-primary text-sm font-bold">Eléctrico</dd>
-                </div>
-              </dl>
-
-              <div class="flex items-center justify-between pt-2 border-t border-slate-100">
-                <div>
-                  <span class="text-xs text-slate-500 block">Precio Facturado</span>
-                  <div class="flex items-baseline gap-1">
-                    <span class="font-headline text-3xl font-black text-primary">$920</span>
-                    <span class="text-xs font-bold text-secondary">inc. IVA</span>
-                  </div>
-                </div>
-                <a 
-                  class="px-5 py-2.5 bg-secondary hover:bg-secondary-dark text-white text-sm font-semibold rounded-lg transition-colors shadow-sm focus-visible:ring-2 focus-visible:ring-secondary" 
-                  href="https://wa.me/19782035623?text=Deseo%20separar%20el%20Inverter%20LIFAN%204800iE%20de%20%24920" 
-                  rel="noopener noreferrer" 
-                  target="_blank"
-                >
-                  Apartar Ahora
-                </a>
-              </div>
-            </article>
+          <!-- Badges de Confianza Ligeros en Fila -->
+          <div class="flex flex-wrap items-center justify-start gap-x-6 gap-y-2 pt-4 border-t border-white/15 text-xs text-slate-200/85 font-medium">
+            <div class="inline-flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-sky-300 text-[17px]" aria-hidden="true">verified</span>
+              <span>1 Año de Garantía Oficial</span>
+            </div>
+            <div class="inline-flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-sky-300 text-[17px]" aria-hidden="true">local_shipping</span>
+              <span>Envíos 24-48h Nacional</span>
+            </div>
+            <div class="inline-flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-sky-300 text-[17px]" aria-hidden="true">savings</span>
+              <span>Hasta 45% Ahorro con Gas</span>
+            </div>
           </div>
 
         </div>
       </div>
+
+      <!-- Slide Indicator Dots -->
+      <div class="absolute bottom-5 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2">
+        <button type="button" onclick="goToSlide(0)" class="hero-dot active w-8 h-2 rounded-full bg-white transition-all cursor-pointer" aria-label="Ver Diapositiva 1"></button>
+        <button type="button" onclick="goToSlide(1)" class="hero-dot w-2.5 h-2 rounded-full bg-white/40 hover:bg-white/70 transition-all cursor-pointer" aria-label="Ver Diapositiva 2"></button>
+        <button type="button" onclick="goToSlide(2)" class="hero-dot w-2.5 h-2 rounded-full bg-white/40 hover:bg-white/70 transition-all cursor-pointer" aria-label="Ver Diapositiva 3"></button>
+      </div>
+
     </section>
 
     <!-- ==========================================
          3. HERRAMIENTA INTERACTIVA: DIMENSIONADOR INTELIGENTE DE CARGAS
-         (Ayuda a humanos y agentes a calcular exactamente los watts necesarios)
          ========================================== -->
-    <section id="dimensionador" class="py-16 bg-slate-900 text-white scroll-mt-20" aria-labelledby="dimensionador-heading">
-      <div class="max-w-5xl mx-auto px-6 sm:px-8">
-        <div class="text-center max-w-2xl mx-auto mb-10">
-          <span class="text-secondary text-xs uppercase font-bold tracking-widest block mb-2">Herramienta Interactiva 2026</span>
-          <h2 id="dimensionador-heading" class="font-headline text-3xl font-extrabold tracking-tight">
+    <section id="dimensionador" class="py-20 lg:py-24 bg-slate-900 text-white scroll-mt-20" aria-labelledby="dimensionador-heading">
+      <div class="max-w-6xl mx-auto px-6 sm:px-8">
+        
+        <!-- Encabezado con Textos Claros y Grandes -->
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <span class="text-sky-400 text-sm sm:text-base uppercase font-bold tracking-widest block mb-3">Herramienta Interactiva 2026</span>
+          <h2 id="dimensionador-heading" class="font-headline text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
             Calcula la Potencia Real que Necesitas
           </h2>
-          <p class="text-slate-300 mt-2 text-sm">
+          <p class="text-slate-200 mt-4 text-base sm:text-lg lg:text-xl font-normal leading-relaxed">
             Selecciona los artefactos que planeas encender en simultáneo durante los cortes de luz. Nuestro sistema sugerirá el generador ideal sin sobrecargar la inversión.
           </p>
         </div>
 
-        <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 sm:p-8 backdrop-blur-sm">
-          <fieldset class="mb-6">
-            <legend class="text-sm font-semibold text-slate-300 uppercase tracking-wider mb-4">Selecciona tus artefactos:</legend>
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 text-xs" id="appliance-selector">
-              <label class="flex items-center gap-2 p-2.5 rounded-lg bg-slate-700/50 hover:bg-slate-700 border border-slate-600 cursor-pointer">
-                <input type="checkbox" data-watts="800" class="rounded text-secondary focus:ring-secondary calc-checkbox" />
-                <span>Refrigerador Inverter (800W)</span>
+        <div class="bg-slate-800/90 border border-slate-700/80 rounded-3xl p-6 sm:p-10 shadow-2xl backdrop-blur-sm">
+          <fieldset class="mb-8">
+            <legend class="text-base sm:text-lg font-bold text-white uppercase tracking-wider mb-5 flex items-center gap-2">
+              <span class="material-symbols-outlined text-sky-400 text-[22px]">checklist</span>
+              <span>Selecciona tus artefactos:</span>
+            </legend>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" id="appliance-selector">
+              
+              <label class="flex items-center gap-3.5 p-4 rounded-xl bg-slate-700/60 hover:bg-slate-700 border border-slate-600/80 hover:border-sky-400 cursor-pointer transition-all shadow-sm">
+                <input type="checkbox" data-watts="800" class="w-5 h-5 rounded text-secondary focus:ring-secondary calc-checkbox cursor-pointer flex-shrink-0" />
+                <span class="text-sm sm:text-base text-white font-medium leading-snug">Refrigerador Inverter <strong class="text-sky-300 font-bold block sm:inline">(800W)</strong></span>
               </label>
-              <label class="flex items-center gap-2 p-2.5 rounded-lg bg-slate-700/50 hover:bg-slate-700 border border-slate-600 cursor-pointer">
-                <input type="checkbox" data-watts="150" class="rounded text-secondary focus:ring-secondary calc-checkbox" checked />
-                <span>WiFi + Iluminación LED (150W)</span>
+
+              <label class="flex items-center gap-3.5 p-4 rounded-xl bg-slate-700/60 hover:bg-slate-700 border border-slate-600/80 hover:border-sky-400 cursor-pointer transition-all shadow-sm">
+                <input type="checkbox" data-watts="150" class="w-5 h-5 rounded text-secondary focus:ring-secondary calc-checkbox cursor-pointer flex-shrink-0" checked />
+                <span class="text-sm sm:text-base text-white font-medium leading-snug">WiFi + Luces LED <strong class="text-sky-300 font-bold block sm:inline">(150W)</strong></span>
               </label>
-              <label class="flex items-center gap-2 p-2.5 rounded-lg bg-slate-700/50 hover:bg-slate-700 border border-slate-600 cursor-pointer">
-                <input type="checkbox" data-watts="400" class="rounded text-secondary focus:ring-secondary calc-checkbox" checked />
-                <span>2 Computadoras/Laptops (400W)</span>
+
+              <label class="flex items-center gap-3.5 p-4 rounded-xl bg-slate-700/60 hover:bg-slate-700 border border-slate-600/80 hover:border-sky-400 cursor-pointer transition-all shadow-sm">
+                <input type="checkbox" data-watts="400" class="w-5 h-5 rounded text-secondary focus:ring-secondary calc-checkbox cursor-pointer flex-shrink-0" checked />
+                <span class="text-sm sm:text-base text-white font-medium leading-snug">2 Computadoras <strong class="text-sky-300 font-bold block sm:inline">(400W)</strong></span>
               </label>
-              <label class="flex items-center gap-2 p-2.5 rounded-lg bg-slate-700/50 hover:bg-slate-700 border border-slate-600 cursor-pointer">
-                <input type="checkbox" data-watts="200" class="rounded text-secondary focus:ring-secondary calc-checkbox" />
-                <span>Smart TV + Audio (200W)</span>
+
+              <label class="flex items-center gap-3.5 p-4 rounded-xl bg-slate-700/60 hover:bg-slate-700 border border-slate-600/80 hover:border-sky-400 cursor-pointer transition-all shadow-sm">
+                <input type="checkbox" data-watts="200" class="w-5 h-5 rounded text-secondary focus:ring-secondary calc-checkbox cursor-pointer flex-shrink-0" />
+                <span class="text-sm sm:text-base text-white font-medium leading-snug">Smart TV + Audio <strong class="text-sky-300 font-bold block sm:inline">(200W)</strong></span>
               </label>
-              <label class="flex items-center gap-2 p-2.5 rounded-lg bg-slate-700/50 hover:bg-slate-700 border border-slate-600 cursor-pointer">
-                <input type="checkbox" data-watts="1200" class="rounded text-secondary focus:ring-secondary calc-checkbox" />
-                <span>Microondas / Cafetera (1200W)</span>
+
+              <label class="flex items-center gap-3.5 p-4 rounded-xl bg-slate-700/60 hover:bg-slate-700 border border-slate-600/80 hover:border-sky-400 cursor-pointer transition-all shadow-sm">
+                <input type="checkbox" data-watts="1200" class="w-5 h-5 rounded text-secondary focus:ring-secondary calc-checkbox cursor-pointer flex-shrink-0" />
+                <span class="text-sm sm:text-base text-white font-medium leading-snug">Microondas / Café <strong class="text-sky-300 font-bold block sm:inline">(1200W)</strong></span>
               </label>
-              <label class="flex items-center gap-2 p-2.5 rounded-lg bg-slate-700/50 hover:bg-slate-700 border border-slate-600 cursor-pointer">
-                <input type="checkbox" data-watts="1500" class="rounded text-secondary focus:ring-secondary calc-checkbox" />
-                <span>Aire Acondicionado 12k (1500W)</span>
+
+              <label class="flex items-center gap-3.5 p-4 rounded-xl bg-slate-700/60 hover:bg-slate-700 border border-slate-600/80 hover:border-sky-400 cursor-pointer transition-all shadow-sm">
+                <input type="checkbox" data-watts="1500" class="w-5 h-5 rounded text-secondary focus:ring-secondary calc-checkbox cursor-pointer flex-shrink-0" />
+                <span class="text-sm sm:text-base text-white font-medium leading-snug">Aire Acondicionado <strong class="text-sky-300 font-bold block sm:inline">(1500W)</strong></span>
               </label>
-              <label class="flex items-center gap-2 p-2.5 rounded-lg bg-slate-700/50 hover:bg-slate-700 border border-slate-600 cursor-pointer">
-                <input type="checkbox" data-watts="1100" class="rounded text-secondary focus:ring-secondary calc-checkbox" />
-                <span>Bomba de Agua 1HP (1100W)</span>
+
+              <label class="flex items-center gap-3.5 p-4 rounded-xl bg-slate-700/60 hover:bg-slate-700 border border-slate-600/80 hover:border-sky-400 cursor-pointer transition-all shadow-sm">
+                <input type="checkbox" data-watts="1100" class="w-5 h-5 rounded text-secondary focus:ring-secondary calc-checkbox cursor-pointer flex-shrink-0" />
+                <span class="text-sm sm:text-base text-white font-medium leading-snug">Bomba de Agua 1HP <strong class="text-sky-300 font-bold block sm:inline">(1100W)</strong></span>
               </label>
-              <label class="flex items-center gap-2 p-2.5 rounded-lg bg-slate-700/50 hover:bg-slate-700 border border-slate-600 cursor-pointer">
-                <input type="checkbox" data-watts="2500" class="rounded text-secondary focus:ring-secondary calc-checkbox" />
-                <span>Maquinaria / Soldadora (2500W)</span>
+
+              <label class="flex items-center gap-3.5 p-4 rounded-xl bg-slate-700/60 hover:bg-slate-700 border border-slate-600/80 hover:border-sky-400 cursor-pointer transition-all shadow-sm">
+                <input type="checkbox" data-watts="2500" class="w-5 h-5 rounded text-secondary focus:ring-secondary calc-checkbox cursor-pointer flex-shrink-0" />
+                <span class="text-sm sm:text-base text-white font-medium leading-snug">Maquinaria / Soldadora <strong class="text-sky-300 font-bold block sm:inline">(2500W)</strong></span>
               </label>
+
             </div>
           </fieldset>
 
-          <!-- Barra de Resultados Dinámica -->
-          <div class="pt-6 border-t border-slate-700 flex flex-col md:flex-row items-center justify-between gap-6">
+          <!-- Barra de Resultados Dinámica con Mayor Tamaño -->
+          <div class="pt-8 border-t border-slate-700/80 flex flex-col md:flex-row items-center justify-between gap-6">
             <div class="text-center md:text-left">
-              <span class="text-xs text-slate-400 block uppercase tracking-wider">Carga Estimada Simultánea (con margen):</span>
-              <div class="flex items-baseline gap-2 mt-1">
-                <output id="calc-total-watts" class="text-3xl font-black font-headline text-secondary">688 W</output>
-                <span class="text-sm text-slate-400">(Recomendación automática)</span>
+              <span class="text-sm sm:text-base text-slate-300 block font-medium">Carga Estimada Simultánea (con margen):</span>
+              <div class="flex items-baseline gap-3 mt-1.5">
+                <output id="calc-total-watts" class="text-4xl sm:text-5xl lg:text-6xl font-black font-headline text-sky-400">688 W</output>
+                <span class="text-sm sm:text-base text-slate-300">(Recomendación automática)</span>
               </div>
             </div>
 
-            <div id="calc-recommendation-box" class="bg-slate-900 border border-secondary/40 px-5 py-3 rounded-xl flex items-center gap-4">
+            <div id="calc-recommendation-box" class="bg-slate-900/90 border border-sky-400/30 px-6 py-4 rounded-2xl flex items-center gap-5 shadow-xl">
               <div>
-                <span class="text-xs text-secondary font-bold uppercase tracking-wider block">Modelo sugerido</span>
-                <strong id="calc-model-name" class="text-lg text-white font-headline">LIFAN 3800i Inverter (3.5 kW)</strong>
+                <span class="text-xs sm:text-sm text-sky-400 font-bold uppercase tracking-wider block mb-0.5">Modelo sugerido</span>
+                <strong id="calc-model-name" class="text-xl sm:text-2xl text-white font-bold font-headline">LIFAN 3800i Inverter (3.5 kW)</strong>
               </div>
               <a 
                 id="calc-cta-btn" 
                 href="#modelos" 
-                class="px-4 py-2 bg-secondary hover:bg-secondary-dark text-white text-xs font-bold rounded-lg transition-colors whitespace-nowrap"
+                class="px-5 py-3 bg-secondary hover:bg-secondary-dark text-white text-sm sm:text-base font-bold rounded-xl transition-all shadow-md hover:scale-[1.03] whitespace-nowrap cursor-pointer" 
               >
                 Ver Ficha ($690)
               </a>
@@ -559,272 +833,273 @@
     <section class="py-20 lg:py-24 bg-slate-50/70 border-t border-slate-200 scroll-mt-20" id="modelos" aria-labelledby="modelos-heading">
       <div class="max-w-7xl mx-auto px-6 sm:px-8">
         
-        <div class="text-center max-w-2xl mx-auto mb-16">
-          <span class="text-secondary text-xs uppercase font-bold tracking-widest block mb-2">Gama Oficial Ecuador</span>
-          <h2 id="modelos-heading" class="font-headline text-3xl sm:text-4xl font-extrabold text-primary tracking-tight">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <span class="text-secondary text-xs sm:text-sm uppercase font-bold tracking-widest block mb-2">Gama Oficial Ecuador</span>
+          <h2 id="modelos-heading" class="font-headline text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary tracking-tight">
             Generadores con Factura Legal y Garantía de 1 Año
           </h2>
-          <p class="text-slate-600 mt-3 text-base">
-            Equipos probados en condiciones reales con soporte directo y entrega en 24 a 48 horas.
+          <p class="text-slate-600 mt-3 text-sm sm:text-base leading-relaxed">
+            Equipos probados en condiciones reales con soporte directo y entrega en 24 a 48 horas a todo el Ecuador.
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- 4 Modelos en Una Sola Fila (Desktop lg:grid-cols-4) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 xl:gap-6">
 
           <!-- MODELO 1: LIFAN 3800i -->
-          <article class="bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-md transition-all p-6 flex flex-col justify-between" aria-labelledby="mod-3800i-title">
+          <article class="bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-lg transition-all p-5 flex flex-col justify-between" aria-labelledby="mod-3800i-title">
             <div>
-              <div class="flex justify-between items-center mb-4">
-                <span class="text-xs font-semibold px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md">Portátil 21kg</span>
+              <div class="flex justify-between items-center mb-3.5">
+                <span class="text-xs font-semibold px-2.5 py-1 bg-slate-100 text-slate-800 rounded-md">Portátil 21kg</span>
                 <span class="text-xs font-bold text-secondary">Dual Fuel Gas/Gasolina</span>
               </div>
               
-              <div class="h-44 w-full flex items-center justify-center bg-[#152438] rounded-xl p-2 mb-5 overflow-hidden border border-slate-700/50">
+              <div class="h-44 sm:h-48 w-full flex items-center justify-center bg-[#111C2E] rounded-xl p-2.5 mb-4 overflow-hidden border border-slate-700/50">
                 <img 
                   alt="Generador Inverter LIFAN 3800i color naranja y negro" 
-                  class="max-h-full max-w-full object-contain" 
+                  class="max-h-full max-w-full object-contain hover:scale-105 transition-transform duration-300" 
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuAojkA7WKK-OiOziWJU4wYJvpKgpuJVt9FHjBZvpDoOfSr_AK1vO19DIsRimh5CQBjnPFg5AC_u5V4CBnC16IPqr9vU0xqDeXx-wRcOjJPtjSLdQPduNmevaO5nc3auJYhD5iyneMIbPdxrfKFayY2W3fsj7YlZWWaDKNI8Cx6yFRRN_N4Htf3cYeY1TBF_l2CjVBAUbmYn05qLx9-u15ysf9BcghZGzy9StsPjuGPb1v5f3m-bMp_0uwbpqEV_PQgZvQ"
                   width="280"
-                  height="176"
+                  height="180"
                   loading="lazy"
                   decoding="async"
                 />
               </div>
 
-              <h3 id="mod-3800i-title" class="font-headline text-xl font-bold text-primary">LIFAN 3800i Inverter</h3>
-              <p class="text-slate-600 text-xs mt-1 mb-5">El más recomendado para departamentos, consultorios y home office.</p>
+              <h3 id="mod-3800i-title" class="font-headline text-2xl font-bold text-primary leading-tight">LIFAN 3800i Inverter</h3>
+              <p class="text-slate-600 text-xs mt-1 mb-4 leading-normal min-h-[34px]">El más recomendado para departamentos, consultorios y home office.</p>
 
-              <dl class="space-y-2 text-xs text-slate-700 mb-6">
+              <dl class="space-y-2 text-xs text-slate-700 mb-5">
                 <div class="flex justify-between pb-1.5 border-b border-slate-100">
-                  <dt class="text-slate-500">Potencia Máx:</dt>
+                  <dt class="text-slate-500 font-medium">Potencia Máx:</dt>
                   <dd class="font-bold text-slate-900">3.5 kW</dd>
                 </div>
                 <div class="flex justify-between pb-1.5 border-b border-slate-100">
-                  <dt class="text-slate-500">Combustible:</dt>
+                  <dt class="text-slate-500 font-medium">Combustible:</dt>
                   <dd class="font-bold text-secondary">Gasolina + Gas GLP</dd>
                 </div>
                 <div class="flex justify-between pb-1.5 border-b border-slate-100">
-                  <dt class="text-slate-500">Nivel de Ruido:</dt>
+                  <dt class="text-slate-500 font-medium">Nivel de Ruido:</dt>
                   <dd class="font-semibold text-slate-800">≤ 68 dB</dd>
                 </div>
                 <div class="flex justify-between">
-                  <dt class="text-slate-500">Peso Neto:</dt>
+                  <dt class="text-slate-500 font-medium">Peso Neto:</dt>
                   <dd class="font-semibold text-slate-800">21 kg (ultraligero)</dd>
                 </div>
               </dl>
             </div>
 
-            <div>
-              <div class="mb-4">
-                <span class="text-xs text-slate-500 block">Precio Facturado</span>
+            <div class="pt-2 border-t border-slate-100">
+              <div class="mb-3.5">
+                <span class="text-[11px] text-slate-500 font-medium block">Precio Facturado</span>
                 <div class="flex items-baseline gap-1">
-                  <span class="font-headline text-2xl font-black text-primary">$690</span>
+                  <span class="font-headline text-3xl font-black text-primary">$690</span>
                   <span class="text-xs font-bold text-secondary">inc. IVA</span>
                 </div>
               </div>
               <a 
-                class="w-full inline-flex items-center justify-center gap-1.5 py-2.5 bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold rounded-lg transition-colors focus-visible:ring-2 focus-visible:ring-slate-900" 
+                class="w-full inline-flex items-center justify-center gap-1.5 py-3 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-xl transition-all shadow-sm hover:scale-[1.02]" 
                 href="https://wa.me/19782035623?text=Deseo%20cotizar%20el%20LIFAN%203800i%20de%20%24690%20con%20IVA" 
                 rel="noopener noreferrer" 
                 target="_blank"
                 aria-label="Cotizar modelo LIFAN 3800i por WhatsApp"
               >
-                <span class="material-symbols-outlined text-[16px]" aria-hidden="true">chat</span>
+                <span class="material-symbols-outlined text-[17px]" aria-hidden="true">chat</span>
                 <span>Cotizar este Modelo</span>
               </a>
             </div>
           </article>
 
           <!-- MODELO 2: LIFAN 4800iE (DESTACADO) -->
-          <article class="bg-white rounded-2xl border-2 border-secondary shadow-md hover:shadow-lg transition-all p-6 flex flex-col justify-between relative" aria-labelledby="mod-4800ie-title">
+          <article class="bg-white rounded-2xl border-2 border-secondary shadow-md hover:shadow-xl transition-all p-5 flex flex-col justify-between relative" aria-labelledby="mod-4800ie-title">
             <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-secondary text-white text-[11px] font-bold px-3 py-0.5 rounded-full uppercase tracking-wider badge-pop">
               Más Recomendado
             </span>
             <div>
-              <div class="flex justify-between items-center mb-4 pt-1">
+              <div class="flex justify-between items-center mb-3.5 pt-1">
                 <span class="text-xs font-semibold px-2.5 py-1 bg-amber-50 text-secondary-dark rounded-md">Hogar & Negocios</span>
                 <span class="text-xs font-bold text-secondary">Arranque Llave</span>
               </div>
 
-              <div class="h-44 w-full flex items-center justify-center bg-[#152438] rounded-xl p-2 mb-5 overflow-hidden border border-slate-700/50">
+              <div class="h-44 sm:h-48 w-full flex items-center justify-center bg-[#111C2E] rounded-xl p-2.5 mb-4 overflow-hidden border border-slate-700/50">
                 <img 
                   alt="Generador Inverter LIFAN 4800iE en vista frontal azul y negro" 
-                  class="max-h-full max-w-full object-contain" 
+                  class="max-h-full max-w-full object-contain hover:scale-105 transition-transform duration-300" 
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuuqvsg5AIQKebMH5GODDR-8BgoFxSqb8kUBW2epKCiAIXujYt7Z4hZFGCb8MZWEnpHyBTEXxccWsBNUieYIOddynPyMoL5VZOhbPw0YP6a5yxHM9bvOsTKOvkEMnZapWOzC9MAVyQISDfgLQTyheSRWg663PRxxw-DTrmWdk2lBonSlqcRibsuRsq_hCq2jHy9dkY6UGpq9SZyDzNnx589uhu-OCntOJuMyM3YT8TgQ8jcN1J7DuLy9Fqwlul7qJmEA"
                   width="280"
-                  height="176"
+                  height="180"
                   loading="lazy"
                   decoding="async"
                 />
               </div>
 
-              <h3 id="mod-4800ie-title" class="font-headline text-xl font-bold text-primary">LIFAN 4800iE Inverter</h3>
-              <p class="text-slate-600 text-xs mt-1 mb-5">El equilibrio perfecto de potencia continua silenciosa.</p>
+              <h3 id="mod-4800ie-title" class="font-headline text-2xl font-bold text-primary leading-tight">LIFAN 4800iE Inverter</h3>
+              <p class="text-slate-600 text-xs mt-1 mb-4 leading-normal min-h-[34px]">El equilibrio perfecto de potencia continua silenciosa.</p>
 
-              <dl class="space-y-2 text-xs text-slate-700 mb-6">
+              <dl class="space-y-2 text-xs text-slate-700 mb-5">
                 <div class="flex justify-between pb-1.5 border-b border-slate-100">
-                  <dt class="text-slate-500">Potencia Máx:</dt>
+                  <dt class="text-slate-500 font-medium">Potencia Máx:</dt>
                   <dd class="font-bold text-slate-900">4.2 kW</dd>
                 </div>
                 <div class="flex justify-between pb-1.5 border-b border-slate-100">
-                  <dt class="text-slate-500">Combustible:</dt>
+                  <dt class="text-slate-500 font-medium">Combustible:</dt>
                   <dd class="font-bold text-secondary">Gasolina + Gas GLP</dd>
                 </div>
                 <div class="flex justify-between pb-1.5 border-b border-slate-100">
-                  <dt class="text-slate-500">Nivel de Ruido:</dt>
-                  <dd class="font-bold text-emerald-700">≤ 62 dB (Ultra Silencioso)</dd>
+                  <dt class="text-slate-500 font-medium">Nivel de Ruido:</dt>
+                  <dd class="font-bold text-emerald-700">≤ 62 dB (Silencioso)</dd>
                 </div>
                 <div class="flex justify-between">
-                  <dt class="text-slate-500">Encendido:</dt>
-                  <dd class="font-bold text-slate-900">Eléctrico con llave + manual</dd>
+                  <dt class="text-slate-500 font-medium">Encendido:</dt>
+                  <dd class="font-bold text-slate-900">Eléctrico llave + manual</dd>
                 </div>
               </dl>
             </div>
 
-            <div>
-              <div class="mb-4">
-                <span class="text-xs text-slate-500 block">Precio Facturado</span>
+            <div class="pt-2 border-t border-slate-100">
+              <div class="mb-3.5">
+                <span class="text-[11px] text-slate-500 font-medium block">Precio Facturado</span>
                 <div class="flex items-baseline gap-1">
-                  <span class="font-headline text-2xl font-black text-secondary">$920</span>
+                  <span class="font-headline text-3xl font-black text-secondary">$920</span>
                   <span class="text-xs font-bold text-secondary">inc. IVA</span>
                 </div>
               </div>
               <a 
-                class="w-full inline-flex items-center justify-center gap-1.5 py-2.5 bg-secondary hover:bg-secondary-dark text-white text-xs font-bold rounded-lg transition-colors shadow-sm focus-visible:ring-2 focus-visible:ring-secondary" 
+                class="w-full inline-flex items-center justify-center gap-1.5 py-3 bg-secondary hover:bg-secondary-dark text-white text-xs font-bold rounded-xl transition-all shadow-md shadow-blue-600/30 hover:scale-[1.02]" 
                 href="https://wa.me/19782035623?text=Deseo%20el%20LIFAN%204800iE%20de%20%24920%20con%20IVA" 
                 rel="noopener noreferrer" 
                 target="_blank"
                 aria-label="Pedir modelo LIFAN 4800iE por WhatsApp"
               >
-                <span class="material-symbols-outlined text-[16px]" aria-hidden="true">bolt</span>
+                <span class="material-symbols-outlined text-[17px]" aria-hidden="true">bolt</span>
                 <span>Pedir este Modelo</span>
               </a>
             </div>
           </article>
 
           <!-- MODELO 3: LIFAN 6500iOE -->
-          <article class="bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-md transition-all p-6 flex flex-col justify-between" aria-labelledby="mod-6500ioe-title">
+          <article class="bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-lg transition-all p-5 flex flex-col justify-between" aria-labelledby="mod-6500ioe-title">
             <div>
-              <div class="flex justify-between items-center mb-4">
-                <span class="text-xs font-semibold px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md">10 Horas Continuas</span>
+              <div class="flex justify-between items-center mb-3.5">
+                <span class="text-xs font-semibold px-2.5 py-1 bg-slate-100 text-slate-800 rounded-md">10h Continuas</span>
                 <span class="text-xs font-bold text-slate-700">Chasis Reforzado</span>
               </div>
 
-              <div class="h-44 w-full flex items-center justify-center bg-[#152438] rounded-xl p-2 mb-5 overflow-hidden border border-slate-700/50">
+              <div class="h-44 sm:h-48 w-full flex items-center justify-center bg-[#111C2E] rounded-xl p-2.5 mb-4 overflow-hidden border border-slate-700/50">
                 <img 
                   alt="Generador Inverter chasis abierto LIFAN 6500iOE" 
-                  class="max-h-full max-w-full object-contain" 
+                  class="max-h-full max-w-full object-contain hover:scale-105 transition-transform duration-300" 
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB8ZOWRM1CDpMxBLaXJv_9iUoOtTnNOiTwqONmHTDOy9nUZJpJnTTHVlPDAXDxta0molxju4-p3sBeTDwJcNNgiQx2h-JNCBmVTQmr61dpXPIa7azg5nuys4eRLWAJdl4NnCk3kO_M3545RA0F4g0HGLT46ICRaH9fn5CYcJkpTivCSUBVeH_OiT5YztjeBZRMhPlxX1kTEpjk2ONp23zCIJOt-HFMqvR6ddIC5z1MtegiOSI1FBUhvH7XGkAQCKCs6g"
                   width="280"
-                  height="176"
+                  height="180"
                   loading="lazy"
                   decoding="async"
                 />
               </div>
 
-              <h3 id="mod-6500ioe-title" class="font-headline text-xl font-bold text-primary">LIFAN 6500iOE Open</h3>
-              <p class="text-slate-600 text-xs mt-1 mb-5">Para jornadas largas de trabajo ininterrumpido en negocios o fincas.</p>
+              <h3 id="mod-6500ioe-title" class="font-headline text-2xl font-bold text-primary leading-tight">LIFAN 6500iOE Open</h3>
+              <p class="text-slate-600 text-xs mt-1 mb-4 leading-normal min-h-[34px]">Para jornadas largas ininterrumpidas en negocios o fincas.</p>
 
-              <dl class="space-y-2 text-xs text-slate-700 mb-6">
+              <dl class="space-y-2 text-xs text-slate-700 mb-5">
                 <div class="flex justify-between pb-1.5 border-b border-slate-100">
-                  <dt class="text-slate-500">Potencia Máx:</dt>
+                  <dt class="text-slate-500 font-medium">Potencia Máx:</dt>
                   <dd class="font-bold text-slate-900">5.5 kW</dd>
                 </div>
                 <div class="flex justify-between pb-1.5 border-b border-slate-100">
-                  <dt class="text-slate-500">Capacidad Tanque:</dt>
+                  <dt class="text-slate-500 font-medium">Capacidad Tanque:</dt>
                   <dd class="font-semibold text-slate-800">15 Litros</dd>
                 </div>
                 <div class="flex justify-between pb-1.5 border-b border-slate-100">
-                  <dt class="text-slate-500">Autonomía:</dt>
+                  <dt class="text-slate-500 font-medium">Autonomía:</dt>
                   <dd class="font-bold text-secondary">Hasta 10 Horas</dd>
                 </div>
                 <div class="flex justify-between">
-                  <dt class="text-slate-500">Tecnología:</dt>
+                  <dt class="text-slate-500 font-medium">Tecnología:</dt>
                   <dd class="font-semibold text-slate-800">Inverter Puro</dd>
                 </div>
               </dl>
             </div>
 
-            <div>
-              <div class="mb-4">
-                <span class="text-xs text-slate-500 block">Precio Facturado</span>
+            <div class="pt-2 border-t border-slate-100">
+              <div class="mb-3.5">
+                <span class="text-[11px] text-slate-500 font-medium block">Precio Facturado</span>
                 <div class="flex items-baseline gap-1">
-                  <span class="font-headline text-2xl font-black text-primary">$860</span>
+                  <span class="font-headline text-3xl font-black text-primary">$860</span>
                   <span class="text-xs font-bold text-secondary">inc. IVA</span>
                 </div>
               </div>
               <a 
-                class="w-full inline-flex items-center justify-center gap-1.5 py-2.5 bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold rounded-lg transition-colors focus-visible:ring-2 focus-visible:ring-slate-900" 
+                class="w-full inline-flex items-center justify-center gap-1.5 py-3 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-xl transition-all shadow-sm hover:scale-[1.02]" 
                 href="https://wa.me/19782035623?text=Deseo%20cotizar%20el%20LIFAN%206500iOE%20de%20%24860%20con%20IVA" 
                 rel="noopener noreferrer" 
                 target="_blank"
                 aria-label="Cotizar modelo LIFAN 6500iOE por WhatsApp"
               >
-                <span class="material-symbols-outlined text-[16px]" aria-hidden="true">chat</span>
+                <span class="material-symbols-outlined text-[17px]" aria-hidden="true">chat</span>
                 <span>Cotizar este Modelo</span>
               </a>
             </div>
           </article>
 
           <!-- MODELO 4: LIFAN 12000E INDUSTRIAL -->
-          <article class="bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-md transition-all p-6 flex flex-col justify-between" aria-labelledby="mod-12000e-title">
+          <article class="bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-lg transition-all p-5 flex flex-col justify-between" aria-labelledby="mod-12000e-title">
             <div>
-              <div class="flex justify-between items-center mb-4">
-                <span class="text-xs font-semibold px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md">Línea Pesada</span>
-                <span class="text-xs font-bold text-slate-700">Motor V-Twin 688cc</span>
+              <div class="flex justify-between items-center mb-3.5">
+                <span class="text-xs font-semibold px-2.5 py-1 bg-slate-100 text-slate-800 rounded-md">Línea Pesada</span>
+                <span class="text-xs font-bold text-slate-700">V-Twin 688cc</span>
               </div>
 
-              <div class="h-44 w-full flex items-center justify-center bg-[#152438] rounded-xl p-2 mb-5 overflow-hidden border border-slate-700/50">
+              <div class="h-44 sm:h-48 w-full flex items-center justify-center bg-[#111C2E] rounded-xl p-2.5 mb-4 overflow-hidden border border-slate-700/50">
                 <img 
                   alt="Generador industrial LIFAN 12000E con ruedas y chasis tubular" 
-                  class="max-h-full max-w-full object-contain" 
+                  class="max-h-full max-w-full object-contain hover:scale-105 transition-transform duration-300" 
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzs2Tx0s4FDc00l49Cs8W8aI_wfGmbmgtqPbRkQjaCevjEGYhBLrOoa4rrtTexAT03dbY7GZDGzEiAFTjurWf2DjdxCrT0Uh4zfePc7iYpZyAWnDa6025iQUVndPBJRbN8hk-8sVNvMZiNAzs1pOJPoe0ia-x2NugD22nyHyeTGY7_vzMbAiCWnLDb9BpHc-Bp0UBk1X4bJqh_tfy-7sCo02FZQcYYVWLkFCuG1NB0Nipi_8rgKPcDK7HulZvo35xaxg"
                   width="280"
-                  height="176"
+                  height="180"
                   loading="lazy"
                   decoding="async"
                 />
               </div>
 
-              <h3 id="mod-12000e-title" class="font-headline text-xl font-bold text-primary">LIFAN 12000E Industrial</h3>
-              <p class="text-slate-600 text-xs mt-1 mb-5">Potencia bruta para talleres mecánicos, soldadoras, bombas y fábricas.</p>
+              <h3 id="mod-12000e-title" class="font-headline text-2xl font-bold text-primary leading-tight">LIFAN 12000E Industrial</h3>
+              <p class="text-slate-600 text-xs mt-1 mb-4 leading-normal min-h-[34px]">Potencia bruta para talleres, soldadoras, bombas y fábricas.</p>
 
-              <dl class="space-y-2 text-xs text-slate-700 mb-6">
+              <dl class="space-y-2 text-xs text-slate-700 mb-5">
                 <div class="flex justify-between pb-1.5 border-b border-slate-100">
-                  <dt class="text-slate-500">Potencia Máx:</dt>
+                  <dt class="text-slate-500 font-medium">Potencia Máx:</dt>
                   <dd class="font-bold text-slate-900">12.0 kW</dd>
                 </div>
                 <div class="flex justify-between pb-1.5 border-b border-slate-100">
-                  <dt class="text-slate-500">Voltaje Salida:</dt>
+                  <dt class="text-slate-500 font-medium">Voltaje Salida:</dt>
                   <dd class="font-semibold text-slate-800">120 / 220 / 240V</dd>
                 </div>
                 <div class="flex justify-between pb-1.5 border-b border-slate-100">
-                  <dt class="text-slate-500">Motor:</dt>
-                  <dd class="font-semibold text-slate-800">688cc V-Twin 4 tiempos</dd>
+                  <dt class="text-slate-500 font-medium">Motor:</dt>
+                  <dd class="font-semibold text-slate-800">688cc V-Twin 4T</dd>
                 </div>
                 <div class="flex justify-between">
-                  <dt class="text-slate-500">Tanque:</dt>
+                  <dt class="text-slate-500 font-medium">Tanque:</dt>
                   <dd class="font-semibold text-slate-800">23 Litros</dd>
                 </div>
               </dl>
             </div>
 
-            <div>
-              <div class="mb-4">
-                <span class="text-xs text-slate-500 block">Precio Facturado</span>
+            <div class="pt-2 border-t border-slate-100">
+              <div class="mb-3.5">
+                <span class="text-[11px] text-slate-500 font-medium block">Precio Facturado</span>
                 <div class="flex items-baseline gap-1">
-                  <span class="font-headline text-2xl font-black text-primary">$1,955</span>
+                  <span class="font-headline text-3xl font-black text-primary">$1,955</span>
                   <span class="text-xs font-bold text-secondary">inc. IVA</span>
                 </div>
               </div>
               <a 
-                class="w-full inline-flex items-center justify-center gap-1.5 py-2.5 bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold rounded-lg transition-colors focus-visible:ring-2 focus-visible:ring-slate-900" 
+                class="w-full inline-flex items-center justify-center gap-1.5 py-3 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-xl transition-all shadow-sm hover:scale-[1.02]" 
                 href="https://wa.me/19782035623?text=Deseo%20cotizar%20el%20generador%20industrial%20LIFAN%2012000E%20de%20%241955" 
                 rel="noopener noreferrer" 
                 target="_blank"
                 aria-label="Cotizar modelo industrial LIFAN 12000E por WhatsApp"
               >
-                <span class="material-symbols-outlined text-[16px]" aria-hidden="true">chat</span>
+                <span class="material-symbols-outlined text-[17px]" aria-hidden="true">chat</span>
                 <span>Cotizar este Modelo</span>
               </a>
             </div>
@@ -1024,18 +1299,24 @@
     <div class="max-w-7xl mx-auto px-6 sm:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
       
       <div class="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
-        <span class="font-headline text-lg font-black tracking-tight uppercase text-white">
-          LIFAN <span class="text-secondary">POWER</span>
-        </span>
+        <div class="flex items-center gap-2.5">
+          <img src="assets/lifan blanco.svg" alt="LIFAN Power Ecuador" class="h-5 sm:h-6 w-auto object-contain" width="150" height="20" />
+          <span class="font-headline font-black text-xs tracking-wider text-secondary uppercase">POWER</span>
+        </div>
         <span class="hidden sm:inline text-slate-600" aria-hidden="true">|</span>
         <span class="text-xs text-slate-400">Distribución Oficial Directa Cuenca &amp; Ecuador</span>
       </div>
 
-      <nav class="flex flex-wrap justify-center items-center gap-6 text-xs" aria-label="Enlaces del pie de página">
+      <nav class="flex flex-wrap justify-center items-center gap-4 sm:gap-6 text-xs" aria-label="Enlaces del pie de página">
         <a class="hover:text-white transition-colors" href="#modelos">Modelos</a>
         <a class="hover:text-white transition-colors" href="#dimensionador">Calculadora</a>
         <a class="hover:text-white transition-colors" href="#ventajas">Tecnología</a>
         <a class="hover:text-white transition-colors" href="#garantia">Garantía</a>
+        <a class="hover:text-white transition-colors" href="politicas.html#terminos" target="_blank" rel="noopener noreferrer">Términos y Condiciones</a>
+        <a class="hover:text-white transition-colors" href="politicas.html#envios" target="_blank" rel="noopener noreferrer">Envíos y Entregas</a>
+        <a class="hover:text-white transition-colors" href="politicas.html#devoluciones" target="_blank" rel="noopener noreferrer">Cambios y Devoluciones</a>
+        <a class="hover:text-white transition-colors" href="politicas.html#privacidad" target="_blank" rel="noopener noreferrer">Privacidad (LOPDP)</a>
+        <a class="hover:text-white transition-colors" href="politicas.html#cookies" target="_blank" rel="noopener noreferrer">Cookies</a>
         <a class="text-secondary hover:underline" href="https://wa.me/19782035623" rel="noopener noreferrer" target="_blank">Soporte Técnico</a>
       </nav>
 
@@ -1059,8 +1340,113 @@
     </a>
   </aside>
 
-  <!-- Script interactivo accesible para la calculadora y dialog -->
+  <!-- Script interactivo accesible para la calculadora, menú móvil y dialog -->
   <script>
+    // Observer para animaciones de barrido al hacer scroll (Sweep Reveal)
+    document.addEventListener('DOMContentLoaded', () => {
+      const sweepElements = document.querySelectorAll('.sweep-reveal, .sweep-up');
+      if ('IntersectionObserver' in window) {
+        const sweepObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              sweepObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+
+        sweepElements.forEach(el => sweepObserver.observe(el));
+      } else {
+        sweepElements.forEach(el => el.classList.add('is-visible'));
+      }
+    });
+
+    // Hero Section Background Slider Logic
+    let currentSlideIndex = 0;
+    let slideTimer = null;
+
+    function goToSlide(index) {
+      const slides = document.querySelectorAll('#hero-slider .hero-slide');
+      const dots = document.querySelectorAll('.hero-dot');
+      if (!slides.length) return;
+
+      currentSlideIndex = (index + slides.length) % slides.length;
+
+      slides.forEach((slide, i) => {
+        if (i === currentSlideIndex) {
+          slide.classList.add('active');
+          slide.style.opacity = '1';
+          slide.style.transform = 'scale(1)';
+        } else {
+          slide.classList.remove('active');
+          slide.style.opacity = '0';
+          slide.style.transform = 'scale(1.05)';
+        }
+      });
+
+      dots.forEach((dot, i) => {
+        if (i === currentSlideIndex) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+
+      resetSlideTimer();
+    }
+
+    function nextSlide() {
+      goToSlide(currentSlideIndex + 1);
+    }
+
+    function startSlideTimer() {
+      stopSlideTimer();
+      slideTimer = setInterval(nextSlide, 5000);
+    }
+
+    function stopSlideTimer() {
+      if (slideTimer) {
+        clearInterval(slideTimer);
+        slideTimer = null;
+      }
+    }
+
+    function resetSlideTimer() {
+      startSlideTimer();
+    }
+
+    // Iniciar timer del slider al cargar la página
+    document.addEventListener('DOMContentLoaded', () => {
+      startSlideTimer();
+    });
+
+    // Control del Menú Hamburguesa Móvil
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const icon = document.getElementById('hamburger-icon');
+      const btn = document.getElementById('mobile-menu-btn');
+      if (!menu) return;
+      const isOpen = menu.classList.contains('open');
+      if (!isOpen) {
+        menu.classList.add('open');
+        btn?.setAttribute('aria-expanded', 'true');
+        if (icon) icon.textContent = 'close';
+      } else {
+        menu.classList.remove('open');
+        btn?.setAttribute('aria-expanded', 'false');
+        if (icon) icon.textContent = 'menu';
+      }
+    }
+
+    // Cierre automático del menú móvil al hacer clic fuera del header
+    document.addEventListener('click', (e) => {
+      const header = document.querySelector('header');
+      const menu = document.getElementById('mobile-menu');
+      if (header && menu && !header.contains(e.target) && menu.classList.contains('open')) {
+        toggleMobileMenu();
+      }
+    });
+
     // Control accesible de Dialog Nativo
     const advisorModal = document.getElementById('advisor-modal');
     function openAdvisorModal() {
