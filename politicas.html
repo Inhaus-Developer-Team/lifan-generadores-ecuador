@@ -40,55 +40,95 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
   <style>
-    /* Tipografías Oficiales del Proyecto */
+    /* ============================================================
+       Tipografías Locales Oficiales: Khand (Títulos) & Switzer (Todo lo demás)
+       ============================================================ */
     @font-face {
       font-family: 'Khand';
-      src: url('assets/tipografias/Khand/Khand-Regular.ttf') format('truetype');
+      src: url('assets/tipografias/Khand_Complete/Fonts/WEB/fonts/Khand-Variable.woff2') format('woff2-variations'),
+           url('assets/tipografias/Khand_Complete/Fonts/WEB/fonts/Khand-Regular.woff2') format('woff2');
+      font-weight: 300 700;
+      font-display: swap;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Khand';
+      src: url('assets/tipografias/Khand_Complete/Fonts/WEB/fonts/Khand-Light.woff2') format('woff2');
+      font-weight: 300;
+      font-display: swap;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Khand';
+      src: url('assets/tipografias/Khand_Complete/Fonts/WEB/fonts/Khand-Regular.woff2') format('woff2');
       font-weight: 400;
       font-display: swap;
+      font-style: normal;
     }
     @font-face {
       font-family: 'Khand';
-      src: url('assets/tipografias/Khand/Khand-Medium.ttf') format('truetype');
+      src: url('assets/tipografias/Khand_Complete/Fonts/WEB/fonts/Khand-Medium.woff2') format('woff2');
       font-weight: 500;
       font-display: swap;
+      font-style: normal;
     }
     @font-face {
       font-family: 'Khand';
-      src: url('assets/tipografias/Khand/Khand-SemiBold.ttf') format('truetype');
+      src: url('assets/tipografias/Khand_Complete/Fonts/WEB/fonts/Khand-SemiBold.woff2') format('woff2');
       font-weight: 600;
       font-display: swap;
+      font-style: normal;
     }
     @font-face {
       font-family: 'Khand';
-      src: url('assets/tipografias/Khand/Khand-Bold.ttf') format('truetype');
+      src: url('assets/tipografias/Khand_Complete/Fonts/WEB/fonts/Khand-Bold.woff2') format('woff2');
       font-weight: 700;
       font-display: swap;
+      font-style: normal;
     }
 
+    @font-face {
+      font-family: 'Switzer';
+      src: url('assets/tipografias/Switzer_Complete/Fonts/WEB/fonts/Switzer-Variable.woff2') format('woff2-variations'),
+           url('assets/tipografias/Switzer_Complete/Fonts/WEB/fonts/Switzer-Regular.woff2') format('woff2');
+      font-weight: 100 900;
+      font-display: swap;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Switzer';
+      src: url('assets/tipografias/Switzer_Complete/Fonts/WEB/fonts/Switzer-Light.woff2') format('woff2');
+      font-weight: 300;
+      font-display: swap;
+      font-style: normal;
+    }
     @font-face {
       font-family: 'Switzer';
       src: url('assets/tipografias/Switzer_Complete/Fonts/WEB/fonts/Switzer-Regular.woff2') format('woff2');
       font-weight: 400;
       font-display: swap;
+      font-style: normal;
     }
     @font-face {
       font-family: 'Switzer';
       src: url('assets/tipografias/Switzer_Complete/Fonts/WEB/fonts/Switzer-Medium.woff2') format('woff2');
       font-weight: 500;
       font-display: swap;
+      font-style: normal;
     }
     @font-face {
       font-family: 'Switzer';
       src: url('assets/tipografias/Switzer_Complete/Fonts/WEB/fonts/Switzer-Semibold.woff2') format('woff2');
       font-weight: 600;
       font-display: swap;
+      font-style: normal;
     }
     @font-face {
       font-family: 'Switzer';
       src: url('assets/tipografias/Switzer_Complete/Fonts/WEB/fonts/Switzer-Bold.woff2') format('woff2');
       font-weight: 700;
       font-display: swap;
+      font-style: normal;
     }
 
     /* Regla global: Khand para todos los títulos */
@@ -320,8 +360,8 @@
               <div class="w-8 h-8 rounded-lg bg-blue-100 text-secondary flex items-center justify-center mb-2">
                 <span class="material-symbols-outlined text-[18px]">badge</span>
               </div>
-              <h3 class="font-headline text-base font-bold text-primary">Operador Directo</h3>
-              <p class="text-xs text-slate-500 mt-1">Distribución oficial con sede y bodega matriz en Cuenca, Azuay.</p>
+              <h3 class="font-headline text-base font-bold text-primary">Operador Legal SRI</h3>
+              <p class="text-xs text-slate-500 mt-1">BUILDSMART SOLUTIONS S.A.S. (RUC: 0195152993001) en Cuenca, Azuay.</p>
             </div>
             <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80">
               <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center mb-2">
@@ -349,13 +389,86 @@
           <div class="space-y-6 text-slate-700 text-sm leading-relaxed">
             <div class="bg-blue-50/60 border-l-4 border-secondary p-4 rounded-r-xl text-xs text-slate-700">
               <strong class="font-bold text-primary block mb-1">Ámbito de Aplicación Legal:</strong>
-              Estos términos regulan la consulta de catálogo, cotizaciones y contratación de generadores eléctricos en lifanpower.ec en el territorio de la República del Ecuador, en estricto cumplimiento de la Ley Orgánica de Defensa del Consumidor y la Ley de Comercio Electrónico, Firmas Electrónicas y Mensajes de Datos.
+              Estos términos regulan la consulta de catálogo, cotizaciones y contratación de generadores eléctricos en lifanpower.ec en el territorio de la República del Ecuador, en estricto cumplimiento de la Ley Orgánica de Defensa del Consumidor, el Código Tributario y la Ley de Comercio Electrónico, Firmas Electrónicas y Mensajes de Datos.
             </div>
 
             <div>
-              <h4 class="font-headline text-xl font-bold text-primary mb-2">1. Identificación del Operador</h4>
+              <h4 class="font-headline text-xl font-bold text-primary mb-2">1. Identificación del Operador y Registro Fiscal Oficial (SRI)</h4>
               <p>
-                El sitio es operado por <strong>LIFAN Power Ecuador</strong> (Inhaus Distribuciones), comercializadora y distribuidora autorizada de generadores de energía portátiles, inverters Dual Fuel e industriales en Ecuador, con domicilio legal y centro logístico en la ciudad de Cuenca, provincia del Azuay, y cobertura de despacho a nivel nacional. Canal oficial de atención: WhatsApp y Teléfono <a href="tel:+19782035623" class="text-secondary font-bold hover:underline">+1 (978) 203-5623</a>, correo: <a href="mailto:legal@lifanpower.ec" class="text-secondary font-bold hover:underline">legal@lifanpower.ec</a>.
+                El sitio web <strong>lifanpower.ec</strong>, la comercialización oficial, distribución y soporte técnico de los generadores de energía en la República del Ecuador son operados formal y jurídicamente por la compañía mercantil <strong>BUILDSMART SOLUTIONS S.A.S.</strong>, sociedad legalmente constituida conforme a las leyes ecuatorianas e inscrita en el Registro Único de Contribuyentes del Servicio de Rentas Internas (SRI).
+              </p>
+
+              <!-- Ficha Tributaria Oficial SRI -->
+              <div class="rounded-2xl border border-blue-200/90 bg-gradient-to-br from-blue-50/60 via-white to-slate-50 p-5 sm:p-6 shadow-sm my-5">
+                <div class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-200/80">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-primary text-white flex items-center justify-center font-headline font-bold text-lg shadow-sm">
+                      SRI
+                    </div>
+                    <div>
+                      <span class="text-[11px] font-bold uppercase tracking-wider text-secondary block">Certificado Oficial de Registro RUC</span>
+                      <h5 class="font-headline text-lg sm:text-xl font-bold text-primary">BUILDSMART SOLUTIONS S.A.S.</h5>
+                    </div>
+                  </div>
+                  <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-100/90 text-emerald-800 text-xs font-bold rounded-full border border-emerald-300">
+                    <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+                    <span>ESTADO: ACTIVO · REGISTRADO</span>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-4 text-xs">
+                  <div class="bg-white p-3.5 rounded-xl border border-slate-200/80">
+                    <span class="text-slate-500 block mb-0.5 font-medium">Número de RUC:</span>
+                    <strong class="text-primary text-sm font-headline tracking-wide">0195152993001</strong>
+                  </div>
+                  <div class="bg-white p-3.5 rounded-xl border border-slate-200/80">
+                    <span class="text-slate-500 block mb-0.5 font-medium">Representante Legal:</span>
+                    <strong class="text-slate-800 text-xs">CRESPO MOSCOSO JOSE BERNARDO</strong>
+                  </div>
+                  <div class="bg-white p-3.5 rounded-xl border border-slate-200/80">
+                    <span class="text-slate-500 block mb-0.5 font-medium">Régimen Tributario:</span>
+                    <strong class="text-slate-800 text-xs">RIMPE - EMPRENDEDOR</strong>
+                  </div>
+                  <div class="bg-white p-3.5 rounded-xl border border-slate-200/80">
+                    <span class="text-slate-500 block mb-0.5 font-medium">Obligado a Llevar Contabilidad:</span>
+                    <strong class="text-emerald-700 font-bold">SÍ</strong>
+                  </div>
+                  <div class="bg-white p-3.5 rounded-xl border border-slate-200/80">
+                    <span class="text-slate-500 block mb-0.5 font-medium">Jurisdicción Tributaria:</span>
+                    <strong class="text-slate-800">ZONA 6 / AZUAY / CUENCA</strong>
+                  </div>
+                  <div class="bg-white p-3.5 rounded-xl border border-slate-200/80">
+                    <span class="text-slate-500 block mb-0.5 font-medium">Tipo de Contribuyente:</span>
+                    <strong class="text-slate-800">SOCIEDADES</strong>
+                  </div>
+                  <div class="bg-white p-3.5 rounded-xl border border-slate-200/80 sm:col-span-2 lg:col-span-2">
+                    <span class="text-slate-500 block mb-0.5 font-medium">Domicilio Tributario &amp; Sede Matriz:</span>
+                    <strong class="text-slate-800 block">Calle Ordoñez Lasso S/N e Intersección Calle de los Claveles, Edificio Palermo, Oficina 1</strong>
+                    <span class="text-slate-500 text-[11px] block mt-0.5">Ref: Frente al Condominio Pinar del Lago · Parroquia San Sebastián, Cuenca, Azuay, Ecuador</span>
+                  </div>
+                  <div class="bg-white p-3.5 rounded-xl border border-slate-200/80 sm:col-span-2 lg:col-span-1">
+                    <span class="text-slate-500 block mb-0.5 font-medium">Medios de Contacto Registrados:</span>
+                    <div class="space-y-1.5 mt-1 text-[11px]">
+                      <div class="flex items-center gap-1.5">
+                        <span class="material-symbols-outlined text-[15px] text-secondary">mail</span>
+                        <a href="mailto:smartbuildsas@gmail.com" class="text-secondary font-semibold hover:underline">smartbuildsas@gmail.com</a>
+                      </div>
+                      <div class="flex items-center gap-1.5">
+                        <span class="material-symbols-outlined text-[15px] text-emerald-600">call</span>
+                        <a href="tel:0980438881" class="text-slate-800 font-semibold hover:underline">0980438881 (+593 98 043 8881)</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-4 pt-3 border-t border-slate-200/80 text-[11px] text-slate-500 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                  <span><strong>Actividad Económica Principal SRI (G47411401):</strong> Venta de maquinaria y aparatos eléctricos: motores, generadores, transformadores y equipos de control de energía.</span>
+                  <span class="text-slate-400 shrink-0 font-medium">Comprobantes Electrónicos SRI</span>
+                </div>
+              </div>
+
+              <p>
+                Todas las adquisiciones efectuadas a través de nuestros canales se respaldan con la emisión de <strong>Factura Electrónica legal autorizada por el Servicio de Rentas Internas (SRI)</strong> emitida por <strong>BUILDSMART SOLUTIONS S.A.S.</strong>, garantizando deducibilidad tributaria, crédito fiscal de IVA para empresas o personas naturales y pleno respaldo de garantía oficial por escrito.
               </p>
             </div>
 
@@ -696,7 +809,7 @@
             <div>
               <h4 class="font-headline text-xl font-bold text-primary mb-2">1. Responsable del Tratamiento</h4>
               <p>
-                El responsable del tratamiento de los datos es <strong>LIFAN Power Ecuador</strong> (Inhaus Distribuciones), con sede principal en Cuenca, Azuay, República del Ecuador. Para cualquier solicitud relacionada con la gestión y privacidad de sus datos personales, puede escribir a <a href="mailto:legal@lifanpower.ec" class="text-secondary font-bold hover:underline">legal@lifanpower.ec</a>.
+                El responsable del tratamiento de los datos personales conforme a la LOPDP es la compañía <strong>BUILDSMART SOLUTIONS S.A.S.</strong> (RUC N° <strong>0195152993001</strong>), comercializadora y operadora de <strong>LIFAN Power Ecuador</strong>, representada legalmente por José Bernardo Crespo Moscoso, con domicilio tributario en la Calle Ordoñez Lasso S/N e Intersección Calle de los Claveles, Edificio Palermo, Oficina 1, San Sebastián, Cuenca, Azuay, República del Ecuador. Para cualquier solicitud relacionada con la gestión y privacidad de sus datos personales o el ejercicio de derechos ARCO, puede contactarnos a través de los correos <a href="mailto:smartbuildsas@gmail.com" class="text-secondary font-bold hover:underline">smartbuildsas@gmail.com</a> / <a href="mailto:legal@lifanpower.ec" class="text-secondary font-bold hover:underline">legal@lifanpower.ec</a> o al canal telefónico registrado <a href="tel:0980438881" class="text-secondary font-bold hover:underline">0980438881 (+593 98 043 8881)</a>.
               </p>
             </div>
 
@@ -747,7 +860,7 @@
                 <li><strong>Portabilidad y suspensión:</strong> Obtener sus datos en formato estructurado o solicitar la limitación temporal de su tratamiento.</li>
               </ul>
               <p class="mt-2 text-xs text-slate-600">
-                Las solicitudes se dirigen a <a href="mailto:legal@lifanpower.ec" class="text-secondary font-bold hover:underline">legal@lifanpower.ec</a> o vía WhatsApp institucional. Se tramitan de forma totalmente gratuita y son respondidas en el <strong>plazo legal de quince (15) días</strong>.
+                Las solicitudes se dirigen a <a href="mailto:smartbuildsas@gmail.com" class="text-secondary font-bold hover:underline">smartbuildsas@gmail.com</a> / <a href="mailto:legal@lifanpower.ec" class="text-secondary font-bold hover:underline">legal@lifanpower.ec</a> o vía WhatsApp registrado (+593 98 043 8881). Se tramitan de forma totalmente gratuita y son respondidas en el <strong>plazo legal de quince (15) días</strong>.
               </p>
             </div>
 
@@ -914,7 +1027,10 @@
           <span class="font-headline font-black text-xs tracking-wider text-secondary uppercase">POWER</span>
         </a>
         <span class="hidden sm:inline text-slate-600" aria-hidden="true">|</span>
-        <span class="text-xs text-slate-400">Distribución Oficial Directa Cuenca &amp; Ecuador</span>
+        <div class="text-xs text-slate-400">
+          <span class="block text-slate-300 font-medium">BUILDSMART SOLUTIONS S.A.S. · RUC: 0195152993001</span>
+          <span class="text-[11px] text-slate-500">Distribución Oficial Directa Cuenca &amp; Ecuador</span>
+        </div>
       </div>
 
       <nav class="flex flex-wrap justify-center items-center gap-4 sm:gap-6 text-xs" aria-label="Enlaces del pie de página">
@@ -930,8 +1046,8 @@
         <a class="text-secondary hover:underline" href="https://wa.me/19782035623" rel="noopener noreferrer" target="_blank">Soporte Técnico</a>
       </nav>
 
-      <p class="text-xs text-slate-500">
-        © 2026 LIFAN Power Ecuador. Todos los derechos reservados.
+      <p class="text-xs text-slate-500 text-center md:text-right">
+        © 2026 LIFAN Power Ecuador · BUILDSMART SOLUTIONS S.A.S. (RUC: 0195152993001). Todos los derechos reservados.
       </p>
     </div>
   </footer>
