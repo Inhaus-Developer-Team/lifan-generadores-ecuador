@@ -1018,37 +1018,68 @@
   <!-- ==========================================
        FOOTER MINIMALISTA CON DATOS DE EMPRESA
        ========================================== -->
-  <footer class="w-full bg-[#07111E] text-slate-400 py-12 border-t border-white/5 text-sm" role="contentinfo">
-    <div class="max-w-7xl mx-auto px-6 sm:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+  <footer class="w-full bg-[#07111E] text-slate-400 py-14 border-t border-white/10 text-sm" role="contentinfo">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8">
       
-      <div class="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
-        <a href="index.html" class="flex items-center gap-2.5">
-          <img src="assets/lifan blanco.svg" alt="LIFAN Power Ecuador" class="h-5 sm:h-6 w-auto object-contain" width="150" height="20" />
-          <span class="font-headline font-black text-xs tracking-wider text-secondary uppercase">POWER</span>
-        </a>
-        <span class="hidden sm:inline text-slate-600" aria-hidden="true">|</span>
-        <div class="text-xs text-slate-400">
-          <span class="block text-slate-300 font-medium">BUILDSMART SOLUTIONS S.A.S. · RUC: 0195152993001</span>
-          <span class="text-[11px] text-slate-500">Distribución Oficial Directa Cuenca &amp; Ecuador</span>
+      <!-- Grid Principal 4 Columnas -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-10 border-b border-slate-800">
+        
+        <!-- Columna 1: Empresa & Marca -->
+        <div class="space-y-4">
+          <a href="index.html" class="inline-flex items-center gap-2.5 group">
+            <img src="assets/lifan blanco.svg" alt="LIFAN Power Ecuador" class="h-6 w-auto object-contain" width="150" height="24" />
+            <span class="font-headline font-black text-[11px] tracking-wider text-secondary uppercase bg-secondary/10 px-2 py-0.5 rounded">POWER</span>
+          </a>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            <strong class="text-slate-200 block font-semibold mb-0.5">BUILDSMART SOLUTIONS S.A.S.</strong>
+            RUC: 0195152993001<br />
+            Distribución Oficial Directa en Cuenca y envíos a las 24 provincias del Ecuador.
+          </p>
         </div>
+
+        <!-- Columna 2: Navegación Principal -->
+        <div>
+          <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4 font-headline">Navegación</h4>
+          <ul class="space-y-2.5 text-xs">
+            <li><a class="hover:text-white transition-colors" href="index.html#modelos">Catálogo de Modelos</a></li>
+            <li><a class="hover:text-white transition-colors" href="index.html#dimensionador">Calculadora de Potencia</a></li>
+            <li><a class="hover:text-white transition-colors" href="index.html#ventajas">Tecnología Dual Fuel</a></li>
+            <li><a class="hover:text-white transition-colors" href="index.html#garantia">Garantía &amp; Respaldo</a></li>
+          </ul>
+        </div>
+
+        <!-- Columna 3: Legal & Políticas -->
+        <div>
+          <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4 font-headline">Legal &amp; Políticas</h4>
+          <ul class="space-y-2.5 text-xs">
+            <li><button type="button" class="hover:text-white transition-colors text-left" onclick="switchPolicyTab('terminos')">Términos y Condiciones</button></li>
+            <li><button type="button" class="hover:text-white transition-colors text-left" onclick="switchPolicyTab('envios')">Envíos y Entregas</button></li>
+            <li><button type="button" class="hover:text-white transition-colors text-left" onclick="switchPolicyTab('devoluciones')">Cambios y Devoluciones</button></li>
+            <li><button type="button" class="hover:text-white transition-colors text-left" onclick="switchPolicyTab('privacidad')">Privacidad (LOPDP)</button></li>
+            <li><button type="button" class="hover:text-white transition-colors text-left" onclick="switchPolicyTab('cookies')">Política de Cookies</button></li>
+          </ul>
+        </div>
+
+        <!-- Columna 4: Atención & Soporte -->
+        <div>
+          <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4 font-headline">Soporte Técnico</h4>
+          <p class="text-xs text-slate-400 mb-3.5 leading-relaxed">
+            Asesoría técnica inmediata para seleccionar tu generador ideal ante los cortes de energía.
+          </p>
+          <a class="inline-flex items-center gap-2 text-xs font-bold text-white bg-secondary hover:bg-secondary-dark px-4 py-2.5 rounded-xl transition-all shadow-sm" href="https://wa.me/19782035623" rel="noopener noreferrer" target="_blank">
+            <span class="material-symbols-outlined text-[18px]" aria-hidden="true">chat</span>
+            <span>Contactar Asesor WhatsApp</span>
+          </a>
+        </div>
+
       </div>
 
-      <nav class="flex flex-wrap justify-center items-center gap-4 sm:gap-6 text-xs" aria-label="Enlaces del pie de página">
-        <a class="hover:text-white transition-colors" href="index.html#modelos">Modelos</a>
-        <a class="hover:text-white transition-colors" href="index.html#dimensionador">Calculadora</a>
-        <a class="hover:text-white transition-colors" href="index.html#ventajas">Tecnología</a>
-        <a class="hover:text-white transition-colors" href="index.html#garantia">Garantía</a>
-        <button type="button" class="hover:text-white transition-colors" onclick="switchPolicyTab('terminos')">Términos</button>
-        <button type="button" class="hover:text-white transition-colors" onclick="switchPolicyTab('envios')">Envíos</button>
-        <button type="button" class="hover:text-white transition-colors" onclick="switchPolicyTab('devoluciones')">Devoluciones</button>
-        <button type="button" class="hover:text-white transition-colors" onclick="switchPolicyTab('privacidad')">Privacidad</button>
-        <button type="button" class="hover:text-white transition-colors" onclick="switchPolicyTab('cookies')">Cookies</button>
-        <a class="text-secondary hover:underline" href="https://wa.me/19782035623" rel="noopener noreferrer" target="_blank">Soporte Técnico</a>
-      </nav>
+      <!-- Fila Inferior: Copyright -->
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 text-center sm:text-left">
+        <p>© 2026 LIFAN Power Ecuador · BUILDSMART SOLUTIONS S.A.S. (RUC: 0195152993001). Todos los derechos reservados.</p>
+        <p class="text-[11px] text-slate-600">Cuenca - Ecuador · Factura Legal &amp; Garantía Oficial</p>
+      </div>
 
-      <p class="text-xs text-slate-500 text-center md:text-right">
-        © 2026 LIFAN Power Ecuador · BUILDSMART SOLUTIONS S.A.S. (RUC: 0195152993001). Todos los derechos reservados.
-      </p>
     </div>
   </footer>
 
