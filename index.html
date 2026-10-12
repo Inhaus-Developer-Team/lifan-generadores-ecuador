@@ -23,7 +23,7 @@
   <meta property="og:url" content="https://lifanpower.ec/" />
   <meta property="og:title" content="LIFAN Power Ecuador | Generadores Inverter & Dual Fuel" />
   <meta property="og:description"
-    content="Energía continua y confiable ante cortes de luz. Generadores Inverter con hasta 40% de ahorro con gas GLP. Factura, 1 año de garantía y stock en Cuenca." />
+    content="Energía continua y confiable ante cortes de luz. Generadores Inverter con hasta 40% de ahorro con gas GLP. Soporte técnico y stock en Cuenca." />
   <meta property="og:image" content="screen_screenshot.png" />
   <meta property="og:locale" content="es_EC" />
 
@@ -31,7 +31,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="LIFAN Power Ecuador | Generadores Inverter & Dual Fuel" />
   <meta name="twitter:description"
-    content="Generadores Inverter y Dual Fuel con despacho inmediato a todo Ecuador. Garantía y repuestos directos." />
+    content="Generadores Inverter y Dual Fuel con despacho inmediato a todo Ecuador. Soporte técnico y repuestos directos." />
   <meta name="twitter:image" content="screen_screenshot.png" />
 
   <!-- Fuentes Locales Oficiales: Khand (Títulos) & Switzer (Cuerpo y UI) -->
@@ -727,7 +727,7 @@
     <nav id="mobile-menu" class="px-4 border-t border-slate-200/60 text-slate-700 font-medium text-sm"
       aria-label="Navegación principal">
       <div class="space-y-1">
-        <div class="grid grid-cols-1 md:grid-cols-6 gap-1 pt-2 pb-2">
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-1 pt-2 pb-2">
           <a class="flex items-center gap-2 px-4 py-2.5 rounded-xl hover:bg-slate-900/5 hover:text-secondary transition-all duration-200"
             href="#modelos" onclick="navigateToSection(event, '#modelos')">
             <span class="material-symbols-outlined text-[18px] text-slate-400">electric_bolt</span>
@@ -753,23 +753,12 @@
             <span class="material-symbols-outlined text-[18px] text-slate-400">help_outline</span>
             <span>Preguntas Frecuentes</span>
           </a>
-          <a class="flex items-center gap-2 px-4 py-2.5 rounded-xl hover:bg-slate-900/5 hover:text-secondary transition-all duration-200"
-            href="politicas.html">
-            <span class="material-symbols-outlined text-[18px] text-slate-400">policy</span>
-            <span>Políticas &amp; Legal</span>
-          </a>
         </div>
 
-        <!-- Botón Cotizar por WhatsApp & Asesor Móvil dentro del Menú -->
-        <div class="pt-1 pb-3.5 space-y-2 border-t border-slate-200/50">
-          <a class="w-full flex items-center justify-center gap-2 px-4 py-3 bg-secondary hover:bg-secondary-dark text-white font-bold text-xs rounded-xl shadow-md transition-all text-center"
-            href="https://wa.me/19782035623?text=Hola%2C%20deseo%20cotizar%20un%20generador%20LIFAN%20en%20Ecuador"
-            rel="noopener noreferrer" target="_blank" onclick="toggleMobileMenu()">
-            <span>Cotizar por WhatsApp</span>
-          </a>
-
+        <!-- Asesor Móvil dentro del Menú (solo pantallas pequeñas) -->
+        <div class="pt-1 pb-3 sm:hidden border-t border-slate-200/50">
           <button type="button" onclick="toggleMobileMenu(); openAdvisorModal();"
-            class="w-full sm:hidden flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-xs transition-all cursor-pointer">
+            class="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-xs transition-all cursor-pointer">
             <span>Asesor Inteligente</span>
           </button>
         </div>
@@ -918,10 +907,10 @@
 
               <label
                 class="flex items-center gap-3.5 p-4 rounded-xl bg-slate-700/60 hover:bg-slate-700 border border-slate-600/80 hover:border-sky-400 cursor-pointer transition-all shadow-sm">
-                <input type="checkbox" data-watts="800"
+                <input type="checkbox" data-watts="200"
                   class="w-5 h-5 rounded text-secondary focus:ring-secondary calc-checkbox cursor-pointer flex-shrink-0" />
                 <span class="text-sm sm:text-base text-white font-medium leading-snug">Refrigerador Inverter <strong
-                    class="text-sky-300 font-bold block sm:inline">(800W)</strong></span>
+                    class="text-sky-300 font-bold block sm:inline">(200W)</strong></span>
               </label>
 
               <label
@@ -935,11 +924,11 @@
 
               <label
                 class="flex items-center gap-3.5 p-4 rounded-xl bg-slate-700/60 hover:bg-slate-700 border border-slate-600/80 hover:border-sky-400 cursor-pointer transition-all shadow-sm">
-                <input type="checkbox" data-watts="400"
+                <input type="checkbox" data-watts="200"
                   class="w-5 h-5 rounded text-secondary focus:ring-secondary calc-checkbox cursor-pointer flex-shrink-0"
                   checked />
                 <span class="text-sm sm:text-base text-white font-medium leading-snug">2 Computadoras <strong
-                    class="text-sky-300 font-bold block sm:inline">(400W)</strong></span>
+                    class="text-sky-300 font-bold block sm:inline">(200W)</strong></span>
               </label>
 
               <label
@@ -992,21 +981,23 @@
                 margen):</span>
               <div class="flex items-baseline gap-3 mt-1.5">
                 <output id="calc-total-watts"
-                  class="text-4xl sm:text-5xl lg:text-6xl font-black font-headline text-sky-400">688 W</output>
+                  class="text-4xl sm:text-5xl lg:text-6xl font-black font-headline text-sky-400">438 W</output>
                 <span class="text-sm sm:text-base text-slate-300">(Recomendación automática)</span>
               </div>
             </div>
 
             <div id="calc-recommendation-box"
-              class="bg-slate-900/90 border border-sky-400/30 px-6 py-4 rounded-2xl flex items-center gap-5 shadow-xl">
-              <div>
-                <span class="text-xs sm:text-sm text-sky-400 font-bold uppercase tracking-wider block mb-0.5">Modelo
-                  sugerido</span>
-                <strong id="calc-model-name" class="text-xl sm:text-2xl text-white font-bold font-headline">LIFAN 3800i
-                  Inverter (3.5 kW)</strong>
+              class="w-full md:w-auto bg-slate-900/90 border border-sky-400/30 p-5 sm:px-6 sm:py-4 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between sm:justify-start gap-4 sm:gap-6 shadow-xl">
+              <div class="text-center sm:text-left">
+                <span class="text-xs sm:text-sm text-sky-400 font-bold uppercase tracking-wider block mb-1">
+                  Modelo sugerido
+                </span>
+                <strong id="calc-model-name" class="text-lg sm:text-xl lg:text-2xl text-white font-bold font-headline block leading-tight">
+                  LIFAN 3800i Inverter (3.5 kW)
+                </strong>
               </div>
               <a id="calc-cta-btn" href="#modelos"
-                class="px-5 py-3 bg-secondary hover:bg-secondary-dark text-white text-sm sm:text-base font-bold rounded-xl transition-all shadow-md hover:scale-[1.03] whitespace-nowrap cursor-pointer">
+                class="w-full sm:w-auto inline-flex items-center justify-center px-5 py-3 bg-secondary hover:bg-secondary-dark text-white text-sm sm:text-base font-bold rounded-xl transition-all shadow-md hover:scale-[1.02] whitespace-nowrap cursor-pointer text-center shrink-0">
                 Ver Ficha ($690)
               </a>
             </div>
@@ -1022,15 +1013,16 @@
       aria-labelledby="modelos-heading">
       <div class="max-w-7xl mx-auto px-6 sm:px-8">
 
-        <div class="text-center max-w-2xl mx-auto mb-14">
-          <span class="text-secondary text-xs sm:text-sm uppercase font-bold tracking-widest block mb-2">Gama Oficial
-            Ecuador</span>
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <span class="text-secondary text-xs sm:text-sm uppercase font-bold tracking-widest block mb-2">
+            Gama Oficial Ecuador
+          </span>
           <h2 id="modelos-heading"
-            class="font-headline text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary tracking-tight">
-            Generadores con Factura Legal y Garantía de 1 Año
+            class="font-headline text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary tracking-tight [text-wrap:balance]">
+            Generadores Eléctricos Inverter y Dual Fuel
           </h2>
-          <p class="text-slate-600 mt-3 text-sm sm:text-base leading-relaxed">
-            Equipos probados en condiciones reales con soporte directo y entrega en 24 a 48 horas a todo el Ecuador.
+          <p class="text-slate-600 mt-3 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto [text-wrap:pretty]">
+            Equipos probados en condiciones reales con soporte técnico directo y entrega inmediata de 24 a 48 horas en todo el Ecuador.
           </p>
         </div>
 
@@ -1102,12 +1094,12 @@
             class="bg-white rounded-2xl border-2 border-secondary shadow-md hover:shadow-xl transition-all p-5 flex flex-col justify-between relative"
             aria-labelledby="mod-4800ie-title">
             <span
-              class="absolute -top-3 left-1/2 -translate-x-1/2 bg-secondary text-white text-[11px] font-bold px-3 py-0.5 rounded-full uppercase tracking-wider badge-pop">
+              class="absolute -top-3 left-1/2 -translate-x-1/2 bg-secondary text-white text-[10px] sm:text-[11px] font-bold px-3.5 py-1 rounded-full uppercase tracking-wider whitespace-nowrap shadow-sm badge-pop z-10">
               Más Recomendado
             </span>
             <div>
               <div class="flex justify-between items-center mb-3.5 pt-1">
-                <span class="text-xs font-semibold px-2.5 py-1 bg-amber-50 text-secondary-dark rounded-md">Hogar &
+                <span class="text-xs font-semibold px-2.5 py-1 bg-amber-50 text-secondary-dark rounded-md">Hogar &amp;
                   Negocios</span>
                 <span class="text-xs font-bold text-secondary">Arranque Llave</span>
               </div>
@@ -1292,14 +1284,15 @@
     <section class="py-20 lg:py-24 bg-white scroll-mt-20" id="ventajas" aria-labelledby="ventajas-heading">
       <div class="max-w-6xl mx-auto px-6 sm:px-8">
 
-        <div class="text-center max-w-2xl mx-auto mb-16">
-          <span class="text-secondary text-xs uppercase font-bold tracking-widest block mb-2">Ingeniería
-            Certificada</span>
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-secondary text-xs uppercase font-bold tracking-widest block mb-2">
+            Ingeniería Certificada
+          </span>
           <h2 id="ventajas-heading"
-            class="font-headline text-3xl sm:text-4xl font-extrabold text-primary tracking-tight">
+            class="font-headline text-3xl sm:text-4xl font-extrabold text-primary tracking-tight [text-wrap:balance]">
             ¿Por qué la Tecnología LIFAN Supera a los Tradicionales?
           </h2>
-          <p class="text-slate-600 mt-3 text-base">
+          <p class="text-slate-600 mt-3 text-base [text-wrap:pretty]">
             Equipos concebidos para cuidar tu inversión tecnológica y garantizar un ahorro real continuo.
           </p>
         </div>
@@ -1485,7 +1478,7 @@
       <div class="max-w-3xl mx-auto px-6 sm:px-8">
         <span
           class="inline-block px-3 py-1 bg-white/10 text-white text-xs font-semibold rounded-full uppercase tracking-wider mb-6 border border-white/20">
-          Stock Real con Factura Legal
+          Disponibilidad Inmediata en Cuenca
         </span>
         <h2 id="cta-heading" class="font-headline text-3xl sm:text-4xl font-extrabold tracking-tight mb-4">
           Asegura la continuidad de tu familia o negocio hoy mismo.
@@ -1553,8 +1546,8 @@
   <footer class="w-full bg-[#07111E] text-slate-400 py-14 border-t border-white/10 text-sm" role="contentinfo">
     <div class="max-w-7xl mx-auto px-6 sm:px-8">
 
-      <!-- Grid Principal 4 Columnas -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-10 border-b border-slate-800">
+      <!-- Grid Principal 3 Columnas -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 pb-10 border-b border-slate-800">
 
         <!-- Columna 1: Empresa & Marca -->
         <div class="space-y-4">
@@ -1566,7 +1559,6 @@
           </a>
           <p class="text-xs text-slate-400 leading-relaxed">
             <strong class="text-slate-200 block font-semibold mb-0.5">BUILDSMART SOLUTIONS S.A.S.</strong>
-            RUC: 0195152993001<br />
             Distribución Oficial Directa en Cuenca y envíos a las 24 provincias del Ecuador.
           </p>
         </div>
@@ -1582,23 +1574,7 @@
           </ul>
         </div>
 
-        <!-- Columna 3: Legal & Políticas -->
-        <div>
-          <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4 font-headline">Legal &amp; Políticas
-          </h4>
-          <ul class="space-y-2.5 text-xs">
-            <li><a class="hover:text-white transition-colors" href="politicas.html#terminos">Términos y Condiciones</a>
-            </li>
-            <li><a class="hover:text-white transition-colors" href="politicas.html#envios">Envíos y Entregas</a></li>
-            <li><a class="hover:text-white transition-colors" href="politicas.html#devoluciones">Cambios y
-                Devoluciones</a></li>
-            <li><a class="hover:text-white transition-colors" href="politicas.html#privacidad">Privacidad (LOPDP)</a>
-            </li>
-            <li><a class="hover:text-white transition-colors" href="politicas.html#cookies">Política de Cookies</a></li>
-          </ul>
-        </div>
-
-        <!-- Columna 4: Atención & Soporte -->
+        <!-- Columna 3: Atención & Soporte -->
         <div>
           <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4 font-headline">Soporte Técnico</h4>
           <p class="text-xs text-slate-400 mb-3.5 leading-relaxed">
@@ -1612,24 +1588,31 @@
 
       </div>
 
-      <!-- Fila Inferior: Copyright -->
+      <!-- Fila Inferior: Copyright & Enlaces Legales -->
       <div
-        class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 text-center sm:text-left">
-        <p>© 2026 LIFAN Power Ecuador · BUILDSMART SOLUTIONS S.A.S. (RUC: 0195152993001). Todos los derechos reservados.
-        </p>
-        <p class="text-[11px] text-slate-600">Cuenca - Ecuador · Factura Legal &amp; Garantía Oficial</p>
+        class="pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500 text-center md:text-left">
+        <p>© 2026 LIFAN Power Ecuador · BUILDSMART SOLUTIONS S.A.S. Todos los derechos reservados.</p>
+        <div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs">
+          <a href="politicas.html#terminos" class="text-slate-400 hover:text-white transition-colors">Términos y Condiciones</a>
+          <span class="text-slate-700" aria-hidden="true">•</span>
+          <a href="politicas.html#privacidad" class="text-slate-400 hover:text-white transition-colors">Políticas de Privacidad</a>
+          <span class="text-slate-700" aria-hidden="true">•</span>
+          <span class="text-[11px] text-slate-600">Cuenca - Ecuador</span>
+        </div>
       </div>
 
     </div>
   </footer>
 
   <!-- Botón Flotante Accesible de WhatsApp -->
-  <aside class="fixed bottom-6 right-6 z-40" aria-label="Canal de asistencia rápida">
-    <a aria-label="Abrir chat de WhatsApp con asesor en línea"
-      class="flex items-center gap-2.5 bg-whatsapp hover:bg-[#20ba5a] text-white px-4 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 focus-visible:ring-4 focus-visible:ring-emerald-400"
+  <aside class="fixed bottom-20 sm:bottom-6 right-4 sm:right-6 z-40" style="bottom: max(5rem, calc(4.5rem + env(safe-area-inset-bottom, 0px)));" aria-label="Canal de asistencia rápida">
+    <a aria-label="Contactar a LIFAN Ecuador por WhatsApp"
+      class="flex items-center justify-center w-14 h-14 bg-whatsapp hover:bg-[#20ba5a] text-white rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-110 focus-visible:ring-4 focus-visible:ring-emerald-400"
       href="https://wa.me/19782035623?text=Hola%20LIFAN%20Ecuador%2C%20requiero%20un%20generador%20con%20urgencia"
       rel="noopener noreferrer" target="_blank">
-      <span class="text-sm font-bold px-1">Asesor en Línea</span>
+      <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12.031 2c-5.502 0-9.972 4.47-9.972 9.974 0 1.76.459 3.477 1.332 4.994L2 22.062l5.228-1.371a9.92 9.92 0 0 0 4.803 1.233h.004c5.501 0 9.971-4.471 9.971-9.974 0-2.664-1.038-5.168-2.925-7.054C17.2 2.993 14.695 2 12.031 2zm0 18.271h-.003a8.25 8.25 0 0 1-4.204-1.149l-.302-.179-3.125.82.834-3.047-.197-.313a8.225 8.225 0 0 1-1.261-4.429c0-4.561 3.711-8.272 8.275-8.272 2.21 0 4.288.862 5.852 2.427a8.217 8.217 0 0 1 2.422 5.853c0 4.562-3.711 8.269-8.276 8.269zm4.536-6.196c-.249-.124-1.472-.727-1.7-.81-.229-.083-.395-.124-.561.124-.166.249-.643.81-.788.976-.145.166-.291.187-.539.062s-1.05-.387-2.001-1.235c-.74-.66-1.24-1.476-1.385-1.725-.145-.249-.015-.383.109-.507.112-.111.249-.29.373-.435.125-.146.166-.249.249-.415.083-.166.042-.311-.02-.435-.063-.125-.561-1.35-.769-1.848-.203-.487-.41-.421-.561-.429-.145-.008-.311-.01-.478-.01-.166 0-.435.062-.663.311-.228.249-.871.851-.871 2.074 0 1.224.892 2.406 1.016 2.572.125.166 1.754 2.679 4.25 3.757.594.256 1.058.41 1.42.525.597.19 1.141.163 1.57.099.478-.072 1.472-.602 1.68-1.183.207-.581.207-1.079.145-1.183-.062-.104-.228-.166-.477-.29z"/>
+      </svg>
     </a>
   </aside>
 
