@@ -183,17 +183,24 @@
       font-style: normal;
     }
 
-    /* Regla global: Khand para todos los títulos y balance visual sin palabras sueltas */
+    /* Regla global: Khand para todos los títulos, precios y balance visual sin palabras sueltas */
     h1,
     h2,
     h3,
     h4,
     h5,
-    h6,
-    .font-headline {
+    h6 {
       font-family: 'Khand', system-ui, -apple-system, sans-serif !important;
       letter-spacing: 0.015em;
       text-wrap: balance;
+    }
+
+    .font-headline,
+    .font-khand,
+    .promo-price,
+    .price-khand {
+      font-family: 'Khand', system-ui, -apple-system, sans-serif !important;
+      letter-spacing: 0.015em;
     }
 
     /* Regla global: Switzer para todo lo demás */
@@ -592,7 +599,7 @@
               "sku": "LF-3800i",
               "offers": {
                 "@type": "Offer",
-                "price": "690.00",
+                "price": "469.99",
                 "priceCurrency": "USD",
                 "availability": "https://schema.org/InStock",
                 "itemCondition": "https://schema.org/NewCondition",
@@ -615,7 +622,7 @@
               "sku": "LF-4800iE",
               "offers": {
                 "@type": "Offer",
-                "price": "920.00",
+                "price": "619.99",
                 "priceCurrency": "USD",
                 "availability": "https://schema.org/InStock",
                 "itemCondition": "https://schema.org/NewCondition",
@@ -634,7 +641,7 @@
               "sku": "LF-6500iOE",
               "offers": {
                 "@type": "Offer",
-                "price": "860.00",
+                "price": "579.99",
                 "priceCurrency": "USD",
                 "availability": "https://schema.org/InStock",
                 "itemCondition": "https://schema.org/NewCondition",
@@ -653,7 +660,7 @@
               "sku": "LF-12000E",
               "offers": {
                 "@type": "Offer",
-                "price": "1955.00",
+                "price": "1659.99",
                 "priceCurrency": "USD",
                 "availability": "https://schema.org/InStock",
                 "itemCondition": "https://schema.org/NewCondition",
@@ -1009,7 +1016,7 @@
               </div>
               <a id="calc-cta-btn" href="#card-3800i" data-target-card="card-3800i"
                 class="w-full sm:w-auto inline-flex items-center justify-center px-5 py-3 bg-secondary hover:bg-secondary-dark text-white text-sm sm:text-base font-bold rounded-xl transition-all shadow-md hover:scale-[1.02] whitespace-nowrap cursor-pointer text-center shrink-0">
-                Ver Ficha ($690)
+                Ver Ficha ($469.99)
               </a>
             </div>
           </div>
@@ -1085,16 +1092,36 @@
               </dl>
             </div>
 
-            <div class="pt-2 border-t border-slate-100">
-              <div class="mb-3.5">
-                <span class="text-[11px] text-slate-500 font-medium block">Precio Facturado</span>
-                <div class="flex items-baseline gap-1">
-                  <span class="font-headline text-3xl font-black text-secondary">$690</span>
-                  <span class="text-xs font-bold text-secondary">inc. IVA</span>
+            <div class="pt-3 border-t border-slate-100">
+              <!-- Precio PVP tachado + % Descuento Contado -->
+              <div class="flex items-center justify-between gap-1 mb-1">
+                <div class="flex items-center gap-1.5">
+                  <span class="font-khand text-sm text-slate-400 line-through font-bold tracking-tight">$690.00</span>
+                  <span class="text-[10px] font-extrabold uppercase px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800">32% OFF</span>
+                </div>
+                <span class="text-[10px] text-emerald-700 font-bold uppercase tracking-wider">Promo Contado</span>
+              </div>
+
+              <!-- Precio Promo Contado Destacado -->
+              <div class="flex items-baseline gap-1 mb-2.5">
+                <span class="font-headline font-khand text-3xl sm:text-4xl font-black text-secondary promo-price leading-none">$469.99</span>
+                <span class="text-xs font-bold text-slate-500">inc. IVA</span>
+              </div>
+
+              <!-- Tarjeta de Crédito 3, 6 y 9 meses sin intereses -->
+              <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200/90 mb-3 text-left">
+                <div class="flex items-center gap-1.5 text-xs font-bold text-slate-800 mb-1.5">
+                  <span class="material-symbols-outlined text-[15px] text-secondary" aria-hidden="true">credit_card</span>
+                  <span>Tarjeta: 3, 6 y 9 meses sin intereses</span>
+                </div>
+                <div class="flex items-center justify-between pt-2 border-t border-slate-200/70">
+                  <span class="inline-flex items-baseline gap-1 text-slate-500 font-medium text-xs">Total: <strong class="font-khand text-slate-900 font-bold text-lg sm:text-xl tracking-tight leading-none">$552.93</strong></span>
+                  <span class="inline-flex items-baseline gap-0.5 text-slate-500 font-medium text-xs">Cuota: <strong class="font-khand text-secondary font-bold text-lg sm:text-xl tracking-tight leading-none">$61.44</strong><span class="text-[11px] font-semibold text-slate-500">/mes</span></span>
                 </div>
               </div>
+
               <a class="w-full inline-flex items-center justify-center gap-1.5 py-3 bg-secondary hover:bg-secondary-dark text-white text-xs font-bold rounded-xl transition-all shadow-md shadow-blue-600/30 hover:scale-[1.02]"
-                href="https://wa.me/19782035623?text=Deseo%20el%20LIFAN%203800i%20de%20%24690%20con%20IVA"
+                href="https://wa.me/19782035623?text=Deseo%20el%20LIFAN%203800i%20con%20precio%20promo%20de%20%24469.99%20con%20IVA"
                 rel="noopener noreferrer" target="_blank" aria-label="Pedir modelo LIFAN 3800i por WhatsApp">
                 <span>Pedir Recomendado</span>
               </a>
@@ -1145,16 +1172,36 @@
               </dl>
             </div>
 
-            <div class="pt-2 border-t border-slate-100">
-              <div class="mb-3.5">
-                <span class="text-[11px] text-slate-500 font-medium block">Precio Facturado</span>
-                <div class="flex items-baseline gap-1">
-                  <span class="font-headline text-3xl font-black text-primary">$920</span>
-                  <span class="text-xs font-bold text-secondary">inc. IVA</span>
+            <div class="pt-3 border-t border-slate-100">
+              <!-- Precio PVP tachado + % Descuento Contado -->
+              <div class="flex items-center justify-between gap-1 mb-1">
+                <div class="flex items-center gap-1.5">
+                  <span class="font-khand text-sm text-slate-400 line-through font-bold tracking-tight">$920.00</span>
+                  <span class="text-[10px] font-extrabold uppercase px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800">33% OFF</span>
+                </div>
+                <span class="text-[10px] text-emerald-700 font-bold uppercase tracking-wider">Promo Contado</span>
+              </div>
+
+              <!-- Precio Promo Contado Destacado -->
+              <div class="flex items-baseline gap-1 mb-2.5">
+                <span class="font-headline font-khand text-3xl sm:text-4xl font-black text-primary promo-price leading-none">$619.99</span>
+                <span class="text-xs font-bold text-slate-500">inc. IVA</span>
+              </div>
+
+              <!-- Tarjeta de Crédito 3, 6 y 9 meses sin intereses -->
+              <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200/90 mb-3 text-left">
+                <div class="flex items-center gap-1.5 text-xs font-bold text-slate-800 mb-1.5">
+                  <span class="material-symbols-outlined text-[15px] text-secondary" aria-hidden="true">credit_card</span>
+                  <span>Tarjeta: 3, 6 y 9 meses sin intereses</span>
+                </div>
+                <div class="flex items-center justify-between pt-2 border-t border-slate-200/70">
+                  <span class="inline-flex items-baseline gap-1 text-slate-500 font-medium text-xs">Total: <strong class="font-khand text-slate-900 font-bold text-lg sm:text-xl tracking-tight leading-none">$729.40</strong></span>
+                  <span class="inline-flex items-baseline gap-0.5 text-slate-500 font-medium text-xs">Cuota: <strong class="font-khand text-secondary font-bold text-lg sm:text-xl tracking-tight leading-none">$81.04</strong><span class="text-[11px] font-semibold text-slate-500">/mes</span></span>
                 </div>
               </div>
+
               <a class="w-full inline-flex items-center justify-center gap-1.5 py-3 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-xl transition-all shadow-sm hover:scale-[1.02]"
-                href="https://wa.me/19782035623?text=Deseo%20el%20LIFAN%204800iE%20de%20%24920%20con%20IVA"
+                href="https://wa.me/19782035623?text=Deseo%20el%20LIFAN%204800iE%20con%20precio%20promo%20de%20%24619.99%20con%20IVA"
                 rel="noopener noreferrer" target="_blank" aria-label="Cotizar modelo LIFAN 4800iE por WhatsApp">
                 <span>Cotizar este Modelo</span>
               </a>
@@ -1205,16 +1252,36 @@
               </dl>
             </div>
 
-            <div class="pt-2 border-t border-slate-100">
-              <div class="mb-3.5">
-                <span class="text-[11px] text-slate-500 font-medium block">Precio Facturado</span>
-                <div class="flex items-baseline gap-1">
-                  <span class="font-headline text-3xl font-black text-primary">$860</span>
-                  <span class="text-xs font-bold text-secondary">inc. IVA</span>
+            <div class="pt-3 border-t border-slate-100">
+              <!-- Precio PVP tachado + % Descuento Contado -->
+              <div class="flex items-center justify-between gap-1 mb-1">
+                <div class="flex items-center gap-1.5">
+                  <span class="font-khand text-sm text-slate-400 line-through font-bold tracking-tight">$860.00</span>
+                  <span class="text-[10px] font-extrabold uppercase px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800">33% OFF</span>
+                </div>
+                <span class="text-[10px] text-emerald-700 font-bold uppercase tracking-wider">Promo Contado</span>
+              </div>
+
+              <!-- Precio Promo Contado Destacado -->
+              <div class="flex items-baseline gap-1 mb-2.5">
+                <span class="font-headline font-khand text-3xl sm:text-4xl font-black text-primary promo-price leading-none">$579.99</span>
+                <span class="text-xs font-bold text-slate-500">inc. IVA</span>
+              </div>
+
+              <!-- Tarjeta de Crédito 3, 6 y 9 meses sin intereses -->
+              <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200/90 mb-3 text-left">
+                <div class="flex items-center gap-1.5 text-xs font-bold text-slate-800 mb-1.5">
+                  <span class="material-symbols-outlined text-[15px] text-secondary" aria-hidden="true">credit_card</span>
+                  <span>Tarjeta: 3, 6 y 9 meses sin intereses</span>
+                </div>
+                <div class="flex items-center justify-between pt-2 border-t border-slate-200/70">
+                  <span class="inline-flex items-baseline gap-1 text-slate-500 font-medium text-xs">Total: <strong class="font-khand text-slate-900 font-bold text-lg sm:text-xl tracking-tight leading-none">$682.34</strong></span>
+                  <span class="inline-flex items-baseline gap-0.5 text-slate-500 font-medium text-xs">Cuota: <strong class="font-khand text-secondary font-bold text-lg sm:text-xl tracking-tight leading-none">$75.82</strong><span class="text-[11px] font-semibold text-slate-500">/mes</span></span>
                 </div>
               </div>
+
               <a class="w-full inline-flex items-center justify-center gap-1.5 py-3 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-xl transition-all shadow-sm hover:scale-[1.02]"
-                href="https://wa.me/19782035623?text=Deseo%20cotizar%20el%20LIFAN%206500iOE%20de%20%24860%20con%20IVA"
+                href="https://wa.me/19782035623?text=Deseo%20cotizar%20el%20LIFAN%206500iOE%20con%20precio%20promo%20de%20%24579.99%20con%20IVA"
                 rel="noopener noreferrer" target="_blank" aria-label="Cotizar modelo LIFAN 6500iOE por WhatsApp">
                 <span>Cotizar este Modelo</span>
               </a>
@@ -1265,16 +1332,36 @@
               </dl>
             </div>
 
-            <div class="pt-2 border-t border-slate-100">
-              <div class="mb-3.5">
-                <span class="text-[11px] text-slate-500 font-medium block">Precio Facturado</span>
-                <div class="flex items-baseline gap-1">
-                  <span class="font-headline text-3xl font-black text-primary">$1,955</span>
-                  <span class="text-xs font-bold text-secondary">inc. IVA</span>
+            <div class="pt-3 border-t border-slate-100">
+              <!-- Precio PVP tachado + % Descuento Contado -->
+              <div class="flex items-center justify-between gap-1 mb-1">
+                <div class="flex items-center gap-1.5">
+                  <span class="font-khand text-sm text-slate-400 line-through font-bold tracking-tight">$1,955.00</span>
+                  <span class="text-[10px] font-extrabold uppercase px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800">15% OFF</span>
+                </div>
+                <span class="text-[10px] text-emerald-700 font-bold uppercase tracking-wider">Promo Contado</span>
+              </div>
+
+              <!-- Precio Promo Contado Destacado -->
+              <div class="flex items-baseline gap-1 mb-2.5">
+                <span class="font-headline font-khand text-3xl sm:text-4xl font-black text-primary promo-price leading-none">$1,659.99</span>
+                <span class="text-xs font-bold text-slate-500">inc. IVA</span>
+              </div>
+
+              <!-- Tarjeta de Crédito 3, 6 y 9 meses sin intereses -->
+              <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200/90 mb-3 text-left">
+                <div class="flex items-center gap-1.5 text-xs font-bold text-slate-800 mb-1.5">
+                  <span class="material-symbols-outlined text-[15px] text-secondary" aria-hidden="true">credit_card</span>
+                  <span>Tarjeta: 3, 6 y 9 meses sin intereses</span>
+                </div>
+                <div class="flex items-center justify-between pt-2 border-t border-slate-200/70">
+                  <span class="inline-flex items-baseline gap-1 text-slate-500 font-medium text-xs">Total: <strong class="font-khand text-slate-900 font-bold text-lg sm:text-xl tracking-tight leading-none">$1,952.93</strong></span>
+                  <span class="inline-flex items-baseline gap-0.5 text-slate-500 font-medium text-xs">Cuota: <strong class="font-khand text-secondary font-bold text-lg sm:text-xl tracking-tight leading-none">$216.99</strong><span class="text-[11px] font-semibold text-slate-500">/mes</span></span>
                 </div>
               </div>
+
               <a class="w-full inline-flex items-center justify-center gap-1.5 py-3 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-xl transition-all shadow-sm hover:scale-[1.02]"
-                href="https://wa.me/19782035623?text=Deseo%20cotizar%20el%20generador%20industrial%20LIFAN%2012000E%20de%20%241955"
+                href="https://wa.me/19782035623?text=Deseo%20cotizar%20el%20generador%20industrial%20LIFAN%2012000E%20con%20precio%20promo%20de%20%241659.99%20con%20IVA"
                 rel="noopener noreferrer" target="_blank"
                 aria-label="Cotizar modelo industrial LIFAN 12000E por WhatsApp">
                 <span>Cotizar este Modelo</span>
@@ -1781,7 +1868,7 @@
       allCards.forEach(card => {
         const existingBadge = card.querySelector('.recommendation-badge');
         const cardBtn = card.querySelector('a[href^="https://wa.me"]');
-        const priceEl = card.querySelector('.font-headline.text-3xl');
+        const priceEl = card.querySelector('.promo-price') || card.querySelector('.font-headline.text-3xl');
         const isTarget = card.id === targetId;
 
         if (isTarget) {
@@ -1840,20 +1927,20 @@
       totalWattsEl.textContent = `${recommendedCapacity} W`;
 
       let model = 'LIFAN 3800i Inverter (3.5 kW)';
-      let price = '$690';
+      let price = '$469.99';
       let targetId = 'card-3800i';
 
       if (recommendedCapacity > 5500) {
         model = 'LIFAN 12000E Industrial (12.0 kW)';
-        price = '$1,955';
+        price = '$1,659.99';
         targetId = 'card-12000e';
       } else if (recommendedCapacity > 4200) {
         model = 'LIFAN 6500iOE Open (5.5 kW)';
-        price = '$860';
+        price = '$579.99';
         targetId = 'card-6500ioe';
       } else if (recommendedCapacity > 2800) {
         model = 'LIFAN 4800iE Inverter (4.2 kW)';
-        price = '$920';
+        price = '$619.99';
         targetId = 'card-4800ie';
       }
 
