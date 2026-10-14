@@ -15,8 +15,7 @@
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#0B192C" />
   <link rel="canonical" href="https://lifanpower.ec/" />
-  <link rel="icon"
-    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>" />
+  <link rel="icon" type="image/svg+xml" href="assets/logo/build logo vertical negro.svg" />
 
   <!-- Open Graph / Facebook / WhatsApp -->
   <meta property="og:type" content="website" />
@@ -184,14 +183,22 @@
       font-style: normal;
     }
 
-    /* Regla global: Khand para todos los títulos */
+    /* Regla global: Khand para todos los títulos, precios y balance visual sin palabras sueltas */
     h1,
     h2,
     h3,
     h4,
     h5,
-    h6,
-    .font-headline {
+    h6 {
+      font-family: 'Khand', system-ui, -apple-system, sans-serif !important;
+      letter-spacing: 0.015em;
+      text-wrap: balance;
+    }
+
+    .font-headline,
+    .font-khand,
+    .promo-price,
+    .price-khand {
       font-family: 'Khand', system-ui, -apple-system, sans-serif !important;
       letter-spacing: 0.015em;
     }
@@ -287,9 +294,25 @@
       box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     }
 
-    /* Product card badge glow */
+    /* Product card badge glow & dynamic recommendation pulse */
     .badge-pop {
       box-shadow: 0 2px 8px rgba(26, 60, 255, 0.25);
+    }
+
+    @keyframes cardPulse {
+      0%, 100% {
+        box-shadow: 0 0 0 0 rgba(26, 60, 255, 0.6), 0 10px 25px -5px rgba(26, 60, 255, 0.25);
+        transform: scale(1);
+      }
+      50% {
+        box-shadow: 0 0 0 8px rgba(26, 60, 255, 0.35), 0 20px 35px -5px rgba(26, 60, 255, 0.35);
+        transform: scale(1.02);
+      }
+    }
+
+    .card-highlight-pulse {
+      animation: cardPulse 0.8s ease-in-out 3;
+      z-index: 20;
     }
 
     /* Liquid Glass Minimalist Header System */
@@ -538,6 +561,7 @@
         "@id": "https://lifanpower.ec/#organization",
         "name": "LIFAN Power Ecuador",
         "legalName": "BUILDSMART SOLUTIONS S.A.S.",
+        "sameAs": "https://buildsmart.com.ec",
         "taxID": "0195152993001",
         "url": "https://lifanpower.ec/",
         "logo": "https://lifanpower.ec/logo.svg",
@@ -575,7 +599,7 @@
               "sku": "LF-3800i",
               "offers": {
                 "@type": "Offer",
-                "price": "690.00",
+                "price": "469.99",
                 "priceCurrency": "USD",
                 "availability": "https://schema.org/InStock",
                 "itemCondition": "https://schema.org/NewCondition",
@@ -598,7 +622,7 @@
               "sku": "LF-4800iE",
               "offers": {
                 "@type": "Offer",
-                "price": "920.00",
+                "price": "619.99",
                 "priceCurrency": "USD",
                 "availability": "https://schema.org/InStock",
                 "itemCondition": "https://schema.org/NewCondition",
@@ -617,7 +641,7 @@
               "sku": "LF-6500iOE",
               "offers": {
                 "@type": "Offer",
-                "price": "860.00",
+                "price": "579.99",
                 "priceCurrency": "USD",
                 "availability": "https://schema.org/InStock",
                 "itemCondition": "https://schema.org/NewCondition",
@@ -636,7 +660,7 @@
               "sku": "LF-12000E",
               "offers": {
                 "@type": "Offer",
-                "price": "1955.00",
+                "price": "1659.99",
                 "priceCurrency": "USD",
                 "availability": "https://schema.org/InStock",
                 "itemCondition": "https://schema.org/NewCondition",
@@ -692,17 +716,11 @@
     class="fixed top-3 left-1/2 -translate-x-1/2 w-[calc(100%-1.5rem)] max-w-7xl z-50 rounded-2xl liquid-glass-header transition-all duration-300"
     role="banner">
     <div class="h-16 px-4 sm:px-6 flex items-center justify-between">
-      <!-- Brand Logo Minimalista Oficial -->
-      <a class="flex items-center gap-2 group focus-visible:ring-2 focus-visible:ring-secondary rounded-xl p-1 transition-all"
-        href="#" aria-label="LIFAN Power Ecuador - Ir al inicio">
-        <img src="assets/lifan negro.svg" alt="LIFAN Power Ecuador"
-          class="h-4 sm:h-5 w-auto object-contain group-hover:scale-[1.03] transition-transform" width="130"
-          height="18" />
-        <div class="flex items-center gap-1 border-l border-slate-300/80 pl-2 leading-none">
-          <span
-            class="font-headline font-black text-[10px] sm:text-[11px] tracking-wider text-secondary uppercase">POWER</span>
-          <span class="text-[8px] uppercase font-bold tracking-widest text-slate-400">EC</span>
-        </div>
+      <!-- Brand Logo Minimalista Oficial Buildsmart -->
+      <a class="flex items-center group focus-visible:ring-2 focus-visible:ring-secondary rounded-xl p-1 transition-all"
+        href="#" aria-label="Buildsmart - Ir al inicio">
+        <img src="assets/logo/build logo horizontal negro.svg" alt="Buildsmart"
+          class="h-8 sm:h-9 md:h-10 w-auto object-contain group-hover:scale-[1.02] transition-transform" />
       </a>
 
       <!-- Botones de Acción Directos + Menú Hamburguesa Universal -->
@@ -810,8 +828,8 @@
 
             <!-- Título Unificado con una sola tipografía -->
             <h1 id="hero-heading"
-              class="font-headline text-3xl sm:text-5xl lg:text-[48px] font-bold text-white tracking-tight leading-[1.16] drop-shadow-md">
-              Energía continua y segura ante racionamientos.
+              class="font-headline text-3xl sm:text-5xl lg:text-[48px] font-bold text-white tracking-tight leading-[1.16] drop-shadow-md [text-wrap:balance]">
+              Energía continua y segura ante&nbsp;racionamientos.
             </h1>
 
             <!-- Subtítulo Ligero y Conciso -->
@@ -883,12 +901,12 @@
       <div class="max-w-6xl mx-auto px-6 sm:px-8">
 
         <!-- Encabezado con Textos Claros y Grandes -->
-        <div class="text-center max-w-3xl mx-auto mb-12">
+        <div class="text-center max-w-4xl mx-auto mb-12">
           <span class="text-sky-400 text-sm sm:text-base uppercase font-bold tracking-widest block mb-3">Herramienta
             Interactiva 2026</span>
           <h2 id="dimensionador-heading"
-            class="font-headline text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
-            Calcula la Potencia Real que Necesitas
+            class="font-headline text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight [text-wrap:balance]">
+            Calcula la Potencia Real que&nbsp;Necesitas
           </h2>
           <p class="text-slate-200 mt-4 text-base sm:text-lg lg:text-xl font-normal leading-relaxed">
             Selecciona los artefactos que planeas encender en simultáneo durante los cortes de luz. Nuestro sistema
@@ -996,9 +1014,9 @@
                   LIFAN 3800i Inverter (3.5 kW)
                 </strong>
               </div>
-              <a id="calc-cta-btn" href="#modelos"
+              <a id="calc-cta-btn" href="#card-3800i" data-target-card="card-3800i"
                 class="w-full sm:w-auto inline-flex items-center justify-center px-5 py-3 bg-secondary hover:bg-secondary-dark text-white text-sm sm:text-base font-bold rounded-xl transition-all shadow-md hover:scale-[1.02] whitespace-nowrap cursor-pointer text-center shrink-0">
-                Ver Ficha ($690)
+                Ver Ficha ($469.99)
               </a>
             </div>
           </div>
@@ -1013,13 +1031,13 @@
       aria-labelledby="modelos-heading">
       <div class="max-w-7xl mx-auto px-6 sm:px-8">
 
-        <div class="text-center max-w-3xl mx-auto mb-14">
+        <div class="text-center max-w-4xl mx-auto mb-14">
           <span class="text-secondary text-xs sm:text-sm uppercase font-bold tracking-widest block mb-2">
             Gama Oficial Ecuador
           </span>
           <h2 id="modelos-heading"
             class="font-headline text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary tracking-tight [text-wrap:balance]">
-            Generadores Eléctricos Inverter y Dual Fuel
+            Generadores Eléctricos Inverter y&nbsp;Dual&nbsp;Fuel
           </h2>
           <p class="text-slate-600 mt-3 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto [text-wrap:pretty]">
             Equipos probados en condiciones reales con soporte técnico directo y entrega inmediata de 24 a 48 horas en todo el Ecuador.
@@ -1030,11 +1048,12 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 xl:gap-6">
 
           <!-- MODELO 1: LIFAN 3800i -->
-          <article
-            class="bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-lg transition-all p-5 flex flex-col justify-between"
+          <article id="card-3800i" data-model-id="card-3800i"
+            class="model-card bg-white rounded-2xl border-2 border-secondary shadow-md hover:shadow-lg transition-all duration-300 p-5 flex flex-col justify-between relative scroll-mt-28"
             aria-labelledby="mod-3800i-title">
+            <span class="recommendation-badge absolute -top-3 left-1/2 -translate-x-1/2 bg-secondary text-white text-[10px] sm:text-[11px] font-bold px-3.5 py-1 rounded-full uppercase tracking-wider whitespace-nowrap shadow-sm badge-pop z-10 transition-all">Más Recomendado</span>
             <div>
-              <div class="flex justify-between items-center mb-3.5">
+              <div class="flex justify-between items-center mb-3.5 pt-1">
                 <span class="text-xs font-semibold px-2.5 py-1 bg-slate-100 text-slate-800 rounded-md">Portátil
                   21kg</span>
                 <span class="text-xs font-bold text-secondary">Dual Fuel Gas/Gasolina</span>
@@ -1073,32 +1092,48 @@
               </dl>
             </div>
 
-            <div class="pt-2 border-t border-slate-100">
-              <div class="mb-3.5">
-                <span class="text-[11px] text-slate-500 font-medium block">Precio Facturado</span>
-                <div class="flex items-baseline gap-1">
-                  <span class="font-headline text-3xl font-black text-primary">$690</span>
-                  <span class="text-xs font-bold text-secondary">inc. IVA</span>
+            <div class="pt-3 border-t border-slate-100">
+              <!-- Precio PVP tachado + % Descuento Contado -->
+              <div class="flex items-center justify-between gap-1 mb-1">
+                <div class="flex items-center gap-1.5">
+                  <span class="font-khand text-sm text-slate-400 line-through font-bold tracking-tight">$690.00</span>
+                  <span class="text-[10px] font-extrabold uppercase px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800">32% OFF</span>
+                </div>
+                <span class="text-[10px] text-emerald-700 font-bold uppercase tracking-wider">Promo Contado</span>
+              </div>
+
+              <!-- Precio Promo Contado Destacado -->
+              <div class="flex items-baseline gap-1 mb-2.5">
+                <span class="font-headline font-khand text-3xl sm:text-4xl font-black text-secondary promo-price leading-none">$469.99</span>
+                <span class="text-xs font-bold text-slate-500">inc. IVA</span>
+              </div>
+
+              <!-- Tarjeta de Crédito 3, 6 y 9 meses sin intereses -->
+              <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200/90 mb-3 text-left">
+                <div class="flex items-center gap-1.5 text-xs font-bold text-slate-800 mb-1.5">
+                  <span class="material-symbols-outlined text-[15px] text-secondary" aria-hidden="true">credit_card</span>
+                  <span>Tarjeta: 3, 6 y 9 meses sin intereses</span>
+                </div>
+                <div class="flex items-center justify-between pt-2 border-t border-slate-200/70">
+                  <span class="inline-flex items-baseline gap-1 text-slate-500 font-medium text-xs">Total: <strong class="font-khand text-slate-900 font-bold text-lg sm:text-xl tracking-tight leading-none">$552.93</strong></span>
+                  <span class="inline-flex items-baseline gap-0.5 text-slate-500 font-medium text-xs">Cuota: <strong class="font-khand text-secondary font-bold text-lg sm:text-xl tracking-tight leading-none">$61.44</strong><span class="text-[11px] font-semibold text-slate-500">/mes</span></span>
                 </div>
               </div>
-              <a class="w-full inline-flex items-center justify-center gap-1.5 py-3 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-xl transition-all shadow-sm hover:scale-[1.02]"
-                href="https://wa.me/19782035623?text=Deseo%20cotizar%20el%20LIFAN%203800i%20de%20%24690%20con%20IVA"
-                rel="noopener noreferrer" target="_blank" aria-label="Cotizar modelo LIFAN 3800i por WhatsApp">
-                <span>Cotizar este Modelo</span>
+
+              <a class="w-full inline-flex items-center justify-center gap-1.5 py-3 bg-secondary hover:bg-secondary-dark text-white text-xs font-bold rounded-xl transition-all shadow-md shadow-blue-600/30 hover:scale-[1.02]"
+                href="https://wa.me/19782035623?text=Deseo%20el%20LIFAN%203800i%20con%20precio%20promo%20de%20%24469.99%20con%20IVA"
+                rel="noopener noreferrer" target="_blank" aria-label="Pedir modelo LIFAN 3800i por WhatsApp">
+                <span>Pedir Recomendado</span>
               </a>
             </div>
           </article>
 
-          <!-- MODELO 2: LIFAN 4800iE (DESTACADO) -->
-          <article
-            class="bg-white rounded-2xl border-2 border-secondary shadow-md hover:shadow-xl transition-all p-5 flex flex-col justify-between relative"
+          <!-- MODELO 2: LIFAN 4800iE -->
+          <article id="card-4800ie" data-model-id="card-4800ie"
+            class="model-card bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-lg transition-all duration-300 p-5 flex flex-col justify-between relative scroll-mt-28"
             aria-labelledby="mod-4800ie-title">
-            <span
-              class="absolute -top-3 left-1/2 -translate-x-1/2 bg-secondary text-white text-[10px] sm:text-[11px] font-bold px-3.5 py-1 rounded-full uppercase tracking-wider whitespace-nowrap shadow-sm badge-pop z-10">
-              Más Recomendado
-            </span>
             <div>
-              <div class="flex justify-between items-center mb-3.5 pt-1">
+              <div class="flex justify-between items-center mb-3.5">
                 <span class="text-xs font-semibold px-2.5 py-1 bg-amber-50 text-secondary-dark rounded-md">Hogar &amp;
                   Negocios</span>
                 <span class="text-xs font-bold text-secondary">Arranque Llave</span>
@@ -1137,25 +1172,45 @@
               </dl>
             </div>
 
-            <div class="pt-2 border-t border-slate-100">
-              <div class="mb-3.5">
-                <span class="text-[11px] text-slate-500 font-medium block">Precio Facturado</span>
-                <div class="flex items-baseline gap-1">
-                  <span class="font-headline text-3xl font-black text-secondary">$920</span>
-                  <span class="text-xs font-bold text-secondary">inc. IVA</span>
+            <div class="pt-3 border-t border-slate-100">
+              <!-- Precio PVP tachado + % Descuento Contado -->
+              <div class="flex items-center justify-between gap-1 mb-1">
+                <div class="flex items-center gap-1.5">
+                  <span class="font-khand text-sm text-slate-400 line-through font-bold tracking-tight">$920.00</span>
+                  <span class="text-[10px] font-extrabold uppercase px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800">33% OFF</span>
+                </div>
+                <span class="text-[10px] text-emerald-700 font-bold uppercase tracking-wider">Promo Contado</span>
+              </div>
+
+              <!-- Precio Promo Contado Destacado -->
+              <div class="flex items-baseline gap-1 mb-2.5">
+                <span class="font-headline font-khand text-3xl sm:text-4xl font-black text-primary promo-price leading-none">$619.99</span>
+                <span class="text-xs font-bold text-slate-500">inc. IVA</span>
+              </div>
+
+              <!-- Tarjeta de Crédito 3, 6 y 9 meses sin intereses -->
+              <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200/90 mb-3 text-left">
+                <div class="flex items-center gap-1.5 text-xs font-bold text-slate-800 mb-1.5">
+                  <span class="material-symbols-outlined text-[15px] text-secondary" aria-hidden="true">credit_card</span>
+                  <span>Tarjeta: 3, 6 y 9 meses sin intereses</span>
+                </div>
+                <div class="flex items-center justify-between pt-2 border-t border-slate-200/70">
+                  <span class="inline-flex items-baseline gap-1 text-slate-500 font-medium text-xs">Total: <strong class="font-khand text-slate-900 font-bold text-lg sm:text-xl tracking-tight leading-none">$729.40</strong></span>
+                  <span class="inline-flex items-baseline gap-0.5 text-slate-500 font-medium text-xs">Cuota: <strong class="font-khand text-secondary font-bold text-lg sm:text-xl tracking-tight leading-none">$81.04</strong><span class="text-[11px] font-semibold text-slate-500">/mes</span></span>
                 </div>
               </div>
-              <a class="w-full inline-flex items-center justify-center gap-1.5 py-3 bg-secondary hover:bg-secondary-dark text-white text-xs font-bold rounded-xl transition-all shadow-md shadow-blue-600/30 hover:scale-[1.02]"
-                href="https://wa.me/19782035623?text=Deseo%20el%20LIFAN%204800iE%20de%20%24920%20con%20IVA"
-                rel="noopener noreferrer" target="_blank" aria-label="Pedir modelo LIFAN 4800iE por WhatsApp">
-                <span>Pedir este Modelo</span>
+
+              <a class="w-full inline-flex items-center justify-center gap-1.5 py-3 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-xl transition-all shadow-sm hover:scale-[1.02]"
+                href="https://wa.me/19782035623?text=Deseo%20el%20LIFAN%204800iE%20con%20precio%20promo%20de%20%24619.99%20con%20IVA"
+                rel="noopener noreferrer" target="_blank" aria-label="Cotizar modelo LIFAN 4800iE por WhatsApp">
+                <span>Cotizar este Modelo</span>
               </a>
             </div>
           </article>
 
           <!-- MODELO 3: LIFAN 6500iOE -->
-          <article
-            class="bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-lg transition-all p-5 flex flex-col justify-between"
+          <article id="card-6500ioe" data-model-id="card-6500ioe"
+            class="model-card bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-lg transition-all duration-300 p-5 flex flex-col justify-between relative scroll-mt-28"
             aria-labelledby="mod-6500ioe-title">
             <div>
               <div class="flex justify-between items-center mb-3.5">
@@ -1197,16 +1252,36 @@
               </dl>
             </div>
 
-            <div class="pt-2 border-t border-slate-100">
-              <div class="mb-3.5">
-                <span class="text-[11px] text-slate-500 font-medium block">Precio Facturado</span>
-                <div class="flex items-baseline gap-1">
-                  <span class="font-headline text-3xl font-black text-primary">$860</span>
-                  <span class="text-xs font-bold text-secondary">inc. IVA</span>
+            <div class="pt-3 border-t border-slate-100">
+              <!-- Precio PVP tachado + % Descuento Contado -->
+              <div class="flex items-center justify-between gap-1 mb-1">
+                <div class="flex items-center gap-1.5">
+                  <span class="font-khand text-sm text-slate-400 line-through font-bold tracking-tight">$860.00</span>
+                  <span class="text-[10px] font-extrabold uppercase px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800">33% OFF</span>
+                </div>
+                <span class="text-[10px] text-emerald-700 font-bold uppercase tracking-wider">Promo Contado</span>
+              </div>
+
+              <!-- Precio Promo Contado Destacado -->
+              <div class="flex items-baseline gap-1 mb-2.5">
+                <span class="font-headline font-khand text-3xl sm:text-4xl font-black text-primary promo-price leading-none">$579.99</span>
+                <span class="text-xs font-bold text-slate-500">inc. IVA</span>
+              </div>
+
+              <!-- Tarjeta de Crédito 3, 6 y 9 meses sin intereses -->
+              <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200/90 mb-3 text-left">
+                <div class="flex items-center gap-1.5 text-xs font-bold text-slate-800 mb-1.5">
+                  <span class="material-symbols-outlined text-[15px] text-secondary" aria-hidden="true">credit_card</span>
+                  <span>Tarjeta: 3, 6 y 9 meses sin intereses</span>
+                </div>
+                <div class="flex items-center justify-between pt-2 border-t border-slate-200/70">
+                  <span class="inline-flex items-baseline gap-1 text-slate-500 font-medium text-xs">Total: <strong class="font-khand text-slate-900 font-bold text-lg sm:text-xl tracking-tight leading-none">$682.34</strong></span>
+                  <span class="inline-flex items-baseline gap-0.5 text-slate-500 font-medium text-xs">Cuota: <strong class="font-khand text-secondary font-bold text-lg sm:text-xl tracking-tight leading-none">$75.82</strong><span class="text-[11px] font-semibold text-slate-500">/mes</span></span>
                 </div>
               </div>
+
               <a class="w-full inline-flex items-center justify-center gap-1.5 py-3 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-xl transition-all shadow-sm hover:scale-[1.02]"
-                href="https://wa.me/19782035623?text=Deseo%20cotizar%20el%20LIFAN%206500iOE%20de%20%24860%20con%20IVA"
+                href="https://wa.me/19782035623?text=Deseo%20cotizar%20el%20LIFAN%206500iOE%20con%20precio%20promo%20de%20%24579.99%20con%20IVA"
                 rel="noopener noreferrer" target="_blank" aria-label="Cotizar modelo LIFAN 6500iOE por WhatsApp">
                 <span>Cotizar este Modelo</span>
               </a>
@@ -1214,8 +1289,8 @@
           </article>
 
           <!-- MODELO 4: LIFAN 12000E INDUSTRIAL -->
-          <article
-            class="bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-lg transition-all p-5 flex flex-col justify-between"
+          <article id="card-12000e" data-model-id="card-12000e"
+            class="model-card bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-lg transition-all duration-300 p-5 flex flex-col justify-between relative scroll-mt-28"
             aria-labelledby="mod-12000e-title">
             <div>
               <div class="flex justify-between items-center mb-3.5">
@@ -1257,16 +1332,36 @@
               </dl>
             </div>
 
-            <div class="pt-2 border-t border-slate-100">
-              <div class="mb-3.5">
-                <span class="text-[11px] text-slate-500 font-medium block">Precio Facturado</span>
-                <div class="flex items-baseline gap-1">
-                  <span class="font-headline text-3xl font-black text-primary">$1,955</span>
-                  <span class="text-xs font-bold text-secondary">inc. IVA</span>
+            <div class="pt-3 border-t border-slate-100">
+              <!-- Precio PVP tachado + % Descuento Contado -->
+              <div class="flex items-center justify-between gap-1 mb-1">
+                <div class="flex items-center gap-1.5">
+                  <span class="font-khand text-sm text-slate-400 line-through font-bold tracking-tight">$1,955.00</span>
+                  <span class="text-[10px] font-extrabold uppercase px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800">15% OFF</span>
+                </div>
+                <span class="text-[10px] text-emerald-700 font-bold uppercase tracking-wider">Promo Contado</span>
+              </div>
+
+              <!-- Precio Promo Contado Destacado -->
+              <div class="flex items-baseline gap-1 mb-2.5">
+                <span class="font-headline font-khand text-3xl sm:text-4xl font-black text-primary promo-price leading-none">$1,659.99</span>
+                <span class="text-xs font-bold text-slate-500">inc. IVA</span>
+              </div>
+
+              <!-- Tarjeta de Crédito 3, 6 y 9 meses sin intereses -->
+              <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200/90 mb-3 text-left">
+                <div class="flex items-center gap-1.5 text-xs font-bold text-slate-800 mb-1.5">
+                  <span class="material-symbols-outlined text-[15px] text-secondary" aria-hidden="true">credit_card</span>
+                  <span>Tarjeta: 3, 6 y 9 meses sin intereses</span>
+                </div>
+                <div class="flex items-center justify-between pt-2 border-t border-slate-200/70">
+                  <span class="inline-flex items-baseline gap-1 text-slate-500 font-medium text-xs">Total: <strong class="font-khand text-slate-900 font-bold text-lg sm:text-xl tracking-tight leading-none">$1,952.93</strong></span>
+                  <span class="inline-flex items-baseline gap-0.5 text-slate-500 font-medium text-xs">Cuota: <strong class="font-khand text-secondary font-bold text-lg sm:text-xl tracking-tight leading-none">$216.99</strong><span class="text-[11px] font-semibold text-slate-500">/mes</span></span>
                 </div>
               </div>
+
               <a class="w-full inline-flex items-center justify-center gap-1.5 py-3 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-xl transition-all shadow-sm hover:scale-[1.02]"
-                href="https://wa.me/19782035623?text=Deseo%20cotizar%20el%20generador%20industrial%20LIFAN%2012000E%20de%20%241955"
+                href="https://wa.me/19782035623?text=Deseo%20cotizar%20el%20generador%20industrial%20LIFAN%2012000E%20con%20precio%20promo%20de%20%241659.99%20con%20IVA"
                 rel="noopener noreferrer" target="_blank"
                 aria-label="Cotizar modelo industrial LIFAN 12000E por WhatsApp">
                 <span>Cotizar este Modelo</span>
@@ -1284,13 +1379,13 @@
     <section class="py-20 lg:py-24 bg-white scroll-mt-20" id="ventajas" aria-labelledby="ventajas-heading">
       <div class="max-w-6xl mx-auto px-6 sm:px-8">
 
-        <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="text-center max-w-4xl mx-auto mb-16">
           <span class="text-secondary text-xs uppercase font-bold tracking-widest block mb-2">
             Ingeniería Certificada
           </span>
           <h2 id="ventajas-heading"
             class="font-headline text-3xl sm:text-4xl font-extrabold text-primary tracking-tight [text-wrap:balance]">
-            ¿Por qué la Tecnología LIFAN Supera a los Tradicionales?
+            ¿Por qué la Tecnología LIFAN Supera a&nbsp;los&nbsp;Tradicionales?
           </h2>
           <p class="text-slate-600 mt-3 text-base [text-wrap:pretty]">
             Equipos concebidos para cuidar tu inversión tecnológica y garantizar un ahorro real continuo.
@@ -1475,26 +1570,26 @@
          7. BANNER DE CIERRE Y CONTACTO
          ========================================== -->
     <section class="py-20 lg:py-24 bg-primary text-white text-center" aria-labelledby="cta-heading">
-      <div class="max-w-3xl mx-auto px-6 sm:px-8">
+      <div class="max-w-4xl mx-auto px-6 sm:px-8">
         <span
           class="inline-block px-3 py-1 bg-white/10 text-white text-xs font-semibold rounded-full uppercase tracking-wider mb-6 border border-white/20">
           Disponibilidad Inmediata en Cuenca
         </span>
-        <h2 id="cta-heading" class="font-headline text-3xl sm:text-4xl font-extrabold tracking-tight mb-4">
-          Asegura la continuidad de tu familia o negocio hoy mismo.
+        <h2 id="cta-heading" class="font-headline text-3xl sm:text-4xl lg:text-[44px] font-extrabold tracking-tight mb-4 [text-wrap:balance]">
+          Asegura la continuidad de tu familia<br class="hidden sm:inline" /> o&nbsp;negocio hoy&nbsp;mismo.
         </h2>
         <p class="text-slate-300 text-base mb-8 max-w-xl mx-auto">
           Equipos listos para entrega inmediata desde Cuenca con soporte técnico certificado en todo el país.
         </p>
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-secondary hover:bg-secondary-dark text-white font-semibold text-base rounded-lg transition-colors shadow-lg focus-visible:ring-2 focus-visible:ring-white"
-            href="https://wa.me/19782035623?text=Hola%20LIFAN%20Ecuador%2C%20necesito%20coordinar%20mi%20pedido%20urgente"
-            rel="noopener noreferrer" target="_blank">
-            <span>Cotizar Urgente por WhatsApp</span>
-          </a>
-          <a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white font-medium text-base rounded-lg transition-colors border border-white/20 focus-visible:ring-2 focus-visible:ring-white"
-            href="tel:+19782035623" aria-label="Llamar directamente por teléfono a LIFAN Ecuador">
-            <span>+1 (978) 203-5623</span>
+        <div class="flex items-center justify-center">
+          <a class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-secondary hover:bg-secondary-dark text-white font-bold text-base sm:text-lg rounded-xl transition-all shadow-xl hover:shadow-2xl hover:scale-[1.02] focus-visible:ring-4 focus-visible:ring-white"
+            href="https://wa.me/19782035623?text=Hola%2C%20deseo%20solicitar%20un%20generador%20con%20entrega%20inmediata"
+            rel="noopener noreferrer" target="_blank"
+            aria-label="Solicitar por WhatsApp">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12.031 2c-5.502 0-9.972 4.47-9.972 9.974 0 1.76.459 3.477 1.332 4.994L2 22.062l5.228-1.371a9.92 9.92 0 0 0 4.803 1.233h.004c5.501 0 9.971-4.471 9.971-9.974 0-2.664-1.038-5.168-2.925-7.054C17.2 2.993 14.695 2 12.031 2zm0 18.271h-.003a8.25 8.25 0 0 1-4.204-1.149l-.302-.179-3.125.82.834-3.047-.197-.313a8.225 8.225 0 0 1-1.261-4.429c0-4.561 3.711-8.272 8.275-8.272 2.21 0 4.288.862 5.852 2.427a8.217 8.217 0 0 1 2.422 5.853c0 4.562-3.711 8.269-8.276 8.269zm4.536-6.196c-.249-.124-1.472-.727-1.7-.81-.229-.083-.395-.124-.561.124-.166.249-.643.81-.788.976-.145.166-.291.187-.539.062s-1.05-.387-2.001-1.235c-.74-.66-1.24-1.476-1.385-1.725-.145-.249-.015-.383.109-.507.112-.111.249-.29.373-.435.125-.146.166-.249.249-.415.083-.166.042-.311-.02-.435-.063-.125-.561-1.35-.769-1.848-.203-.487-.41-.421-.561-.429-.145-.008-.311-.01-.478-.01-.166 0-.435.062-.663.311-.228.249-.871.851-.871 2.074 0 1.224.892 2.406 1.016 2.572.125.166 1.754 2.679 4.25 3.757.594.256 1.058.41 1.42.525.597.19 1.141.163 1.57.099.478-.072 1.472-.602 1.68-1.183.207-.581.207-1.079.145-1.183-.062-.104-.228-.166-.477-.29z"/>
+            </svg>
+            <span>Solicitar por WhatsApp</span>
           </a>
         </div>
       </div>
@@ -1547,19 +1642,18 @@
     <div class="max-w-7xl mx-auto px-6 sm:px-8">
 
       <!-- Grid Principal 3 Columnas -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 pb-10 border-b border-slate-800">
+      <!-- Grid Principal 4 Columnas -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-10 border-b border-slate-800">
 
         <!-- Columna 1: Empresa & Marca -->
         <div class="space-y-4">
-          <a href="index.html" class="inline-flex items-center gap-2.5 group">
-            <img src="assets/lifan blanco.svg" alt="LIFAN Power Ecuador" class="h-6 w-auto object-contain" width="150"
-              height="24" />
-            <span
-              class="font-headline font-black text-[11px] tracking-wider text-secondary uppercase bg-secondary/10 px-2 py-0.5 rounded">POWER</span>
+          <a href="index.html" class="inline-flex items-center group">
+            <img src="assets/logo/build logo horizontal blanco.svg" alt="Buildsmart" class="h-8 sm:h-9 md:h-10 w-auto object-contain group-hover:scale-[1.02] transition-transform" />
           </a>
           <p class="text-xs text-slate-400 leading-relaxed">
             <strong class="text-slate-200 block font-semibold mb-0.5">BUILDSMART SOLUTIONS S.A.S.</strong>
             Distribución Oficial Directa en Cuenca y envíos a las 24 provincias del Ecuador.
+            <span class="block mt-1.5 text-[11px]"><a href="https://buildsmart.com.ec" target="_blank" rel="noopener noreferrer" class="text-secondary font-semibold hover:underline">buildsmart.com.ec</a></span>
           </p>
         </div>
 
@@ -1574,7 +1668,18 @@
           </ul>
         </div>
 
-        <!-- Columna 3: Atención & Soporte -->
+        <!-- Columna 3: Legal & Políticas -->
+        <div>
+          <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4 font-headline">Legal &amp; Políticas</h4>
+          <ul class="space-y-2.5 text-xs">
+            <li><a class="hover:text-white transition-colors" href="politicas.html#terminos">Términos y Condiciones</a></li>
+            <li><a class="hover:text-white transition-colors" href="politicas.html#envios">Envíos y Entregas</a></li>
+            <li><a class="hover:text-white transition-colors" href="politicas.html#privacidad">Políticas de Privacidad</a></li>
+            <li><a class="hover:text-white transition-colors" href="politicas.html#cookies">Política de Cookies</a></li>
+          </ul>
+        </div>
+
+        <!-- Columna 4: Atención & Soporte -->
         <div>
           <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4 font-headline">Soporte Técnico</h4>
           <p class="text-xs text-slate-400 mb-3.5 leading-relaxed">
@@ -1588,17 +1693,11 @@
 
       </div>
 
-      <!-- Fila Inferior: Copyright & Enlaces Legales -->
+      <!-- Fila Inferior: Copyright -->
       <div
-        class="pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500 text-center md:text-left">
+        class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 text-center sm:text-left">
         <p>© 2026 LIFAN Power Ecuador · BUILDSMART SOLUTIONS S.A.S. Todos los derechos reservados.</p>
-        <div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs">
-          <a href="politicas.html#terminos" class="text-slate-400 hover:text-white transition-colors">Términos y Condiciones</a>
-          <span class="text-slate-700" aria-hidden="true">•</span>
-          <a href="politicas.html#privacidad" class="text-slate-400 hover:text-white transition-colors">Políticas de Privacidad</a>
-          <span class="text-slate-700" aria-hidden="true">•</span>
-          <span class="text-[11px] text-slate-600">Cuenca - Ecuador</span>
-        </div>
+        <p class="text-[11px] text-slate-600">Cuenca - Ecuador</p>
       </div>
 
     </div>
@@ -1764,6 +1863,57 @@
     const ctaBtn = document.getElementById('calc-cta-btn');
     const statusAnnouncer = document.getElementById('status-announcer');
 
+    function updateRecommendedCard(targetId) {
+      const allCards = document.querySelectorAll('.model-card');
+      allCards.forEach(card => {
+        const existingBadge = card.querySelector('.recommendation-badge');
+        const cardBtn = card.querySelector('a[href^="https://wa.me"]');
+        const priceEl = card.querySelector('.promo-price') || card.querySelector('.font-headline.text-3xl');
+        const isTarget = card.id === targetId;
+
+        if (isTarget) {
+          card.classList.remove('border-slate-200/90', 'shadow-sm');
+          card.classList.add('border-2', 'border-secondary', 'shadow-md');
+          if (priceEl) {
+            priceEl.classList.remove('text-primary');
+            priceEl.classList.add('text-secondary');
+          }
+          if (cardBtn) {
+            cardBtn.classList.remove('bg-slate-900', 'hover:bg-slate-800');
+            cardBtn.classList.add('bg-secondary', 'hover:bg-secondary-dark', 'shadow-md', 'shadow-blue-600/30');
+            const spanText = cardBtn.querySelector('span');
+            if (spanText) {
+              spanText.textContent = 'Pedir Recomendado';
+            }
+          }
+          if (!existingBadge) {
+            const badge = document.createElement('span');
+            badge.className = 'recommendation-badge absolute -top-3 left-1/2 -translate-x-1/2 bg-secondary text-white text-[10px] sm:text-[11px] font-bold px-3.5 py-1 rounded-full uppercase tracking-wider whitespace-nowrap shadow-sm badge-pop z-10 transition-all';
+            badge.textContent = 'Más Recomendado';
+            card.prepend(badge);
+          }
+        } else {
+          card.classList.remove('border-2', 'border-secondary', 'shadow-md');
+          card.classList.add('border-slate-200/90', 'shadow-sm');
+          if (priceEl) {
+            priceEl.classList.remove('text-secondary');
+            priceEl.classList.add('text-primary');
+          }
+          if (cardBtn) {
+            cardBtn.classList.remove('bg-secondary', 'hover:bg-secondary-dark', 'shadow-md', 'shadow-blue-600/30');
+            cardBtn.classList.add('bg-slate-900', 'hover:bg-slate-800');
+            const spanText = cardBtn.querySelector('span');
+            if (spanText) {
+              spanText.textContent = 'Cotizar este Modelo';
+            }
+          }
+          if (existingBadge) {
+            existingBadge.remove();
+          }
+        }
+      });
+    }
+
     function calculateWatts() {
       let rawWatts = 0;
       checkboxes.forEach(cb => {
@@ -1777,27 +1927,51 @@
       totalWattsEl.textContent = `${recommendedCapacity} W`;
 
       let model = 'LIFAN 3800i Inverter (3.5 kW)';
-      let price = '$690';
-      let link = '#modelos';
+      let price = '$469.99';
+      let targetId = 'card-3800i';
 
       if (recommendedCapacity > 5500) {
         model = 'LIFAN 12000E Industrial (12.0 kW)';
-        price = '$1,955';
+        price = '$1,659.99';
+        targetId = 'card-12000e';
       } else if (recommendedCapacity > 4200) {
         model = 'LIFAN 6500iOE Open (5.5 kW)';
-        price = '$860';
+        price = '$579.99';
+        targetId = 'card-6500ioe';
       } else if (recommendedCapacity > 2800) {
         model = 'LIFAN 4800iE Inverter (4.2 kW)';
-        price = '$920';
+        price = '$619.99';
+        targetId = 'card-4800ie';
       }
 
       modelNameEl.textContent = model;
       ctaBtn.textContent = `Ver Ficha (${price})`;
+      ctaBtn.href = `#${targetId}`;
+      ctaBtn.setAttribute('data-target-card', targetId);
+
+      // Destacar dinámicamente en el catálogo la tarjeta sugerida por el cálculo
+      updateRecommendedCard(targetId);
 
       // Anuncio accesible a lectores de pantalla
       if (statusAnnouncer) {
         statusAnnouncer.textContent = `Capacidad estimada: ${recommendedCapacity} watts. Modelo recomendado: ${model}`;
       }
+    }
+
+    if (ctaBtn) {
+      ctaBtn.addEventListener('click', (e) => {
+        const targetCardId = ctaBtn.getAttribute('data-target-card') || 'card-3800i';
+        const targetEl = document.getElementById(targetCardId);
+        if (targetEl) {
+          e.preventDefault();
+          targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          targetEl.classList.add('card-highlight-pulse');
+          setTimeout(() => {
+            targetEl.classList.remove('card-highlight-pulse');
+          }, 2400);
+          history.replaceState(null, '', `#${targetCardId}`);
+        }
+      });
     }
 
     checkboxes.forEach(cb => cb.addEventListener('change', calculateWatts));
