@@ -316,32 +316,100 @@
     }
 
     /* Liquid Glass Minimalist Header System */
-    .liquid-glass-header {
-      background: rgba(255, 255, 255, 0.72);
-      backdrop-filter: blur(24px) saturate(180%);
-      -webkit-backdrop-filter: blur(24px) saturate(180%);
-      border: 1px solid rgba(255, 255, 255, 0.85);
+    .liquid-glass-header,
+    .header-sticky {
+      background: rgba(255, 255, 255, 0.78) !important;
+      backdrop-filter: blur(24px) saturate(180%) !important;
+      -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+      border: 1px solid rgba(255, 255, 255, 0.85) !important;
       box-shadow:
         0 10px 30px -5px rgba(11, 27, 72, 0.07),
         0 4px 12px -2px rgba(11, 27, 72, 0.03),
         inset 0 1px 2px 0 rgba(255, 255, 255, 0.95),
-        inset 0 -1px 1px 0 rgba(0, 0, 0, 0.02);
+        inset 0 -1px 1px 0 rgba(0, 0, 0, 0.02) !important;
     }
 
-    .liquid-nav-item {
-      position: relative;
-      padding: 0.45rem 0.9rem;
-      border-radius: 9999px;
-      color: #1B1B1F;
-      font-weight: 500;
-      font-size: 0.875rem;
-      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Estado Transparente en Hero */
+    .header-hero {
+      background: transparent !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      border: 1px solid transparent !important;
+      box-shadow: none !important;
+    }
+    .header-hero #nav-links > a,
+    .header-hero #models-dropdown-btn {
+      color: rgba(255, 255, 255, 0.95) !important;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    }
+    .header-hero #nav-links > a:hover,
+    .header-hero #models-dropdown-btn:hover {
+      color: #ffffff !important;
+      text-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+    }
+    .header-hero .header-action-btn {
+      background: rgba(255, 255, 255, 0.15) !important;
+      border: 1px solid rgba(255, 255, 255, 0.3) !important;
+      color: #ffffff !important;
+      backdrop-filter: blur(12px) !important;
+      -webkit-backdrop-filter: blur(12px) !important;
+    }
+    .header-hero .header-action-btn:hover {
+      background: rgba(255, 255, 255, 0.28) !important;
+      color: #ffffff !important;
     }
 
-    .liquid-nav-item:hover {
-      background: rgba(11, 27, 72, 0.05);
-      color: var(--brand-primary);
-      backdrop-filter: blur(8px);
+    /* Reglas del Menú Desplegable de Modelos (siempre nítido y oscuro sobre tarjeta blanca) */
+    #models-dropdown-menu,
+    .header-hero #models-dropdown-menu,
+    .header-sticky #models-dropdown-menu {
+      color: #1e293b !important;
+      text-shadow: none !important;
+    }
+    #models-dropdown-menu a,
+    .header-hero #models-dropdown-menu a,
+    .header-sticky #models-dropdown-menu a {
+      color: #334155 !important;
+      text-shadow: none !important;
+    }
+    #models-dropdown-menu a:hover,
+    .header-hero #models-dropdown-menu a:hover,
+    .header-sticky #models-dropdown-menu a:hover {
+      color: #1A3CFF !important;
+      background-color: #f8fafc !important;
+      text-shadow: none !important;
+    }
+    #models-dropdown-menu a span,
+    .header-hero #models-dropdown-menu a span,
+    .header-sticky #models-dropdown-menu a span {
+      text-shadow: none !important;
+    }
+    #models-dropdown-menu a.text-secondary,
+    #models-dropdown-menu a:first-child,
+    .header-hero #models-dropdown-menu a:first-child,
+    .header-sticky #models-dropdown-menu a:first-child {
+      color: #1A3CFF !important;
+    }
+
+    /* Estado Sticky (fuera del Hero) */
+    .header-sticky #nav-links > a,
+    .header-sticky #models-dropdown-btn {
+      color: #334155 !important;
+      text-shadow: none !important;
+    }
+    .header-sticky #nav-links > a:hover,
+    .header-sticky #models-dropdown-btn:hover {
+      color: #1A3CFF !important;
+    }
+    .header-sticky .header-action-btn {
+      background: rgba(255, 255, 255, 0.75) !important;
+      border: 1px solid rgba(255, 255, 255, 0.9) !important;
+      color: #1e293b !important;
+      box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.95), 0 4px 12px rgba(11, 27, 72, 0.05) !important;
+    }
+    .header-sticky .header-action-btn:hover {
+      background: #ffffff !important;
+      color: #1A3CFF !important;
     }
 
     .liquid-badge-glow {
@@ -352,36 +420,29 @@
     }
 
     /* Liquid Glass Animated Menu System */
-    #mobile-menu {
-      display: grid;
-      grid-template-rows: 0fr;
-      opacity: 0;
-      visibility: hidden;
-      border-top-color: transparent;
-      transition: grid-template-rows 0.38s cubic-bezier(0.16, 1, 0.3, 1),
-        opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-        visibility 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-        border-color 0.3s ease;
-      overflow: hidden;
+    @media (max-width: 1023px) {
+      #mobile-menu:not(.open) {
+        display: none !important;
+      }
+      #mobile-menu.open {
+        display: block !important;
+        animation: mobileMenuFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
     }
-
-    #mobile-menu>div {
-      min-height: 0;
-      transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
-      transform: translateY(-8px) scale(0.98);
-      opacity: 0;
+    @media (min-width: 1024px) {
+      #mobile-menu, #mobile-menu.open {
+        display: none !important;
+      }
     }
-
-    #mobile-menu.open {
-      grid-template-rows: 1fr;
-      opacity: 1;
-      visibility: visible;
-      border-top-color: rgba(215, 215, 219, 0.6);
-    }
-
-    #mobile-menu.open>div {
-      transform: translateY(0) scale(1);
-      opacity: 1;
+    @keyframes mobileMenuFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-6px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* Hero Desktop Background Zoom & Product Positioning on Right */
@@ -713,73 +774,140 @@
        1. HEADER & NAVBAR LIQUID GLASS MINIMALISTA (MENÚ HAMBURGUESA INTEGRADO)
        ========================================== -->
   <header
-    class="fixed top-3 left-1/2 -translate-x-1/2 w-[calc(100%-1.5rem)] max-w-7xl z-50 rounded-2xl liquid-glass-header transition-all duration-300"
+    id="site-header"
+    class="fixed top-3 left-1/2 -translate-x-1/2 w-[calc(100%-1.5rem)] max-w-7xl z-50 rounded-2xl header-hero transition-all duration-300"
     role="banner">
     <div class="h-16 px-4 sm:px-6 flex items-center justify-between">
-      <!-- Brand Logo Minimalista Oficial Buildsmart -->
+      <!-- Brand Logo Minimalista Oficial Buildsmart (Blanco en Hero, Negro en Sticky) -->
       <a class="flex items-center group focus-visible:ring-2 focus-visible:ring-secondary rounded-xl p-1 transition-all"
         href="#" aria-label="Buildsmart - Ir al inicio">
-        <img src="assets/logo/build logo horizontal negro.svg" alt="Buildsmart"
-          class="h-8 sm:h-9 md:h-10 w-auto object-contain group-hover:scale-[1.02] transition-transform" />
+        <img id="header-logo-white" src="assets/logo/build logo horizontal blanco.svg" alt="Buildsmart"
+          class="h-8 sm:h-9 md:h-10 w-auto object-contain transition-opacity duration-300 group-hover:scale-[1.02]" />
+        <img id="header-logo-black" src="assets/logo/build logo horizontal negro.svg" alt="Buildsmart"
+          class="h-8 sm:h-9 md:h-10 w-auto object-contain hidden transition-opacity duration-300 group-hover:scale-[1.02]" />
       </a>
 
-      <!-- Botones de Acción Directos + Menú Hamburguesa Universal -->
-      <div class="flex items-center gap-2">
-        <button type="button" onclick="openAdvisorModal()"
-          class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 liquid-badge-glow hover:bg-white text-slate-800 text-xs font-semibold rounded-full transition-all cursor-pointer"
-          aria-haspopup="dialog">
-          <span>Asesor Inteligente</span>
-        </button>
+      <!-- Navegación de Escritorio Elegante (Inspirada en el diseño de referencia) -->
+      <nav id="nav-links" class="hidden lg:flex items-center gap-8 text-xs font-semibold" aria-label="Navegación principal de escritorio">
+        <!-- Dropdown Modelos (como Pages en el ejemplo de referencia) -->
+        <div class="relative group" id="models-dropdown-container">
+          <button type="button" id="models-dropdown-btn"
+            class="inline-flex items-center gap-1 transition-colors cursor-pointer focus:outline-none py-2"
+            aria-expanded="false" aria-haspopup="true">
+            <span>Modelos</span>
+            <span class="material-symbols-outlined text-[16px] transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180">keyboard_arrow_down</span>
+          </button>
+          
+          <!-- Dropdown Flotante Estilo Referencia ZYNQEHOUSE -->
+          <div id="models-dropdown-menu"
+            class="absolute top-full left-0 mt-1 w-60 bg-white rounded-2xl shadow-2xl border border-slate-100 p-2.5 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200 transform translate-y-1 group-hover:translate-y-0 group-focus-within:translate-y-0 z-50 text-slate-800">
+            <div class="space-y-0.5">
+              <a href="#modelos" onclick="navigateToSection(event, '#modelos')"
+                class="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-bold text-secondary hover:bg-secondary/5 transition-all">
+                <span>Todos los Modelos</span>
+                <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+              </a>
+              <div class="h-px bg-slate-100 my-1"></div>
+              <a href="lifan-3800i.html"
+                class="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-medium text-slate-700 hover:text-secondary hover:bg-slate-50 transition-all">
+                <span>LIFAN 3800i</span>
+                <span class="text-[11px] text-slate-400">3.5 kW</span>
+              </a>
+              <a href="lifan-4800ie.html"
+                class="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-medium text-slate-700 hover:text-secondary hover:bg-slate-50 transition-all">
+                <span>LIFAN 4800iE</span>
+                <span class="text-[11px] text-slate-400">4.2 kW</span>
+              </a>
+              <a href="lifan-6500ioe.html"
+                class="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-medium text-slate-700 hover:text-secondary hover:bg-slate-50 transition-all">
+                <span>LIFAN 6500iOE</span>
+                <span class="text-[11px] text-slate-400">5.5 kW</span>
+              </a>
+              <a href="lifan-12000e.html"
+                class="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-medium text-slate-700 hover:text-secondary hover:bg-slate-50 transition-all">
+                <span>LIFAN 12000E</span>
+                <span class="text-[11px] text-slate-400">12 kW</span>
+              </a>
+            </div>
+          </div>
+        </div>
 
-        <!-- Botón Menú Hamburguesa Universal -->
+        <a href="#garantia" onclick="navigateToSection(event, '#garantia')" class="transition-colors py-2">
+          Garantía &amp; Servicio
+        </a>
+        <a href="#preguntas-frecuentes" onclick="navigateToSection(event, '#preguntas-frecuentes')" class="transition-colors py-2">
+          Preguntas Frecuentes
+        </a>
+        <a href="#ubicacion" onclick="navigateToSection(event, '#ubicacion')" class="transition-colors py-2">
+          Ubicación
+        </a>
+      </nav>
+
+      <!-- Botones de Acción: Icono Calculadora Inteligente + Menú Hamburguesa Mobile -->
+      <div class="flex items-center gap-2">
+        <a href="#dimensionador" onclick="navigateToSection(event, '#dimensionador')"
+          class="header-action-btn w-10 h-10 rounded-full flex items-center justify-center transition-all shadow-sm cursor-pointer group"
+          aria-label="Calculadora Inteligente de Watts" title="Calculadora Inteligente">
+          <span class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">calculate</span>
+        </a>
+
+        <!-- Botón Menú Hamburguesa (visible solo en móviles/tablets: lg:hidden) -->
         <button id="mobile-menu-btn" type="button" onclick="toggleMobileMenu()"
-          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full liquid-badge-glow text-slate-800 hover:text-secondary focus:outline-none transition-all cursor-pointer font-semibold text-xs"
+          class="header-action-btn lg:hidden w-10 h-10 rounded-full flex items-center justify-center focus:outline-none transition-all cursor-pointer"
           aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú de navegación">
-          <span id="hamburger-icon" class="material-symbols-outlined text-[20px]">menu</span>
-          <span class="hidden md:inline text-xs font-bold tracking-wide">Menú</span>
+          <span id="hamburger-icon" class="material-symbols-outlined text-[22px]">menu</span>
         </button>
       </div>
     </div>
 
-    <!-- Menú Desplegable Liquid Glass Animado (Secciones del Sitio) -->
-    <nav id="mobile-menu" class="px-4 border-t border-slate-200/60 text-slate-700 font-medium text-sm"
-      aria-label="Navegación principal">
+    <!-- Menú Desplegable Móvil (Estilo Referencia ZYNQEHOUSE) -->
+    <nav id="mobile-menu" class="hidden lg:hidden px-4 py-3 bg-white/95 backdrop-blur-2xl rounded-2xl shadow-2xl mt-2 border border-slate-200/80 text-slate-800 text-sm"
+      aria-label="Navegación móvil">
       <div class="space-y-1">
-        <div class="grid grid-cols-1 md:grid-cols-5 gap-1 pt-2 pb-2">
-          <a class="flex items-center gap-2 px-4 py-2.5 rounded-xl hover:bg-slate-900/5 hover:text-secondary transition-all duration-200"
-            href="#modelos" onclick="navigateToSection(event, '#modelos')">
-            <span class="material-symbols-outlined text-[18px] text-slate-400">electric_bolt</span>
-            <span>Modelos y Precios</span>
-          </a>
-          <a class="flex items-center gap-2 px-4 py-2.5 rounded-xl hover:bg-slate-900/5 hover:text-secondary transition-all duration-200"
-            href="#dimensionador" onclick="navigateToSection(event, '#dimensionador')">
-            <span class="material-symbols-outlined text-[18px] text-slate-400">calculate</span>
-            <span>Calculadora de Watts</span>
-          </a>
-          <a class="flex items-center gap-2 px-4 py-2.5 rounded-xl hover:bg-slate-900/5 hover:text-secondary transition-all duration-200"
-            href="#ventajas" onclick="navigateToSection(event, '#ventajas')">
-            <span class="material-symbols-outlined text-[18px] text-slate-400">verified</span>
-            <span>Tecnología Dual Fuel</span>
-          </a>
-          <a class="flex items-center gap-2 px-4 py-2.5 rounded-xl hover:bg-slate-900/5 hover:text-secondary transition-all duration-200"
-            href="#garantia" onclick="navigateToSection(event, '#garantia')">
-            <span class="material-symbols-outlined text-[18px] text-slate-400">build</span>
-            <span>Garantía &amp; Servicio</span>
-          </a>
-          <a class="flex items-center gap-2 px-4 py-2.5 rounded-xl hover:bg-slate-900/5 hover:text-secondary transition-all duration-200"
-            href="#preguntas-frecuentes" onclick="navigateToSection(event, '#preguntas-frecuentes')">
-            <span class="material-symbols-outlined text-[18px] text-slate-400">help_outline</span>
-            <span>Preguntas Frecuentes</span>
-          </a>
-        </div>
+        <!-- Subgrupo Modelos -->
+        <span class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 block px-3 pt-1 pb-1">Modelos</span>
+        <a class="flex items-center justify-between px-3 py-2 rounded-xl text-sm font-bold text-secondary hover:bg-secondary/5 transition-colors"
+          href="#modelos" onclick="navigateToSection(event, '#modelos')">
+          <span>Todos los Modelos (Comparativa)</span>
+          <span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+        </a>
+        <a class="flex items-center justify-between px-3 py-2 rounded-xl hover:bg-slate-900/5 hover:text-secondary transition-colors text-sm font-semibold"
+          href="lifan-3800i.html">
+          <span>LIFAN 3800i</span>
+          <span class="text-xs font-normal text-slate-400">3.5 kW</span>
+        </a>
+        <a class="flex items-center justify-between px-3 py-2 rounded-xl hover:bg-slate-900/5 hover:text-secondary transition-colors text-sm font-semibold"
+          href="lifan-4800ie.html">
+          <span>LIFAN 4800iE</span>
+          <span class="text-xs font-normal text-slate-400">4.2 kW</span>
+        </a>
+        <a class="flex items-center justify-between px-3 py-2 rounded-xl hover:bg-slate-900/5 hover:text-secondary transition-colors text-sm font-semibold"
+          href="lifan-6500ioe.html">
+          <span>LIFAN 6500iOE</span>
+          <span class="text-xs font-normal text-slate-400">5.5 kW</span>
+        </a>
+        <a class="flex items-center justify-between px-3 py-2 rounded-xl hover:bg-slate-900/5 hover:text-secondary transition-colors text-sm font-semibold"
+          href="lifan-12000e.html">
+          <span>LIFAN 12000E</span>
+          <span class="text-xs font-normal text-slate-400">12 kW</span>
+        </a>
 
-        <!-- Asesor Móvil dentro del Menú (solo pantallas pequeñas) -->
-        <div class="pt-1 pb-3 sm:hidden border-t border-slate-200/50">
-          <button type="button" onclick="toggleMobileMenu(); openAdvisorModal();"
-            class="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-xs transition-all cursor-pointer">
-            <span>Asesor Inteligente</span>
-          </button>
-        </div>
+        <div class="h-px bg-slate-200/60 my-2"></div>
+
+        <!-- Secciones Principales -->
+        <span class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 block px-3 pt-1 pb-1">Secciones</span>
+        <a class="block px-3 py-2 rounded-xl hover:bg-slate-900/5 hover:text-secondary transition-colors text-sm font-semibold"
+          href="#garantia" onclick="navigateToSection(event, '#garantia')">
+          Garantía &amp; Servicio
+        </a>
+        <a class="block px-3 py-2 rounded-xl hover:bg-slate-900/5 hover:text-secondary transition-colors text-sm font-semibold"
+          href="#preguntas-frecuentes" onclick="navigateToSection(event, '#preguntas-frecuentes')">
+          Preguntas Frecuentes
+        </a>
+        <a class="block px-3 py-2 rounded-xl hover:bg-slate-900/5 hover:text-secondary transition-colors text-sm font-semibold"
+          href="#ubicacion" onclick="navigateToSection(event, '#ubicacion')">
+          Ubicación de la Oficina
+        </a>
       </div>
     </nav>
   </header>
@@ -787,7 +915,7 @@
   <!-- ==========================================
        MAIN CONTENT CONTAINER
        ========================================== -->
-  <main id="contenido-principal" class="w-full pt-20" tabindex="-1">
+  <main id="contenido-principal" class="w-full" tabindex="-1">
 
     <!-- Live Region Accesible para cambios de estado (Calculadora / Filtros) -->
     <div id="status-announcer" class="sr-only" role="status" aria-live="polite"></div>
@@ -795,7 +923,7 @@
     <!-- ==========================================
          2. HERO SECTION CON SLIDER DE FONDO Y CRISTAL DE ALTO CONTRASTE
          ========================================== -->
-    <section class="relative min-h-[88vh] lg:min-h-[92vh] flex items-center justify-start overflow-hidden bg-[#0B1B48]"
+    <section id="hero-section" class="relative min-h-[88vh] lg:min-h-[92vh] flex items-center justify-start overflow-hidden bg-[#0B1B48]"
       aria-labelledby="hero-heading">
 
       <!-- Slide Images Stack -->
@@ -814,7 +942,10 @@
       <!-- Gradient Overlay para garantizar legibilidad a la izquierda e iluminación a la derecha -->
       <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/45 to-transparent"></div>
 
-      <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-10 sm:py-20 lg:py-28 min-h-[82vh] sm:min-h-0 flex flex-col justify-between">
+      <!-- Top Vignette Gradient para contraste perfecto del menú transparente en Hero -->
+      <div class="absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-black/75 via-black/30 to-transparent pointer-events-none z-10"></div>
+
+      <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 lg:pt-32 pb-10 sm:py-20 lg:py-28 min-h-[82vh] sm:min-h-0 flex flex-col justify-between">
         <div class="max-w-xl lg:max-w-md xl:max-w-lg text-left space-y-6 flex flex-col justify-between h-full min-h-[74vh] sm:min-h-0">
           
           <!-- Bloque Superior (Pill, Título y Subtítulo en Móvil) -->
@@ -1119,6 +1250,11 @@
                 </div>
               </div>
 
+              <a href="lifan-3800i.html"
+                class="w-full inline-flex items-center justify-center gap-1.5 py-2.5 mb-2 bg-slate-100 hover:bg-blue-50 hover:text-secondary text-slate-700 text-xs font-bold rounded-xl transition-all border border-slate-200/80">
+                <span class="material-symbols-outlined text-[16px]">photo_library</span>
+                <span>Ver Ficha Técnica y Fotos</span>
+              </a>
               <a class="w-full inline-flex items-center justify-center gap-1.5 py-3 bg-secondary hover:bg-secondary-dark text-white text-xs font-bold rounded-xl transition-all shadow-md shadow-blue-600/30 hover:scale-[1.02]"
                 href="https://wa.me/19782035623?text=Hola%20Buildsmart%2C%20deseo%20el%20LIFAN%203800i%20con%20precio%20promo%20de%20%24469.99%20con%20IVA"
                 rel="noopener noreferrer" target="_blank" aria-label="Pedir modelo LIFAN 3800i a Buildsmart por WhatsApp">
@@ -1198,6 +1334,11 @@
                 </div>
               </div>
 
+              <a href="lifan-4800ie.html"
+                class="w-full inline-flex items-center justify-center gap-1.5 py-2.5 mb-2 bg-slate-100 hover:bg-blue-50 hover:text-secondary text-slate-700 text-xs font-bold rounded-xl transition-all border border-slate-200/80">
+                <span class="material-symbols-outlined text-[16px]">photo_library</span>
+                <span>Ver Ficha Técnica y Fotos</span>
+              </a>
               <a class="w-full inline-flex items-center justify-center gap-1.5 py-3 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-xl transition-all shadow-sm hover:scale-[1.02]"
                 href="https://wa.me/19782035623?text=Hola%20Buildsmart%2C%20deseo%20el%20LIFAN%204800iE%20con%20precio%20promo%20de%20%24619.99%20con%20IVA"
                 rel="noopener noreferrer" target="_blank" aria-label="Cotizar modelo LIFAN 4800iE a Buildsmart por WhatsApp">
@@ -1277,6 +1418,11 @@
                 </div>
               </div>
 
+              <a href="lifan-6500ioe.html"
+                class="w-full inline-flex items-center justify-center gap-1.5 py-2.5 mb-2 bg-slate-100 hover:bg-blue-50 hover:text-secondary text-slate-700 text-xs font-bold rounded-xl transition-all border border-slate-200/80">
+                <span class="material-symbols-outlined text-[16px]">photo_library</span>
+                <span>Ver Ficha Técnica y Fotos</span>
+              </a>
               <a class="w-full inline-flex items-center justify-center gap-1.5 py-3 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-xl transition-all shadow-sm hover:scale-[1.02]"
                 href="https://wa.me/19782035623?text=Hola%20Buildsmart%2C%20deseo%20cotizar%20el%20LIFAN%206500iOE%20con%20precio%20promo%20de%20%24579.99%20con%20IVA"
                 rel="noopener noreferrer" target="_blank" aria-label="Cotizar modelo LIFAN 6500iOE a Buildsmart por WhatsApp">
@@ -1356,6 +1502,11 @@
                 </div>
               </div>
 
+              <a href="lifan-12000e.html"
+                class="w-full inline-flex items-center justify-center gap-1.5 py-2.5 mb-2 bg-slate-100 hover:bg-blue-50 hover:text-secondary text-slate-700 text-xs font-bold rounded-xl transition-all border border-slate-200/80">
+                <span class="material-symbols-outlined text-[16px]">photo_library</span>
+                <span>Ver Ficha Técnica y Fotos</span>
+              </a>
               <a class="w-full inline-flex items-center justify-center gap-1.5 py-3 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-xl transition-all shadow-sm hover:scale-[1.02]"
                 href="https://wa.me/19782035623?text=Hola%20Buildsmart%2C%20deseo%20cotizar%20el%20generador%20industrial%20LIFAN%2012000E%20con%20precio%20promo%20de%20%241659.99%20con%20IVA"
                 rel="noopener noreferrer" target="_blank"
@@ -1563,7 +1714,100 @@
     </section>
 
     <!-- ==========================================
-         7. BANNER DE CIERRE Y CONTACTO
+         7. NUESTRA UBICACIÓN & SHOWROOM EN CUENCA
+         ========================================== -->
+    <section id="ubicacion" class="py-16 lg:py-20 bg-white border-t border-slate-200/80 scroll-mt-20" aria-labelledby="ubicacion-heading">
+      <div class="max-w-7xl mx-auto px-6 sm:px-8">
+        <!-- Header de la Sección Minimalista -->
+        <div class="text-center max-w-xl mx-auto mb-10 lg:mb-12">
+          <span class="text-secondary text-xs uppercase font-bold tracking-widest block mb-2">Visítanos</span>
+          <h2 id="ubicacion-heading" class="font-headline text-3xl font-extrabold text-primary">Nuestra Oficina en Cuenca</h2>
+          <p class="text-slate-600 text-sm mt-2">Edificio Palermo Oficina 1, Ordóñez Lasso, frente a Hotel Oro Verde.</p>
+        </div>
+
+        <!-- Grid 2 Columnas Minimalista: Info + Mapa -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
+          
+          <!-- Columna Izquierda: Tarjeta Unificada Minimalista (5 cols) -->
+          <div class="lg:col-span-5 flex flex-col justify-between bg-slate-50/70 border border-slate-200/80 rounded-2xl p-6 sm:p-8">
+            <div>
+              <span class="text-[11px] font-bold uppercase tracking-wider text-secondary block mb-1.5">Showroom &amp; Oficina</span>
+              <h3 class="font-headline font-bold text-slate-900 text-xl sm:text-2xl leading-snug">
+                Edificio Palermo · Oficina 1
+              </h3>
+              <p class="text-slate-600 text-sm mt-2 font-medium">
+                Av. Ordóñez Lasso S/N y Calle de los Claveles
+              </p>
+              <p class="text-xs text-slate-500 mt-1">
+                Frente a Hotel Oro Verde · San Sebastián, Cuenca
+              </p>
+
+              <!-- Horarios Minimalistas -->
+              <div class="mt-6 pt-6 border-t border-slate-200/80 space-y-3">
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-900 block font-headline">Horarios de Atención</span>
+                <div class="text-xs sm:text-sm text-slate-600 space-y-1.5">
+                  <div class="flex justify-between items-center">
+                    <span>Lunes a Viernes</span>
+                    <span class="font-semibold text-slate-800">8:30 AM – 6:30 PM</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span>Sábados</span>
+                    <span class="font-semibold text-slate-800">9:00 AM – 1:00 PM</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Teléfono directo -->
+              <div class="mt-6 pt-6 border-t border-slate-200/80 flex items-center justify-between text-xs sm:text-sm">
+                <span class="text-slate-500">Teléfono directo:</span>
+                <a href="tel:+593980438881" class="font-bold text-primary hover:text-secondary flex items-center gap-1.5 transition-colors">
+                  <span class="material-symbols-outlined text-[16px]">call</span>
+                  <span>+593 98 043 8881</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Botones de Acción Minimalistas -->
+            <div class="flex flex-row gap-2.5 sm:gap-3 pt-6 mt-6 border-t border-slate-200/80">
+              <a href="https://maps.app.goo.gl/drkWSYMpDKjEViTr7"
+                target="_blank" rel="noopener noreferrer"
+                class="flex-1 inline-flex items-center justify-center gap-2 px-3 sm:px-4 py-3 bg-primary hover:bg-slate-800 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow-sm whitespace-nowrap">
+                <span class="material-symbols-outlined text-[18px] shrink-0">location_on</span>
+                <span>Ubicación</span>
+              </a>
+
+              <a href="https://wa.me/19782035623?text=Hola%20Buildsmart%2C%20deseo%20agendar%20una%20visita%20a%20su%20oficina%20en%20el%20Edificio%20Palermo%20(frente%20al%20Hotel%20Oro%20Verde)%20para%20conocer%20los%20generadores"
+                target="_blank" rel="noopener noreferrer"
+                class="flex-1 inline-flex items-center justify-center gap-2 px-3 sm:px-4 py-3 bg-white hover:bg-slate-100 text-slate-800 font-bold text-xs sm:text-sm rounded-xl border border-slate-200/90 transition-all shadow-xs whitespace-nowrap">
+                <svg class="w-4 h-4 fill-[#25D366] shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12.031 2c-5.502 0-9.972 4.47-9.972 9.974 0 1.76.459 3.477 1.332 4.994L2 22.062l5.228-1.371a9.92 9.92 0 0 0 4.803 1.233h.004c5.501 0 9.971-4.471 9.971-9.974 0-2.664-1.038-5.168-2.925-7.054C17.2 2.993 14.695 2 12.031 2zm0 18.271h-.003a8.25 8.25 0 0 1-4.204-1.149l-.302-.179-3.125.82.834-3.047-.197-.313a8.225 8.225 0 0 1-1.261-4.429c0-4.561 3.711-8.272 8.275-8.272 2.21 0 4.288.862 5.852 2.427a8.217 8.217 0 0 1 2.422 5.853c0 4.562-3.711 8.269-8.276 8.269zm4.536-6.196c-.249-.124-1.472-.727-1.7-.81-.229-.083-.395-.124-.561.124-.166.249-.643.81-.788.976-.145.166-.291.187-.539.062s-1.05-.387-2.001-1.235c-.74-.66-1.24-1.476-1.385-1.725-.145-.249-.015-.383.109-.507.112-.111.249-.29.373-.435.125-.146.166-.249.249-.415.083-.166.042-.311-.02-.435-.063-.125-.561-1.35-.769-1.848-.203-.487-.41-.421-.561-.429-.145-.008-.311-.01-.478-.01-.166 0-.435.062-.663.311-.228.249-.871.851-.871 2.074 0 1.224.892 2.406 1.016 2.572.125.166 1.754 2.679 4.25 3.757.594.256 1.058.41 1.42.525.597.19 1.141.163 1.57.099.478-.072 1.472-.602 1.68-1.183.207-.581.207-1.079.145-1.183-.062-.104-.228-.166-.477-.29z"/>
+                </svg>
+                <span>Agendar Visita</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Columna Derecha: Mapa Limpio sin sobrecargas (7 cols) -->
+          <div class="lg:col-span-7 flex flex-col">
+            <div class="w-full h-[380px] sm:h-[420px] lg:h-full min-h-[380px] rounded-2xl overflow-hidden border border-slate-200/80 shadow-xs bg-slate-100 relative">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.992683935293!2d-79.035169!3d-2.8891253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91cd230077489fbb%3A0x41131c31350f7b4a!2sEDIFICIO%20PALERMO!5e0!3m2!1ses!2sec!4v1700000000000!5m2!1ses!2sec"
+                class="w-full h-full border-0 absolute inset-0"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen=""
+                aria-label="Mapa interactivo de Edificio Palermo Oficina 1, Ordóñez Lasso, frente a Hotel Oro Verde, Cuenca"
+                title="Ubicación Edificio Palermo Oficina 1, Cuenca">
+              </iframe>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         8. BANNER DE CIERRE Y CONTACTO
          ========================================== -->
     <section class="py-20 lg:py-24 bg-primary text-white text-center" aria-labelledby="cta-heading">
       <div class="max-w-4xl mx-auto px-6 sm:px-8">
@@ -1651,16 +1895,23 @@
             Distribución Oficial Directa en Cuenca y envíos a las 24 provincias del Ecuador.
             <span class="block mt-1.5 text-[11px]"><a href="https://buildsmart.com.ec" target="_blank" rel="noopener noreferrer" class="text-secondary font-semibold hover:underline">buildsmart.com.ec</a></span>
           </p>
+          <div class="pt-2 text-[11px] text-slate-400 leading-relaxed border-t border-slate-800/80">
+            <strong class="text-slate-300 block font-medium">Oficina &amp; Showroom:</strong>
+            <a href="https://maps.app.goo.gl/drkWSYMpDKjEViTr7" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">
+              Edificio Palermo Oficina 1, Av. Ordóñez Lasso (frente a Hotel Oro Verde), Cuenca.
+            </a>
+          </div>
         </div>
 
-        <!-- Columna 2: Navegación Principal -->
+        <!-- Columna 2: Navegación & Fichas Técnicas -->
         <div>
-          <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4 font-headline">Navegación</h4>
-          <ul class="space-y-2.5 text-xs">
-            <li><a class="hover:text-white transition-colors" href="#modelos">Catálogo de Modelos</a></li>
-            <li><a class="hover:text-white transition-colors" href="#dimensionador">Calculadora de Potencia</a></li>
-            <li><a class="hover:text-white transition-colors" href="#ventajas">Tecnología Dual Fuel</a></li>
-            <li><a class="hover:text-white transition-colors" href="#garantia">Garantía &amp; Respaldo</a></li>
+          <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4 font-headline">Fichas de Modelos</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a class="hover:text-white transition-colors" href="lifan-3800i.html">LIFAN 3800i (3.5 kW)</a></li>
+            <li><a class="hover:text-white transition-colors" href="lifan-4800ie.html">LIFAN 4800iE (4.2 kW)</a></li>
+            <li><a class="hover:text-white transition-colors" href="lifan-6500ioe.html">LIFAN 6500iOE (5.5 kW)</a></li>
+            <li><a class="hover:text-white transition-colors" href="lifan-12000e.html">LIFAN 12000E (12.0 kW)</a></li>
+            <li><a class="text-secondary hover:underline font-semibold" href="#modelos">Ver Comparativa →</a></li>
           </ul>
         </div>
 
@@ -1789,6 +2040,57 @@
     // Iniciar timer del slider al cargar la página
     document.addEventListener('DOMContentLoaded', () => {
       startSlideTimer();
+
+      // Control de clic accesible para Dropdown de Modelos en Desktop
+      const modelsBtn = document.getElementById('models-dropdown-btn');
+      const modelsMenu = document.getElementById('models-dropdown-menu');
+      if (modelsBtn && modelsMenu) {
+        modelsBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const isExpanded = modelsBtn.getAttribute('aria-expanded') === 'true';
+          modelsBtn.setAttribute('aria-expanded', !isExpanded);
+          modelsMenu.classList.toggle('opacity-100');
+          modelsMenu.classList.toggle('visible');
+          modelsMenu.classList.toggle('translate-y-0');
+        });
+        document.addEventListener('click', (e) => {
+          if (!modelsBtn.contains(e.target) && !modelsMenu.contains(e.target)) {
+            modelsBtn.setAttribute('aria-expanded', 'false');
+            modelsMenu.classList.remove('opacity-100', 'visible', 'translate-y-0');
+          }
+        });
+      }
+
+      // Control de estado transparente en Hero y Sticky con frosted glass al hacer scroll
+      const header = document.getElementById('site-header');
+      const heroSection = document.getElementById('hero-section');
+      const logoWhite = document.getElementById('header-logo-white');
+      const logoBlack = document.getElementById('header-logo-black');
+
+      function updateHeaderState() {
+        if (!header || !heroSection) return;
+        const heroRect = heroSection.getBoundingClientRect();
+        if (heroRect.bottom > 80) {
+          header.classList.add('header-hero');
+          header.classList.remove('header-sticky');
+          if (logoWhite && logoBlack) {
+            logoWhite.classList.remove('hidden');
+            logoBlack.classList.add('hidden');
+          }
+        } else {
+          header.classList.remove('header-hero');
+          header.classList.add('header-sticky');
+          if (logoWhite && logoBlack) {
+            logoWhite.classList.add('hidden');
+            logoBlack.classList.remove('hidden');
+          }
+        }
+      }
+
+      window.addEventListener('scroll', updateHeaderState, { passive: true });
+      window.addEventListener('resize', updateHeaderState, { passive: true });
+      window.addEventListener('load', updateHeaderState, { passive: true });
+      updateHeaderState();
     });
 
     // Control del Menú Hamburguesa Móvil
@@ -1799,11 +2101,13 @@
       if (!menu) return;
       const isOpen = menu.classList.contains('open');
       if (!isOpen) {
+        menu.classList.remove('hidden');
         menu.classList.add('open');
         btn?.setAttribute('aria-expanded', 'true');
         if (icon) icon.textContent = 'close';
       } else {
         menu.classList.remove('open');
+        menu.classList.add('hidden');
         btn?.setAttribute('aria-expanded', 'false');
         if (icon) icon.textContent = 'menu';
       }
@@ -1823,6 +2127,18 @@
         }, 100);
       }
     }
+
+    // Scroll automático al hash cuando se llega desde una página de producto
+    window.addEventListener('load', () => {
+      if (window.location.hash) {
+        const target = document.querySelector(window.location.hash);
+        if (target) {
+          setTimeout(() => {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 150);
+        }
+      }
+    });
 
     // Control accesible de Dialog Nativo
     const advisorModal = document.getElementById('advisor-modal');
