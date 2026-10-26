@@ -6,7 +6,7 @@
 [![GitHub Pages](https://img.shields.io/badge/Deploy-GitHub%20Pages-success?style=flat&logo=github)](https://inhaus-developer-team.github.io/lifan-generadores-ecuador/)
 [![Modern Web Guidance](https://img.shields.io/badge/Modern%20Web-Compliant%202026-orange?style=flat)](https://web.dev)
 [![WCAG 2.1 AA](https://img.shields.io/badge/Accessibility-WCAG%202.1%20AA-blue?style=flat)](https://www.w3.org/WAI/standards-guidelines/wcag/)
-[![Dual Fuel GLP](https://img.shields.io/badge/Tecnolog%C3%ADa-Dual%20Fuel%20Gas%20GLP-green?style=flat)](https://lifanpower.ec)
+[![Dual Fuel GLP](https://img.shields.io/badge/Tecnolog%C3%ADa-Dual%20Fuel%20Gas%20GLP-green?style=flat)](https://buildsmart.com.ec)
 
 ---
 

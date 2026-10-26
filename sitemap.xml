@@ -4,7 +4,7 @@
   
   <!-- Página Principal / Catálogo -->
   <url>
-    <loc>https://lifanpower.ec/</loc>
+    <loc>https://buildsmart.com.ec/</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -12,55 +12,55 @@
 
   <!-- Modelo LIFAN 3800i Inverter Dual Fuel (3.5 kW) -->
   <url>
-    <loc>https://lifanpower.ec/lifan-3800i.html</loc>
+    <loc>https://buildsmart.com.ec/lifan-3800i.html</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://lifanpower.ec/assets/LIFAN%203800i%20Inverter/Generador%20Lifan%203800i%20en%20azul%20cian.png</image:loc>
+      <image:loc>https://buildsmart.com.ec/assets/LIFAN%203800i%20Inverter/Generador%20Lifan%203800i%20en%20azul%20cian.png</image:loc>
       <image:title>Generador Inverter LIFAN 3800i Dual Fuel 3.5 kW</image:title>
     </image:image>
   </url>
 
   <!-- Modelo LIFAN 4800iE Inverter Dual Fuel Silencioso (4.2 kW) -->
   <url>
-    <loc>https://lifanpower.ec/lifan-4800ie.html</loc>
+    <loc>https://buildsmart.com.ec/lifan-4800ie.html</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://lifanpower.ec/assets/LIFAN%204800iE%20Inverter/Generador%20azul%20centrado%20sobre%20fondo%20blanco.png</image:loc>
+      <image:loc>https://buildsmart.com.ec/assets/LIFAN%204800iE%20Inverter/Generador%20azul%20centrado%20sobre%20fondo%20blanco.png</image:loc>
       <image:title>Generador Inverter LIFAN 4800iE Silencioso Dual Fuel 4.2 kW</image:title>
     </image:image>
   </url>
 
   <!-- Modelo LIFAN 6500iOE Inverter Open Chasis Abierto (5.5 kW) -->
   <url>
-    <loc>https://lifanpower.ec/lifan-6500ioe.html</loc>
+    <loc>https://buildsmart.com.ec/lifan-6500ioe.html</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://lifanpower.ec/assets/LIFAN%206500iOE%20Open/639137622527626962_G6500IOE.webp</image:loc>
+      <image:loc>https://buildsmart.com.ec/assets/LIFAN%206500iOE%20Open/639137622527626962_G6500IOE.webp</image:loc>
       <image:title>Generador Inverter LIFAN 6500iOE Open 5.5 kW Tanque 15L</image:title>
     </image:image>
   </url>
 
   <!-- Modelo LIFAN 12000E Industrial Pesado V-Twin (12.0 kW) -->
   <url>
-    <loc>https://lifanpower.ec/lifan-12000e.html</loc>
+    <loc>https://buildsmart.com.ec/lifan-12000e.html</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://lifanpower.ec/assets/LIFAN%2012000E%20Industrial/pic258.png</image:loc>
+      <image:loc>https://buildsmart.com.ec/assets/LIFAN%2012000E%20Industrial/pic258.png</image:loc>
       <image:title>Generador Industrial LIFAN 12000E Bifásico 12 kW V-Twin</image:title>
     </image:image>
   </url>
 
   <!-- Políticas y Términos Legales -->
   <url>
-    <loc>https://lifanpower.ec/politicas.html</loc>
+    <loc>https://buildsmart.com.ec/politicas.html</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
