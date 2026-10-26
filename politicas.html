@@ -908,6 +908,34 @@
 
   <!-- Script interactivo accesible para cambiar pestañas, menú y modal -->
   <script>
+    // ponytail: En GHL el sitio corre dentro de un iframe; navegamos en window.top hacia la ruta de GHL solo si estamos dentro de un iframe.
+    const ghlBase = 'https://buildsmart.com.ec';
+    const ghlRoutes = {
+      'index.html': `${ghlBase}/home`,
+      'lifan-3800i/index.html': `${ghlBase}/lifan-3800i`,
+      'lifan-4800ie/index.html': `${ghlBase}/lifan-4800ie`,
+      'lifan-6500ioe/index.html': `${ghlBase}/lifan-6500ioe`,
+      'lifan-12000e/index.html': `${ghlBase}/lifan-12000e`,
+    };
+
+    function resolveGhlUrl(rawUrl) {
+      if (!rawUrl || rawUrl.startsWith('#') || rawUrl.startsWith('http') || rawUrl.startsWith('tel:')) return null;
+      const [pathPart, hashPart] = rawUrl.split('#');
+      const cleanPath = pathPart.replace(/^(\.\/|\.\.\/)+/, '');
+      if (!ghlRoutes[cleanPath]) return null;
+      return ghlRoutes[cleanPath] + (hashPart ? `#${hashPart}` : '');
+    }
+
+    if (window.self !== window.top) {
+      document.querySelectorAll('a[href]').forEach((a) => {
+        const ghlUrl = resolveGhlUrl(a.getAttribute('href'));
+        if (ghlUrl) {
+          a.href = ghlUrl;
+          a.target = '_top';
+        }
+      });
+    }
+
     // Control de menú responsive
     function toggleMobileMenu() {
       const menu = document.getElementById('mobile-menu');
@@ -936,7 +964,12 @@
         toggleMobileMenu();
       }
       setTimeout(() => {
-        window.location.href = targetUrl;
+        const ghlUrl = window.self !== window.top ? resolveGhlUrl(targetUrl) : null;
+        if (ghlUrl) {
+          window.top.location.href = ghlUrl;
+        } else {
+          window.location.href = targetUrl;
+        }
       }, 80);
     }
 

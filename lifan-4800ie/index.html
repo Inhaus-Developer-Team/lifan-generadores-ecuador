@@ -520,7 +520,7 @@
               <span class="material-symbols-outlined text-[16px]">share</span>
               <span id="btn-copy-text">Copiar</span>
             </button>
-            <a href="https://wa.me/?text=Ficha%20T%C3%A9cnica%20y%20Fotos%20del%20Generador%20LIFAN%204800iE%20Inverter%20(Dual%20Fuel%204.2%20kW%20con%20Llave)%3A%20https%3A%2F%2Fbuildsmart.com.ec%2Flifan-4800ie%2Findex.html"
+            <a href="https://wa.me/?text=Ficha%20T%C3%A9cnica%20y%20Fotos%20del%20Generador%20LIFAN%204800iE%20Inverter%20(Dual%20Fuel%204.2%20kW%20con%20Llave)%3A%20https%3A%2F%2Fbuildsmart.com.ec%2Flifan-4800ie"
               target="_blank" rel="noopener noreferrer"
               class="flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200/80 text-xs font-bold transition-all shadow-sm">
               <span class="material-symbols-outlined text-[16px]">send</span>
@@ -820,10 +820,10 @@
         <div>
           <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-4 font-headline">Legal &amp; Políticas</h4>
           <ul class="space-y-2.5 text-xs">
-            <li><a class="hover:text-white transition-colors" href="politicas.html#terminos">Términos y Condiciones</a></li>
-            <li><a class="hover:text-white transition-colors" href="politicas.html#envios">Envíos y Entregas</a></li>
-            <li><a class="hover:text-white transition-colors" href="politicas.html#privacidad">Políticas de Privacidad</a></li>
-            <li><a class="hover:text-white transition-colors" href="politicas.html#cookies">Política de Cookies</a></li>
+            <li><a class="hover:text-white transition-colors" href="../politicas.html#terminos">Términos y Condiciones</a></li>
+            <li><a class="hover:text-white transition-colors" href="../politicas.html#envios">Envíos y Entregas</a></li>
+            <li><a class="hover:text-white transition-colors" href="../politicas.html#privacidad">Políticas de Privacidad</a></li>
+            <li><a class="hover:text-white transition-colors" href="../politicas.html#cookies">Política de Cookies</a></li>
           </ul>
         </div>
 
@@ -956,8 +956,36 @@
       }
     }
 
+    // ponytail: En GHL el sitio corre dentro de un iframe; navegamos en window.top hacia la ruta de GHL solo si estamos dentro de un iframe.
+    const ghlBase = 'https://buildsmart.com.ec';
+    const ghlRoutes = {
+      'index.html': `${ghlBase}/home`,
+      'lifan-3800i/index.html': `${ghlBase}/lifan-3800i`,
+      'lifan-4800ie/index.html': `${ghlBase}/lifan-4800ie`,
+      'lifan-6500ioe/index.html': `${ghlBase}/lifan-6500ioe`,
+      'lifan-12000e/index.html': `${ghlBase}/lifan-12000e`,
+    };
+
+    function resolveGhlUrl(rawUrl) {
+      if (!rawUrl || rawUrl.startsWith('#') || rawUrl.startsWith('http') || rawUrl.startsWith('tel:')) return null;
+      const [pathPart, hashPart] = rawUrl.split('#');
+      const cleanPath = pathPart.replace(/^(\.\/|\.\.\/)+/, '');
+      if (!ghlRoutes[cleanPath]) return null;
+      return ghlRoutes[cleanPath] + (hashPart ? `#${hashPart}` : '');
+    }
+
+    if (window.self !== window.top) {
+      document.querySelectorAll('a[href]').forEach((a) => {
+        const ghlUrl = resolveGhlUrl(a.getAttribute('href'));
+        if (ghlUrl) {
+          a.href = ghlUrl;
+          a.target = '_top';
+        }
+      });
+    }
+
     function copyCurrentLink() {
-      const url = window.location.href;
+      const url = window.self !== window.top ? `${ghlBase}/lifan-4800ie` : window.location.href;
       if (navigator.clipboard) {
         navigator.clipboard.writeText(url).then(() => showToast());
       } else {
@@ -1013,7 +1041,12 @@
         toggleMobileMenu();
       }
       setTimeout(() => {
-        window.location.href = targetUrl;
+        const ghlUrl = window.self !== window.top ? resolveGhlUrl(targetUrl) : null;
+        if (ghlUrl) {
+          window.top.location.href = ghlUrl;
+        } else {
+          window.location.href = targetUrl;
+        }
       }, 80);
     }
 

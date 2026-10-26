@@ -2144,6 +2144,28 @@
       }
     });
 
+    // ponytail: En GHL el sitio corre dentro de un iframe cross-origin; reescribimos los enlaces de modelos hacia https://buildsmart.com.ec/<slug> con target="_top" solo cuando window.self !== window.top para que en local/GitHub Pages directo sigan funcionando las rutas relativas.
+    if (window.self !== window.top) {
+      const ghlBase = 'https://buildsmart.com.ec';
+      const ghlRoutes = {
+        'index.html': `${ghlBase}/home`,
+        'lifan-3800i/index.html': `${ghlBase}/lifan-3800i`,
+        'lifan-4800ie/index.html': `${ghlBase}/lifan-4800ie`,
+        'lifan-6500ioe/index.html': `${ghlBase}/lifan-6500ioe`,
+        'lifan-12000e/index.html': `${ghlBase}/lifan-12000e`,
+      };
+      document.querySelectorAll('a[href]').forEach((a) => {
+        const rawHref = a.getAttribute('href');
+        if (!rawHref || rawHref.startsWith('#') || rawHref.startsWith('http') || rawHref.startsWith('tel:')) return;
+        const [pathPart, hashPart] = rawHref.split('#');
+        const cleanPath = pathPart.replace(/^(\.\/|\.\.\/)+/, '');
+        if (ghlRoutes[cleanPath]) {
+          a.href = ghlRoutes[cleanPath] + (hashPart ? `#${hashPart}` : '');
+          a.target = '_top';
+        }
+      });
+    }
+
     // Control accesible de Dialog Nativo
     const advisorModal = document.getElementById('advisor-modal');
     function openAdvisorModal() {
